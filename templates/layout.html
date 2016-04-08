@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+		<title>Entradas.com</title>
+	</head>
+
+	<body>
+
+		<header>
+			<div>
+				<img alt='logo' id='logo' src='static/images/logo.png'>
+				<nav>
+					<li>Ayuda</li>
+					<li>Regístrate</li>
+					<li>Inicia Sesión</li>
+				</nav>
+			</div>
+		</header>
+
+		{% block content %}
+			CONTENT GOES HERE
+		{% endblock %}
+
+		<footer>
+			<div id='zonas'>
+				<ul>
+					Empresa
+					<li> Lorem Ipsum</li>
+					<li> Lorem Ipsum</li>
+					<li> Lorem Ipsum</li>
+					<li> Lorem Ipsum</li>
+					<li> Lorem Ipsum</li>
+				</ul>
+				<ul>
+					Ayuda y Contacto
+					<li> Lorem Ipsum</li>
+					<li> Lorem Ipsum</li>
+					<li> Lorem Ipsum</li>
+					<li> Lorem Ipsum</li>
+					<li> Lorem Ipsum</li>
+				</ul>
+				<ul>
+					Servicios
+					<li> Lorem Ipsum</li>
+					<li> Lorem Ipsum</li>
+					<li> Lorem Ipsum</li>
+					<li> Lorem Ipsum</li>
+					<li> Lorem Ipsum</li>
+				</ul>
+				<ul>
+					B2B
+					<li> Lorem Ipsum</li>
+					<li> Lorem Ipsum</li>
+					<li> Lorem Ipsum</li>
+					<li> Lorem Ipsum</li>
+					<li> Lorem Ipsum</li>
+				</ul>
+			</div>
+
+			<div id='contacta'>
+				Siguenos en
+				<div>
+				</div>
+				@ Entradas.com
+			</div>
+
+		</footer>
+
+	</body>
+
+
+
+	<script href="{{ url_for('static', filename='main.js') }}"></script>
+</html>

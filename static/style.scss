@@ -1,0 +1,42 @@
+$azulOscuro: #133C55;
+$azulClarito: #1282A2;
+$verde: #157A6E;
+$flashReverso: #FABB00;
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+header {
+	
+	div{
+		display: flex;
+		justify-content: space-between;
+		background-color: $azulOscuro;
+
+		img {
+			margin: 10px 10px 10px 30px;
+		}
+
+		nav {
+			display: flex;
+		    flex-flow: row wrap;
+		    justify-content: space-around;
+		    width: 25%;
+		    margin: 30px 50px 20px 20px;
+		    list-style-type: none;
+		}
+	}	
+}
+
+footer {
+	background-color: $azulOscuro;
+	#zonas {
+		display:flex;
+	}
+
+	#contacta {
+		display: flex;
+	}
+}
