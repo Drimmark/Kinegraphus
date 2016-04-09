@@ -1,111 +1,39 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+{% extends "layout.html" %}
 
-		<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
-		<title>Entradas.com</title>
-	</head>
+{% block content %}
+<div id='imagen'>
+</div>
 
-	<body>
+<div class='searchBar'>
+	<form class = 'busqueda' action= '' method='get'>
+	<ul>
+		<li>
+			<select id='categoria' name='categoria'>
+				<option default name='Película' value='pelicula'> Película</option>
+				<option name='Cine' value='cine'> Cine </option>
+			</select>
+		</li>
+		<li>
+			<input type='text' value=></input>
+		</li>
+		<li>
+			<span>Día</span>
+			<input type='date' value=></input>
+		</li>
+		<li>
+			<span>Ciudad</span>
+			<input type='text' value=>
 
-		<header>
-			<div id='indexHeader'>
-				<img alt='logo' id='logo' src='static/images/logo.png'>
-				<nav>
-					<li>Ayuda</li>
-					<li>Regístrate</li>
-					<li>Inicia Sesión</li>
-				</nav>
-			</div>
-		</header>
+			</input>
+		</li>
+		<li>
+			<button type='submit'>Buscar</button>
+		</li>
+	</ul>
+	</form>
+</div>
 
-		<section>
-			<div id='imagen'>
-			</div>
+<div id='destacados'>
+</div>
 
-			<div class='searchBar'>
-				<form class = 'busqueda' action= '' method='get'>
-				<ul>
-					<li>
-						<select id='categoria' name='categoria'>
-							<option default name='Película' value='pelicula'> Película</option>
-							<option name='Cine' value='cine'> Cine </option>
-						</select>
-					</li>
-					<li>
-						<input type='text' value=></input>
-					</li>
-					<li>
-						<span>Día</span>
-						<input type='date' value=></input>
-					</li>
-					<li>
-						<span>Ciudad</span>
-						<input type='text' value=>
-						
-						</input>
-					</li>
-					<li>
-						<button type='submit'>Buscar</button>
-					</li>
-				</ul>
-				</form>
-			</div>
-
-			<div id='destacados'>
-			</div>
-		</section>
-
-
-		<footer>
-			<div id='zonas'>
-				<ul>
-					Empresa
-					<li> Lorem Ipsum</li>
-					<li> Lorem Ipsum</li>
-					<li> Lorem Ipsum</li>
-					<li> Lorem Ipsum</li>
-					<li> Lorem Ipsum</li>
-				</ul>
-				<ul>
-					Ayuda y Contacto
-					<li> Lorem Ipsum</li>
-					<li> Lorem Ipsum</li>
-					<li> Lorem Ipsum</li>
-					<li> Lorem Ipsum</li>
-					<li> Lorem Ipsum</li>
-				</ul>
-				<ul>
-					Servicios
-					<li> Lorem Ipsum</li>
-					<li> Lorem Ipsum</li>
-					<li> Lorem Ipsum</li>
-					<li> Lorem Ipsum</li>
-					<li> Lorem Ipsum</li>
-				</ul>
-				<ul>
-					B2B
-					<li> Lorem Ipsum</li>
-					<li> Lorem Ipsum</li>
-					<li> Lorem Ipsum</li>
-					<li> Lorem Ipsum</li>
-					<li> Lorem Ipsum</li>
-				</ul>
-			</div>
-
-			<div id='contacta'>
-				Siguenos en
-				<div id='social'>
-				</div>
-				
-			</div>
-			<span>@ Entradas.com</span>
-		</footer>
-
-	</body>
-
-
-
-	<script href="{{ url_for('static', filename='main.js') }}"></script>
-</html>
+{% endblock %}
