@@ -14,13 +14,33 @@ header div {
     justify-content: space-around;
     width: 25%;
     margin: 30px 50px 20px 20px;
-    list-style-type: none; }
+    list-style-type: none;
+    color: #FABB00; }
+header #indexHeader {
+  background-color: transparent; }
 
 footer {
-  background-color: #133C55; }
+  background-color: #133C55;
+  color: white; }
   footer #zonas {
-    display: flex; }
+    display: flex;
+    justify-content: space-around;
+    padding: 0 0 10px 0;
+    border-style: none none solid;
+    border-color: white;
+    margin: 0 15%;
+    border-width: 1px; }
   footer #contacta {
-    display: flex; }
+    display: flex;
+    justify-content: center;
+    margin: 10px 20%; }
+    footer #contacta #social {
+      display: flex;
+      justify-content: center space-around; }
+  footer span {
+    display: flex;
+    justify-content: center;
+    margin: 30px 50px 0px;
+    padding: 0 0 15px; }
 
 /*# sourceMappingURL=style.css.map */

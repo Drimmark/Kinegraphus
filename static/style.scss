@@ -9,7 +9,7 @@ $flashReverso: #FABB00;
 }
 
 header {
-	
+
 	div{
 		display: flex;
 		justify-content: space-between;
@@ -26,17 +26,47 @@ header {
 		    width: 25%;
 		    margin: 30px 50px 20px 20px;
 		    list-style-type: none;
+		    color: $flashReverso;
 		}
 	}	
+
+	#indexHeader {
+		background-color: transparent;
+	}
 }
 
 footer {
+
 	background-color: $azulOscuro;
+	color: white;
+
 	#zonas {
-		display:flex;
+		display: flex;
+		justify-content: space-around;
+		padding: 0 0 10px 0;
+		border-style: none none solid;
+		border-color: white;
+		margin: 0 15%;
+		border-width: 1px;
 	}
 
 	#contacta {
+		//Esto no está bien, pero bueno, por ahora se queda centrado
 		display: flex;
+		justify-content: center;
+		margin: 10px 20%;
+
+		#social {
+			display: flex;
+			justify-content: center space-around;
+			//margin: 10px 15%;
+		}
+	}
+
+	span {
+		display: flex;
+		justify-content: center;
+		margin: 30px 50px 0px;
+		padding: 0 0 15px;
 	}
 }
