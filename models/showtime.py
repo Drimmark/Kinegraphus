@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 from models.basicmodel import db
-from random import random
 
 
 class ShowTime(db.Model):
@@ -12,9 +11,6 @@ class ShowTime(db.Model):
         self.cinema_id = cinema_id
         self.movie_id = movie_id
         self.time = time
-
-    def getOccupation(self):
-        return random()
 
     def __repr__(self):
         pass

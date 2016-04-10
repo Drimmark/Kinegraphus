@@ -7,6 +7,7 @@ app.config.from_pyfile('config_file.cfg')
 db.app = app
 db.init_app(app)
 
+
 @app.route('/')
 def index():
     return render_template('index.html')
