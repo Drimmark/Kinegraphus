@@ -1,6 +1,11 @@
 from flask import Flask, render_template
-app = Flask(__name__)
+from models.basicmodel import db
+from models.movie import Movie
 
+app = Flask(__name__)
+app.config.from_pyfile('config_file.cfg')
+db.app = app
+db.init_app(app)
 
 @app.route('/')
 def index():
