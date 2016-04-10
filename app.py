@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from flask import Flask, render_template
 from models.basicmodel import db
 from models.movie import Movie
