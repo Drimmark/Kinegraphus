@@ -23,15 +23,40 @@ header {
 			display: flex;
 		    flex-flow: row wrap;
 		    justify-content: space-around;
-		    width: 25%;
 		    margin: 30px 50px 20px 20px;
 		    list-style-type: none;
 		    color: $flashReverso;
+
+		    li {
+		    	margin: 0px 10px
+		    }
 		}
 	}	
 
 	#indexHeader {
 		background-color: transparent;
+	}
+}
+
+section {
+	#imagen{
+
+	}
+
+	.searchBar{
+		form {
+			ul {
+				display: flex;
+				justify-content: center;
+				margin: 10px 10%;
+				list-style-type: none;
+			}
+
+		}
+	}
+
+	#destacados{
+
 	}
 }
 
@@ -48,6 +73,10 @@ footer {
 		border-color: white;
 		margin: 0 15%;
 		border-width: 1px;
+		padding-top: 20px;
+		ul {
+		 	list-style-type: none;
+		}
 	}
 
 	#contacta {

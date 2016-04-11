@@ -12,12 +12,19 @@ header div {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
-    width: 25%;
     margin: 30px 50px 20px 20px;
     list-style-type: none;
     color: #FABB00; }
+    header div nav li {
+      margin: 0px 10px; }
 header #indexHeader {
   background-color: transparent; }
+
+section .searchBar form ul {
+  display: flex;
+  justify-content: center;
+  margin: 10px 10%;
+  list-style-type: none; }
 
 footer {
   background-color: #133C55;
@@ -29,7 +36,10 @@ footer {
     border-style: none none solid;
     border-color: white;
     margin: 0 15%;
-    border-width: 1px; }
+    border-width: 1px;
+    padding-top: 20px; }
+    footer #zonas ul {
+      list-style-type: none; }
   footer #contacta {
     display: flex;
     justify-content: center;
@@ -43,4 +53,4 @@ footer {
     margin: 30px 50px 0px;
     padding: 0 0 15px; }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=main.css.map */
