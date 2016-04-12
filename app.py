@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect, url_for
 from models import db, Cinema, Movie, ShowTime
 
 app = Flask(__name__)
@@ -63,9 +63,30 @@ def index():
     return render_template('index.html', cities=cities, premieres=premieres)
 
 
-@app.route('/search')
-def results():
-    return render_template('search.html')
+@app.route('/searchcinemas')
+def search_cinemas():
+    movie_id = request.args.get('movie_id', None)
+    city = request.args.get('city', None)
+    time = request.args.get('time', None)
+
+    if movie_id is not None:
+        cinemas = Cinema.query.join(Cinema.show_times)\
+            .filter(ShowTime.movie_id == movie_id)
+
+        if city is not None:
+            cinemas = cinemas.filter(Cinema.city == city)
+
+        if time is not None:
+            cinemas = cinemas.filter(ShowTime.time >= time)
+
+        return render_template('searchcinemas.html', cinemas=cinemas.all())
+    else:
+        return redirect(url_for('index'))
+
+
+@app.route('/searchmovies')
+def search_movies():
+    pass
 
 
 if __name__ == '__main__':
