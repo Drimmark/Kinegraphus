@@ -6,7 +6,7 @@ class Movie(db.Model):
     title = db.Column(db.String(255), nullable=False)
     sinopsis = db.Column(db.Text)
     format = db.Column(db.String(128), nullable=False)
-    duration = db.Column(db.Integer, nullable=False)
+    duration = db.Column(db.Integer)
     imdb = db.Column(db.String(128))
     vose = db.Column(db.Boolean)
     rating = db.Column(db.String(255), nullable=False)
