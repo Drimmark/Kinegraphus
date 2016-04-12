@@ -86,7 +86,19 @@ def search_cinemas():
 
 @app.route('/searchmovies')
 def search_movies():
-    pass
+    cinema_id = request.args.get('cinema_id', None)
+    time = request.args.get('time', None)
+
+    if cinema_id is not None:
+        movies = Movie.query.join(Cinema.show_times)\
+            .filter(ShowTime.cinema_id == cinema_id)
+
+        if time is not None:
+            movies = movies.filter(ShowTime.time >= time)
+
+        return render_template('searchmovies.html', cinemas=movies.all())
+    else:
+        return redirect(url_for('index'))
 
 
 if __name__ == '__main__':
