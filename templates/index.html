@@ -34,9 +34,11 @@
 		</li>
 		<li>
 			<span>Ciudad</span>
-			<input type='text' value=>
-
-			</input>
+			<select name="" id="">
+				{% for r in cities %}
+				<option value="{{ city }}">{{ r.city }}</option>
+				{% endfor %}
+			</select>
 		</li>
 		<li>
 			<button type='submit'>Buscar</button>
@@ -46,6 +48,9 @@
 </div>
 
 <div id='destacados'>
+	{% for movie in premieres %}
+	<h3>{{ movie.title }}</h3>
+	{% endfor %}
 </div>
 
 {% endblock %}

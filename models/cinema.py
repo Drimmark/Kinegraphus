@@ -27,4 +27,4 @@ class Cinema(db.Model):
         self.latitude = latitude
         
     def __repr__(self):
-        return self.title
+        return self.name

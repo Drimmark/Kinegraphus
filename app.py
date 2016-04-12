@@ -53,12 +53,19 @@ def import_xml(file_name):
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    cities = db.session.query(Cinema.city).distinct()
+    premieres_id = db.session.query(ShowTime.movie_id, db.func.count(ShowTime.movie_id))\
+        .group_by(ShowTime.movie_id)\
+        .order_by(db.func.count(ShowTime.movie_id).desc())\
+        .limit(10)
+    premieres = [Movie.query.get(premiere_id.movie_id) for premiere_id in premieres_id]
+
+    return render_template('index.html', cities=cities, premieres=premieres)
 
 
-@app.route('/results')
+@app.route('/search')
 def results():
-    return render_template('results.html')
+    return render_template('search.html')
 
 
 if __name__ == '__main__':
