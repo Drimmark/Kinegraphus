@@ -1,12 +1,13 @@
+@import "normalize.scss";
+
+* {
+	box-sizing: border-box;
+}
+
 $azulOscuro: #133C55;
 $azulClarito: #1282A2;
 $verde: #157A6E;
 $flashReverso: #FABB00;
-
-* {
-	margin: 0;
-	padding: 0;
-}
 
 header {
 
@@ -25,43 +26,60 @@ header {
 		    justify-content: space-around;
 		    margin: 30px 50px 20px 20px;
 		    list-style-type: none;
-		    color: $flashReverso;
 
 		    li {
-		    	margin: 0px 10px
+		    	margin: 0px 10px;
+
+				a {
+					color: $flashReverso;
+				}
 		    }
 		}
-	}	
+	}
 
 	#indexHeader {
 		background-color: transparent;
 	}
 }
 
-section {
-	#imagen{
+section#imagen{
 
-	}
+}
 
-	.searchBar{
-		form {
-			ul {
-				display: flex;
-				justify-content: center;
-				margin: 10px 10%;
-				list-style-type: none;
-			}
-
+section#searchBar{
+	form {
+		ul {
+			display: flex;
+			justify-content: center;
+			margin: 10px 10%;
+			list-style-type: none;
 		}
 	}
+}
 
-	#destacados{
+section#destacados{
 
+	div#films {
+		display: flex;
+		flex-wrap: wrap;
+
+		a {
+			display: block;
+			width: 19%;
+			margin: 0.5%;
+			height: 230px;
+			background-size: cover;
+			text-decoration: none;
+
+			h3 {
+				text-align: center;
+				color: #fff;
+			}
+		}
 	}
 }
 
 footer {
-
 	background-color: $azulOscuro;
 	color: white;
 
@@ -74,6 +92,7 @@ footer {
 		margin: 0 15%;
 		border-width: 1px;
 		padding-top: 20px;
+
 		ul {
 		 	list-style-type: none;
 		}
@@ -92,7 +111,7 @@ footer {
 		}
 	}
 
-	span {
+	p {
 		display: flex;
 		justify-content: center;
 		margin: 30px 50px 0px;

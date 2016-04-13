@@ -36,7 +36,7 @@ def import_xml(file_name):
                     movie.find('imdb').text if movie.find('imdb') is not None else None,
                     movie.find('version').text == 'Z',
                     movie.find('ratings').find('rating').text,
-                    movie.find('cartel').text)
+                    movie.find('cartel').text.split('.')[0] + '.jpg')
         mov.id = movie.attrib['movieId']
         db.session.add(mov)
 

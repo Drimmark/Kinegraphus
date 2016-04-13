@@ -4,7 +4,7 @@
 		{% block head %}
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta charset="UTF-8">
-		<title>{% block title %}entradas.com{% endblock %}</title>
+		<title>{% block title %}kinegraphus.com - Entradas de cine{% endblock %}</title>
 
 		<link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/main.css') }}">
 		<link rel=stylesheet type=text/css href="{{ url_for('static', filename='js/jquery-ui/jquery-ui.min.css') }}">
@@ -18,20 +18,20 @@
 			<div>
 				<img alt='logo' id='logo' src='static/images/logo.png'>
 				<nav>
-					<li>Ayuda</li>
-					<li>Regístrate</li>
-					<li>Inicia Sesión</li>
+					<li><a href="#">Ayuda</a></li>
+					<li><a href="#">Regístrate</a></li>
+					<li><a href="#">Inicia Sesión</a></li>
 				</nav>
 			</div>
 			{% endblock %}
 		</header>
 
-		<section>
+		<section id="main">
 			{% block content %}{% endblock %}
 		</section>
-		
+
 		<footer>
-			<div id='zonas'>
+			<section id='zonas'>
 				<ul>
 					Empresa
 					<li> Lorem Ipsum</li>
@@ -64,15 +64,15 @@
 					<li> Lorem Ipsum</li>
 					<li> Lorem Ipsum</li>
 				</ul>
-			</div>
+			</section>
 
-			<div id='contacta'>
+			<section id='contacta'>
 				Siguenos en
 				<div id='social'>
 				</div>
-				
-			</div>
-			<span>@ Entradas.com</span>
+			</section>
+
+			<p>kinegraphus.com</p>
 		</footer>
 
 		{% block scripts %}

@@ -5,55 +5,47 @@
 <div id='indexHeader'>
 	<img alt='logo' id='logo' src='static/images/logo.png'>
 	<nav>
-		<li>Ayuda</li>
-		<li>Regístrate</li>
-		<li>Inicia Sesión</li>
+		<li><a href="#">Ayuda</a></li>
+		<li><a href="#">Regístrate</a></li>
+		<li><a href="#">Inicia Sesión</a></li>
 	</nav>
 </div>
 {% endblock %}
 
 {% block content %}
-<div id='imagen'>
-</div>
+<section id='imagen'>
+</section>
 
-<div class='searchBar'>
-	<form class = 'busqueda' action= '' method='get'>
-	<ul>
-		<li>
-			<select id='categoria' name='categoria'>
-				<option default name='Película' value='pelicula'> Película</option>
-				<option name='Cine' value='cine'> Cine </option>
-			</select>
-		</li>
-		<li>
-			<input type='text' value=></input>
-		</li>
-		<li>
-			<span>Día</span>
-			<input type='date' value=></input>
-		</li>
-		<li>
-			<span>Ciudad</span>
-			<select name="" id="">
-				{% for r in cities %}
-				<option value="{{ city }}">{{ r.city }}</option>
-				{% endfor %}
-			</select>
-		</li>
-		<li>
-			<button type='submit'>Buscar</button>
-		</li>
-	</ul>
+<section id='searchBar'>
+	<form action='?' method='get'>
+		<ul>
+			<li>
+				<input type='text' placeholder="Película o cine"/>
+			</li>
+			<li>
+				<select name="" id="">
+					{% for r in cities %}
+					<option value="{{ city }}">{{ r.city }}</option>
+					{% endfor %}
+				</select>
+			</li>
+			<li>
+				<button type='submit'>Buscar</button>
+			</li>
+		</ul>
 	</form>
-</div>
+</section>
 
-<div id='destacados'>
+<section id='destacados'>
 	<h2> Top 10 </h2>
-	<ol id='top10'>
+
+	<div id='films'>
 		{% for movie in premieres %}
-		<li>{{ movie.title }}</li>
+		<a href='/searchcinemas?movie_id={{ movie.id }}' style="background-image: url('http://cine.entradas.com/entradas/contenidos/peliculas/{{ movie.cartel }}')">
+			<h3>{{ movie.title }}</h3>
+		</a>
 		{% endfor %}
-	</ol>
-</div>
+	</div>
+</section>
 
 {% endblock %}
