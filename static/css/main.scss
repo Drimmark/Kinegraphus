@@ -16,6 +16,9 @@ header {
 		display: flex;
 		justify-content: space-between;
 		background-color: $azulOscuro;
+		position: absolute;
+		width: 100%;
+		padding: 10px 5%;
 
 		img {
 			margin: 10px 10px 10px 30px;
@@ -44,7 +47,9 @@ header {
 }
 
 section#imagen{
-	width:100%;
+	video {
+		width:100%;
+	}
 }
 
 section#searchBar{

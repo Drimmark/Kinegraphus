@@ -370,7 +370,10 @@ textarea {
 header div {
   display: flex;
   justify-content: space-between;
-  background-color: #133C55; }
+  background-color: #133C55;
+  position: absolute;
+  width: 100%;
+  padding: 10px 5%; }
   header div img {
     margin: 10px 10px 10px 30px; }
   header div nav {
@@ -386,7 +389,7 @@ header div {
 header #indexHeader {
   background-color: transparent; }
 
-section#imagen {
+section#imagen video {
   width: 100%; }
 
 section#searchBar form ul {
