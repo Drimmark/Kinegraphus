@@ -67,6 +67,15 @@ section#searchBar{
 			margin: 10px 10%;
 			list-style-type: none;
 		}
+
+		#selectCity {
+			display: none;
+		}
+
+		#busquedaText {
+			width: 50%;
+			input {width: 100%;}
+		}
 	}
 
 	button {

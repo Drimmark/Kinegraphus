@@ -403,6 +403,12 @@ section#searchBar form ul {
   justify-content: center;
   margin: 10px 10%;
   list-style-type: none; }
+section#searchBar form #selectCity {
+  display: none; }
+section#searchBar form #busquedaText {
+  width: 50%; }
+  section#searchBar form #busquedaText input {
+    width: 100%; }
 section#searchBar button {
   background-color: #157A6E;
   color: white;

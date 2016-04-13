@@ -23,11 +23,11 @@
 <section id='searchBar'>
 	<form action='?' method='get'>
 		<ul>
-			<li>
+			<li id='busquedaText'>
 				<input type='text' placeholder="Película o cine"/>
 			</li>
-			<li>
-				<select name="" id="">
+			<li id="selectCity">
+				<select>
 					{% for r in cities %}
 					<option value="{{ city }}">{{ r.city }}</option>
 					{% endfor %}
