@@ -8,7 +8,7 @@ $azulOscuro: #133C55;
 $azulClarito: #1282A2;
 $verde: #157A6E;
 $flashReverso: #FABB00;
-$gris: #f2f2f2;
+$gris: #e9e9e9;
 
 html {
 	height: 100%;
@@ -49,6 +49,10 @@ header {
 	}
 }
 
+section#main {
+	background-color: $gris;
+}
+
 section#imagen{
 
 	video {
@@ -64,7 +68,27 @@ section#imagen{
 	}
 }
 
+#ui-id-1 {
+	max-height: 30%;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	border: 1px solid $azulOscuro;
+	
+	li div {
+		background-color: white;
+		transition: ease-in-out  0.1s;
+		border: none;
+		
+		&:hover{
+			cursor: pointer;
+			color: white;
+			background-color: $azulOscuro;
+		}
+	}
+}
+
 section#searchBar{
+
 	form {
 		ul {
 			display: flex;
@@ -79,8 +103,14 @@ section#searchBar{
 
 		#busquedaText {
 			width: 50%;
-			input {width: 100%;}
+
+			input {
+				width: 100%;
+				padding: 5px 20px;
+				border: solid 1px #133C55;
+			}
 		}
+
 	}
 
 	button {
@@ -98,7 +128,6 @@ section#searchBar{
 }
 
 section#destacados{
-	background-color: $gris;
 
 	div#films {
 		display: flex;

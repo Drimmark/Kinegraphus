@@ -392,6 +392,9 @@ header div {
 header #indexHeader {
   background-color: transparent; }
 
+section#main {
+  background-color: #e9e9e9; }
+
 section#imagen video {
   min-width: 100%;
   min-height: 100%; }
@@ -401,6 +404,20 @@ section#imagen i {
   bottom: 70px;
   left: 50%;
   color: white; }
+
+#ui-id-1 {
+  max-height: 30%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  border: 1px solid #133C55; }
+  #ui-id-1 li div {
+    background-color: white;
+    transition: ease-in-out  0.1s;
+    border: none; }
+    #ui-id-1 li div:hover {
+      cursor: pointer;
+      color: white;
+      background-color: #133C55; }
 
 section#searchBar form ul {
   display: flex;
@@ -412,7 +429,9 @@ section#searchBar form #selectCity {
 section#searchBar form #busquedaText {
   width: 50%; }
   section#searchBar form #busquedaText input {
-    width: 100%; }
+    width: 100%;
+    padding: 5px 20px;
+    border: solid 1px #133C55; }
 section#searchBar button {
   background-color: #157A6E;
   color: white;
@@ -423,33 +442,31 @@ section#searchBar button {
   section#searchBar button:hover {
     background-color: #1D567A; }
 
-section#destacados {
-  background-color: #f2f2f2; }
-  section#destacados div#films {
+section#destacados div#films {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%; }
+  section#destacados div#films a {
     display: flex;
-    flex-wrap: wrap;
-    width: 80%;
-    margin-left: 10%;
-    margin-right: 10%; }
-    section#destacados div#films a {
-      display: flex;
-      width: 19%;
-      margin: 0px 5px 10px;
-      height: 230px;
-      background-size: cover;
-      text-decoration: none;
-      flex-flow: column;
-      justify-content: space-between; }
-      section#destacados div#films a h3 {
-        text-align: center;
-        color: #fff; }
-  section#destacados h2 {
-    display: flex;
-    justify-content: center;
-    width: 80%;
-    padding-top: 10px;
-    margin-right: 10%;
-    margin-left: 10%; }
+    width: 19%;
+    margin: 0px 5px 10px;
+    height: 230px;
+    background-size: cover;
+    text-decoration: none;
+    flex-flow: column;
+    justify-content: space-between; }
+    section#destacados div#films a h3 {
+      text-align: center;
+      color: #fff; }
+section#destacados h2 {
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  padding-top: 10px;
+  margin-right: 10%;
+  margin-left: 10%; }
 
 footer {
   background-color: #133C55;
