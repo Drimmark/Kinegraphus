@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, json, abort, Response
 from models import db, Cinema, Movie, ShowTime
+from difflib import SequenceMatcher
 
 app = Flask(__name__)
 app.config.from_pyfile('config_file.cfg')
@@ -61,6 +62,26 @@ def index():
     premieres = [Movie.query.get(premiere_id.movie_id) for premiere_id in premieres_id]
 
     return render_template('index.html', cities=cities, premieres=premieres)
+
+
+@app.route('/searchsuggestions')
+def search_suggestions():
+    term = request.args.get('term', None)
+    if term is not None:
+        cinemas = Cinema.query.filter(Cinema.name.like('%' + term + '%')).all()
+        movies = Movie.query.filter(Movie.title.like('%' + term + '%')).all()
+
+        results = []
+        results.extend([{'type': 0, 'name': cinema.name} for cinema in cinemas])
+        results.extend([{'type': 1, 'name': movie.title} for movie in movies])
+
+        results = sorted(results, key=lambda result: 1-SequenceMatcher(None, result['name'].lower(), term.lower()).ratio())
+
+        return Response(response=json.dumps(results),
+                        status=200,
+                        mimetype="application/json")
+    else:
+        abort(404)
 
 
 @app.route('/searchcinemas')
