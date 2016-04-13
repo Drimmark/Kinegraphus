@@ -72,8 +72,8 @@ def search_suggestions():
         movies = Movie.query.filter(Movie.title.like('%' + term + '%')).all()
 
         results = []
-        results.extend([{'type': 0, 'name': cinema.name} for cinema in cinemas])
-        results.extend([{'type': 1, 'name': movie.title} for movie in movies])
+        results.extend([{'type': 0, 'name': cinema.name, 'id': cinema.id} for cinema in cinemas])
+        results.extend([{'type': 1, 'name': movie.title, 'id': movie.id} for movie in movies])
 
         results = sorted(results, key=lambda result: 1-SequenceMatcher(None, result['name'].lower(), term.lower()).ratio())
 
