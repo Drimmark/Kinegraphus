@@ -83,6 +83,28 @@ def search_suggestions():
     else:
         abort(404)
 
+@app.route('/searchpositions')
+def search_positions():
+    term = request.args.get('term', None)
+    if term is not None:
+        cinemas = Cinema.query.filter(Cinema.name.like('%' + term + '%')).all()
+
+        results = []
+        results.extend([{'name': cinema.name, 'id': cinema.id, 'longitude': cinema.longitude, 'latitude': cinema.latitude} for cinema in cinemas])
+
+        results = sorted(results, key=lambda result: 1-SequenceMatcher(None, result['name'].lower(), term.lower()).ratio())
+
+    else:
+        cinemas = Cinema.query.all()
+
+        results = []
+        results.extend([{'name': cinema.name, 'id': cinema.id, 'longitude': cinema.longitude, 'latitude': cinema.latitude} for cinema in cinemas])
+
+
+    return Response(response=json.dumps(results),
+                    status=200,
+                    mimetype="application/json")
+
 
 @app.route('/searchcinemas')
 def search_cinemas():
