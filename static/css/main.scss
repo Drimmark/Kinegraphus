@@ -8,6 +8,7 @@ $azulOscuro: #133C55;
 $azulClarito: #1282A2;
 $verde: #157A6E;
 $flashReverso: #FABB00;
+$gris: #f2f2f2;
 
 header {
 
@@ -55,6 +56,19 @@ section#searchBar{
 			list-style-type: none;
 		}
 	}
+
+	button {
+		background-color: $verde;
+		color: white;
+		border: solid 1px $azulOscuro;
+		padding: 5px 20px;
+		transition: ease-in-out 0.3s;
+		cursor: pointer;
+
+		&:hover{
+			background-color: #1D567A;
+		}
+	}
 }
 
 section#destacados{
@@ -62,20 +76,26 @@ section#destacados{
 	div#films {
 		display: flex;
 		flex-wrap: wrap;
-
 		a {
-			display: block;
+			display: flex;
 			width: 19%;
-			margin: 0.5%;
+			margin: 0px 5px 10px;
 			height: 230px;
 			background-size: cover;
 			text-decoration: none;
+			flex-flow: column;
+			justify-content: space-between;
 
 			h3 {
 				text-align: center;
 				color: #fff;
 			}
 		}
+	}
+
+	h2 {
+		display: flex;
+		justify-content: center;
 	}
 }
 
