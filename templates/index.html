@@ -3,7 +3,7 @@
 
 {% block header %}
 <div id='indexHeader'>
-	<img alt='logo' id='logo' src='static/images/logo.png'>
+	<a href='/'> <img alt='logo' id='logo' src='static/images/logo.png'></a>
 	<nav>
 		<li><a href="#">Ayuda</a></li>
 		<li><a href="#">Regístrate</a></li>
@@ -24,7 +24,7 @@
 	<form action='?' method='get'>
 		<ul>
 			<li id='busquedaText'>
-				<input type='text' placeholder="Película o cine"/>
+				<input id='inputText' type='text' placeholder="Película o cine" value=''/>
 			</li>
 			<li id="selectCity">
 				<select>

@@ -10,6 +10,9 @@ $verde: #157A6E;
 $flashReverso: #FABB00;
 $gris: #f2f2f2;
 
+html {
+	height: 100%;
+}
 header {
 
 	div{
@@ -47,14 +50,16 @@ header {
 }
 
 section#imagen{
+
 	video {
-		width:100%;
+		min-width:100%;
+		min-height: 100%;
 	}
 	i{
 		font-size: 5em;
 		position: absolute;
-		top: 85%;
-		left: 49%;
+		bottom: 70px;
+		left: 50%;
 		color: white;
 	}
 }

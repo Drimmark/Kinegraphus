@@ -367,6 +367,9 @@ textarea {
 * {
   box-sizing: border-box; }
 
+html {
+  height: 100%; }
+
 header div {
   display: flex;
   justify-content: space-between;
@@ -390,12 +393,13 @@ header #indexHeader {
   background-color: transparent; }
 
 section#imagen video {
-  width: 100%; }
+  min-width: 100%;
+  min-height: 100%; }
 section#imagen i {
   font-size: 5em;
   position: absolute;
-  top: 85%;
-  left: 49%;
+  bottom: 70px;
+  left: 50%;
   color: white; }
 
 section#searchBar form ul {
