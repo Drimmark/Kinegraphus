@@ -391,6 +391,12 @@ header #indexHeader {
 
 section#imagen video {
   width: 100%; }
+section#imagen i {
+  font-size: 5em;
+  position: absolute;
+  top: 85%;
+  left: 49%;
+  color: white; }
 
 section#searchBar form ul {
   display: flex;
