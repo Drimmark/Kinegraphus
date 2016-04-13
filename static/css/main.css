@@ -386,6 +386,9 @@ header div {
 header #indexHeader {
   background-color: transparent; }
 
+section#imagen {
+  width: 100%; }
+
 section#searchBar form ul {
   display: flex;
   justify-content: center;
@@ -401,24 +404,33 @@ section#searchBar button {
   section#searchBar button:hover {
     background-color: #1D567A; }
 
-section#destacados div#films {
-  display: flex;
-  flex-wrap: wrap; }
-  section#destacados div#films a {
+section#destacados {
+  background-color: #f2f2f2; }
+  section#destacados div#films {
     display: flex;
-    width: 19%;
-    margin: 0px 5px 10px;
-    height: 230px;
-    background-size: cover;
-    text-decoration: none;
-    flex-flow: column;
-    justify-content: space-between; }
-    section#destacados div#films a h3 {
-      text-align: center;
-      color: #fff; }
-section#destacados h2 {
-  display: flex;
-  justify-content: center; }
+    flex-wrap: wrap;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%; }
+    section#destacados div#films a {
+      display: flex;
+      width: 19%;
+      margin: 0px 5px 10px;
+      height: 230px;
+      background-size: cover;
+      text-decoration: none;
+      flex-flow: column;
+      justify-content: space-between; }
+      section#destacados div#films a h3 {
+        text-align: center;
+        color: #fff; }
+  section#destacados h2 {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    padding-top: 10px;
+    margin-right: 10%;
+    margin-left: 10%; }
 
 footer {
   background-color: #133C55;
