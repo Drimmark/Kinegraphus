@@ -7,6 +7,7 @@
 		<title>{% block title %}entradas.com{% endblock %}</title>
 
 		<link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/main.css') }}">
+		<link rel=stylesheet type=text/css href="{{ url_for('static', filename='js/jquery-ui/jquery-ui.min.css') }}">
 		{% endblock %}
 	</head>
 
@@ -75,7 +76,9 @@
 		</footer>
 
 		{% block scripts %}
-		<script href="{{ url_for('static', filename='js/main.js') }}"></script>
+		<script type="text/javascript" src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+		<script type="text/javascript" src="{{ url_for('static', filename='js/jquery-ui/jquery-ui.min.js') }}"></script>
+		<script type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}"></script>
 		{% endblock %}
 	</body>
 
