@@ -27,13 +27,14 @@
 			</li>
 			<li id="selectCity">
 				<select>
+					<option value="">Ciudades </option>
 					{% for r in cities %}
 					<option value="{{ r.city }}">{{ r.city }}</option>
 					{% endfor %}
 				</select>
 			</li>
 			<li>
-				<a id='aBusqueda'><button id='busqueda' type='button'>Buscar</button></a>
+				<a id='aBusqueda'><button id='busqueda' type='button'><i class='fa fa-search'></i>Buscar</button></a>
 			</li>
 		</ul>
 	<!--</form>-->

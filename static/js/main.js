@@ -51,6 +51,11 @@ $(document).ready(function () {
     
 	});
 
+	$( "#selectCity option" ).click(function() {
+		ruta = $('#aBusqueda').attr('href').split('&')[0];
+		$('#aBusqueda').attr('href', ruta+'&city='+this.value);
+	});
+
 	//$('#busqueda').click(function() {
 	//	request = $.ajax({
 	//        url: "/searchcinemas",

@@ -399,12 +399,6 @@ section#main {
 section#imagen video {
   width: 100%;
   min-height: 100%; }
-section#imagen i {
-  font-size: 5em;
-  position: absolute;
-  bottom: 70px;
-  left: 50%;
-  color: white; }
 
 #ui-id-1 {
   max-height: 30%;
@@ -472,13 +466,16 @@ section#searchBar {
     opacity: 0.2; }
     section#searchBar button:hover {
       background-color: #1D567A; }
+    section#searchBar button i {
+      margin: 0 5px; }
 
 section#destacados div#films {
   display: flex;
   flex-wrap: wrap;
   width: 80%;
   margin-left: 10%;
-  margin-right: 10%; }
+  margin-right: 10%;
+  justify-content: center; }
   section#destacados div#films a {
     display: flex;
     width: 19%;

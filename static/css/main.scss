@@ -68,13 +68,6 @@ section#imagen{
 		width:100%;
 		min-height: 100%;
 	}
-	i{
-		font-size: 5em;
-		position: absolute;
-		bottom: 70px;
-		left: 50%;
-		color: white;
-	}
 }
 
 #ui-id-1 {
@@ -178,6 +171,10 @@ section#searchBar{
 		&:hover{
 			background-color: #1D567A;
 		}
+
+		i {
+			margin: 0 5px;
+		}
 	}
 }
 
@@ -189,6 +186,7 @@ section#destacados{
 		width: 80%;
 		margin-left: 10%;
 		margin-right: 10%;
+		justify-content: center;
 		a {
 			display: flex;
 			width: 19%;
