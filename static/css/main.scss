@@ -19,11 +19,6 @@ html {
 
 
 header {
-
-	#indexHeader {
-		position: absolute;
-	}
-
 	div{
 		display: flex;
 		justify-content: space-between;
@@ -55,6 +50,9 @@ header {
 
 	#indexHeader {
 		background-color: transparent;
+		z-index: 10;
+		position: absolute;
+		top: 0;
 	}
 }
 
@@ -62,41 +60,45 @@ section#main {
 	background-color: $gris;
 }
 
-section#imagen{
+section#imagen {
+	position: relative;
+	height: 80vh;
+	overflow: hidden;
 
 	video {
 		width:100%;
-		min-height: 100%;
 	}
 }
 
-#ui-id-1 {
-	max-height: 30%;
-	overflow-y: scroll;
-	overflow-x: hidden;
-	border: 1px solid $azulOscuro;
+	section#searchBar{
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		padding: 20px 10%;
+		background: rgba(233,233,233,0.45);
 
-	li div {
-		background-color: white;
-		transition: ease-in-out  0.1s;
-		border: none;
+		form {
+			ul {
+				display: flex;
+				justify-content: center;
+				margin: 10px 10%;
+				list-style-type: none;
+			}
 
-		&:hover{
-			cursor: pointer;
-			color: white;
-			background-color: $azulOscuro;
-		}
-	}
-}
+			#selectCity {
+				display: none;
+			}
 
-section#searchBar{
+			#busquedaText {
+				width: 50%;
 
-	border-style: none none solid;
-	border-width: 1px;
-	width: 80%;
-	margin: 0px 10%;
+				input {
+					width: 100%;
+					padding: 5px 20px;
+					border: solid 1px #133C55;
+				}
+			}
 
-	//form {
 		ul {
 			display: flex;
 			justify-content: center;
@@ -115,49 +117,52 @@ section#searchBar{
 				padding: 4px 20px;
 			}
 		}
+			#addFiltros {
 
-		#busquedaText {
-			width: 50%;
+				.fa-minus-square{
+					display: none;
+				}
 
-			input {
-				width: 100%;
-				padding: 5px 20px;
-				border: solid 1px #133C55;
+				a {
+					font-size: 2em;
+					margin: 0px 10px;
+					color: $azulOscuro;
+					transition: ease-in-out 0.4s;
+					cursor: pointer;
+
+					&:hover {
+						color: $azulClarito;
+					}
+				}
+
 			}
-		}
 
-		#addFiltros {
-
-			.fa-minus-square{
+			#filtros {
 				display: none;
-			}
+				justify-content: flex-end;
+				margin-right: 26%;
+				transition: ease-in-out 0.5s;
 
-			a {
-				font-size: 2em;
-				margin: 0px 10px;
-				color: $azulOscuro;
-				transition: ease-in-out 0.4s;
-				cursor: pointer;
-
-				&:hover {
-					color: $azulClarito;
+				li {
+					margin: 0px 5px;
 				}
 			}
 
 		}
 
-		#filtros {
-			display: none;
-			justify-content: flex-end;
-			margin-right: 26%;
-			transition: ease-in-out 0.5s;
+		button {
+			background-color: $verde;
+			color: white;
+			border: solid 1px $azulOscuro;
+			padding: 5px 20px;
+			transition: ease-in-out 0.3s;
+			cursor: pointer;
 
-			li {
-				margin: 0px 5px;
+			&:hover{
+				background-color: #1D567A;
 			}
 		}
-
-	//}
+	}
 
 	button {
 		background-color: $verde;
@@ -169,7 +174,9 @@ section#searchBar{
 		opacity: 0.2;
 
 		&:hover{
-			background-color: #1D567A;
+			cursor: pointer;
+			color: white;
+			background-color: $azulOscuro;
 		}
 
 		i {
