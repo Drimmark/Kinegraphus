@@ -141,7 +141,7 @@ def search_movies():
         if time is not None:
             movies = movies.filter(ShowTime.time >= time)
 
-        return render_template('searchmovies.html', cinemas=movies.all(), cinema_id=cinema_id, time=time)
+        return render_template('searchmovies.html', movies=movies.all(), cinema_id=cinema_id, time=time)
     else:
         return redirect(url_for('index'))
 
