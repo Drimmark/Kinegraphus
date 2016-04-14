@@ -12,12 +12,13 @@
         <div class="cinemas">
             {% for cinema in cinemas %}
                 <div class="cinema" data>
+                    <img width="100%" src="https://maps.googleapis.com/maps/api/streetview?size=400x200&location={{ cinema.street }},{{ cinema.city }}" alt="{{ cinema.name }}" />
                     <h3>{{ cinema.name }}</h3>
                     <div class="showtimes">
                     </div>
                     <div class="buy">
                         <span>
-                            <input type="number" id="value" value="">
+                            <input type="number" id="value" value="1">
                             <label for="value">x 4,90 €</label>
                         </span>
                         <a href="#">Comprar</a>
