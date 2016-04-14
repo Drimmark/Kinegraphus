@@ -9,15 +9,13 @@ html {
   -ms-text-size-adjust: 100%;
   /* 2 */
   -webkit-text-size-adjust: 100%;
-  /* 2 */
-}
+  /* 2 */ }
 
 /**
  * Remove the margin in all browsers (opinionated).
  */
 body {
-  margin: 0;
-}
+  margin: 0; }
 
 /* HTML5 display definitions
    ========================================================================== */
@@ -39,8 +37,7 @@ nav,
 section,
 summary {
   /* 1 */
-  display: block;
-}
+  display: block; }
 
 /**
  * Add the correct display in IE 9-.
@@ -49,23 +46,20 @@ audio,
 canvas,
 progress,
 video {
-  display: inline-block;
-}
+  display: inline-block; }
 
 /**
  * Add the correct display in iOS 4-7.
  */
 audio:not([controls]) {
   display: none;
-  height: 0;
-}
+  height: 0; }
 
 /**
  * Add the correct vertical alignment in Chrome, Firefox, and Opera.
  */
 progress {
-  vertical-align: baseline;
-}
+  vertical-align: baseline; }
 
 /**
  * Add the correct display in IE 10-.
@@ -73,8 +67,7 @@ progress {
  */
 template,
 [hidden] {
-  display: none;
-}
+  display: none; }
 
 /* Links
    ========================================================================== */
@@ -86,8 +79,7 @@ a {
   background-color: transparent;
   /* 1 */
   -webkit-text-decoration-skip: objects;
-  /* 2 */
-}
+  /* 2 */ }
 
 /**
  * Remove the outline on focused links when they are also active or hovered
@@ -95,8 +87,7 @@ a {
  */
 a:active,
 a:hover {
-  outline-width: 0;
-}
+  outline-width: 0; }
 
 /* Text-level semantics
    ========================================================================== */
@@ -110,31 +101,27 @@ abbr[title] {
   text-decoration: underline;
   /* 2 */
   text-decoration: underline dotted;
-  /* 2 */
-}
+  /* 2 */ }
 
 /**
  * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
  */
 b,
 strong {
-  font-weight: inherit;
-}
+  font-weight: inherit; }
 
 /**
  * Add the correct font weight in Chrome, Edge, and Safari.
  */
 b,
 strong {
-  font-weight: bolder;
-}
+  font-weight: bolder; }
 
 /**
  * Add the correct font style in Android 4.3-.
  */
 dfn {
-  font-style: italic;
-}
+  font-style: italic; }
 
 /**
  * Correct the font size and margin on `h1` elements within `section` and
@@ -142,23 +129,20 @@ dfn {
  */
 h1 {
   font-size: 2em;
-  margin: 0.67em 0;
-}
+  margin: 0.67em 0; }
 
 /**
  * Add the correct background and color in IE 9-.
  */
 mark {
   background-color: #ff0;
-  color: #000;
-}
+  color: #000; }
 
 /**
  * Add the correct font size in all browsers.
  */
 small {
-  font-size: 80%;
-}
+  font-size: 80%; }
 
 /**
  * Prevent `sub` and `sup` elements from affecting the line height in
@@ -169,16 +153,13 @@ sup {
   font-size: 75%;
   line-height: 0;
   position: relative;
-  vertical-align: baseline;
-}
+  vertical-align: baseline; }
 
 sub {
-  bottom: -0.25em;
-}
+  bottom: -0.25em; }
 
 sup {
-  top: -0.5em;
-}
+  top: -0.5em; }
 
 /* Embedded content
    ========================================================================== */
@@ -186,15 +167,13 @@ sup {
  * Remove the border on images inside links in IE 10-.
  */
 img {
-  border-style: none;
-}
+  border-style: none; }
 
 /**
  * Hide the overflow in IE.
  */
 svg:not(:root) {
-  overflow: hidden;
-}
+  overflow: hidden; }
 
 /* Grouping content
    ========================================================================== */
@@ -209,15 +188,13 @@ samp {
   font-family: monospace, monospace;
   /* 1 */
   font-size: 1em;
-  /* 2 */
-}
+  /* 2 */ }
 
 /**
  * Add the correct margin in IE 8.
  */
 figure {
-  margin: 1em 40px;
-}
+  margin: 1em 40px; }
 
 /**
  * 1. Add the correct box sizing in Firefox.
@@ -229,8 +206,7 @@ hr {
   height: 0;
   /* 1 */
   overflow: visible;
-  /* 2 */
-}
+  /* 2 */ }
 
 /* Forms
    ========================================================================== */
@@ -245,15 +221,13 @@ textarea {
   font: inherit;
   /* 1 */
   margin: 0;
-  /* 2 */
-}
+  /* 2 */ }
 
 /**
  * Restore the font weight unset by the previous rule.
  */
 optgroup {
-  font-weight: bold;
-}
+  font-weight: bold; }
 
 /**
  * Show the overflow in IE.
@@ -262,8 +236,7 @@ optgroup {
 button,
 input {
   /* 1 */
-  overflow: visible;
-}
+  overflow: visible; }
 
 /**
  * Remove the inheritance of text transform in Edge, Firefox, and IE.
@@ -272,8 +245,7 @@ input {
 button,
 select {
   /* 1 */
-  text-transform: none;
-}
+  text-transform: none; }
 
 /**
  * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
@@ -285,8 +257,7 @@ html [type="button"],
 [type="reset"],
 [type="submit"] {
   -webkit-appearance: button;
-  /* 2 */
-}
+  /* 2 */ }
 
 /**
  * Remove the inner border and padding in Firefox.
@@ -296,8 +267,7 @@ button::-moz-focus-inner,
 [type="reset"]::-moz-focus-inner,
 [type="submit"]::-moz-focus-inner {
   border-style: none;
-  padding: 0;
-}
+  padding: 0; }
 
 /**
  * Restore the focus styles unset by the previous rule.
@@ -306,8 +276,7 @@ button:-moz-focusring,
 [type="button"]:-moz-focusring,
 [type="reset"]:-moz-focusring,
 [type="submit"]:-moz-focusring {
-  outline: 1px dotted ButtonText;
-}
+  outline: 1px dotted ButtonText; }
 
 /**
  * Change the border, margin, and padding in all browsers (opinionated).
@@ -315,8 +284,7 @@ button:-moz-focusring,
 fieldset {
   border: 1px solid #c0c0c0;
   margin: 0 2px;
-  padding: 0.35em 0.625em 0.75em;
-}
+  padding: 0.35em 0.625em 0.75em; }
 
 /**
  * 1. Correct the text wrapping in Edge and IE.
@@ -336,15 +304,13 @@ legend {
   padding: 0;
   /* 3 */
   white-space: normal;
-  /* 1 */
-}
+  /* 1 */ }
 
 /**
  * Remove the default vertical scrollbar in IE.
  */
 textarea {
-  overflow: auto;
-}
+  overflow: auto; }
 
 /**
  * 1. Add the correct box sizing in IE 10-.
@@ -355,16 +321,14 @@ textarea {
   box-sizing: border-box;
   /* 1 */
   padding: 0;
-  /* 2 */
-}
+  /* 2 */ }
 
 /**
  * Correct the cursor style of increment and decrement buttons in Chrome.
  */
 [type="number"]::-webkit-inner-spin-button,
 [type="number"]::-webkit-outer-spin-button {
-  height: auto;
-}
+  height: auto; }
 
 /**
  * 1. Correct the odd appearance in Chrome and Safari.
@@ -374,24 +338,21 @@ textarea {
   -webkit-appearance: textfield;
   /* 1 */
   outline-offset: -2px;
-  /* 2 */
-}
+  /* 2 */ }
 
 /**
  * Remove the inner padding and cancel buttons in Chrome and Safari on OS X.
  */
 [type="search"]::-webkit-search-cancel-button,
 [type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
+  -webkit-appearance: none; }
 
 /**
  * Correct the text style of placeholders in Chrome, Edge, and Safari.
  */
 ::-webkit-input-placeholder {
   color: inherit;
-  opacity: 0.54;
-}
+  opacity: 0.54; }
 
 /**
  * 1. Correct the inability to style clickable types in iOS and Safari.
@@ -401,349 +362,246 @@ textarea {
   -webkit-appearance: button;
   /* 1 */
   font: inherit;
-  /* 2 */
-}
+  /* 2 */ }
 
 * {
-  box-sizing: border-box;
-}
+  box-sizing: border-box; }
 
 html {
-  height: 100%;
-}
+  height: 100%; }
 
 header #indexHeader {
-  position: absolute;
-}
-
+  position: absolute; }
 header div {
   display: flex;
   justify-content: space-between;
   background-color: #133C55;
   width: 100%;
-  padding: 10px 5%;
-}
-
-header div img {
-  margin: 10px 10px 10px 30px;
-}
-
-header div nav {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
-  margin: 30px 50px 20px 20px;
-  list-style-type: none;
-}
-
-header div nav li {
-  margin: 0px 10px;
-}
-
-header div nav li a {
-  color: #FABB00;
-}
-
+  padding: 10px 5%; }
+  header div img {
+    margin: 10px 10px 10px 30px; }
+  header div nav {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    margin: 30px 50px 20px 20px;
+    list-style-type: none; }
+    header div nav li {
+      margin: 0px 10px; }
+      header div nav li a {
+        color: #FABB00; }
 header #indexHeader {
-  background-color: transparent;
-}
+  background-color: transparent; }
 
 section#main {
-  background-color: #e9e9e9;
-}
+  background-color: #e9e9e9; }
 
 section#imagen video {
   width: 100%;
-  min-height: 100%;
-}
-
+  min-height: 100%; }
 section#imagen i {
   font-size: 5em;
   position: absolute;
   bottom: 70px;
   left: 50%;
-  color: white;
-}
+  color: white; }
 
 #ui-id-1 {
   max-height: 30%;
   overflow-y: scroll;
   overflow-x: hidden;
-  border: 1px solid #133C55;
-}
-
-#ui-id-1 li div {
-  background-color: white;
-  transition: ease-in-out  0.1s;
-  border: none;
-}
-
-#ui-id-1 li div:hover {
-  cursor: pointer;
-  color: white;
-  background-color: #133C55;
-}
+  border: 1px solid #133C55; }
+  #ui-id-1 li div {
+    background-color: white;
+    transition: ease-in-out  0.1s;
+    border: none; }
+    #ui-id-1 li div:hover {
+      cursor: pointer;
+      color: white;
+      background-color: #133C55; }
 
 section#searchBar {
   border-style: none none solid;
   border-width: 1px;
   width: 80%;
-  margin: 0px 10%;
-}
-
-section#searchBar form ul {
-  display: flex;
-  justify-content: center;
-  margin: 10px 10%;
-  list-style-type: none;
-}
-
-section#searchBar form #selectCity {
-  display: none;
-}
-
-section#searchBar form #busquedaText {
-  width: 50%;
-}
-
-section#searchBar form #busquedaText input {
-  width: 100%;
-  padding: 5px 20px;
-  border: solid 1px #133C55;
-}
-
-section#searchBar form #addFiltros .fa-minus-square {
-  display: none;
-}
-
-section#searchBar form #addFiltros a {
-  font-size: 2em;
-  margin: 0px 10px;
-  color: #133C55;
-  transition: ease-in-out 0.4s;
-  cursor: pointer;
-}
-
-section#searchBar form #addFiltros a:hover {
-  color: #1282A2;
-}
-
-section#searchBar form #filtros {
-  display: none;
-  justify-content: flex-end;
-  margin-right: 26%;
-  transition: ease-in-out 0.5s;
-}
-
-section#searchBar form #filtros li {
-  margin: 0px 5px;
-}
-
-section#searchBar button {
-  background-color: #157A6E;
-  color: white;
-  border: solid 1px #133C55;
-  padding: 5px 20px;
-  transition: ease-in-out 0.3s;
-  cursor: pointer;
-}
-
-section#searchBar button:hover {
-  background-color: #1D567A;
-}
+  margin: 0px 10%; }
+  section#searchBar form ul {
+    display: flex;
+    justify-content: center;
+    margin: 10px 10%;
+    list-style-type: none; }
+  section#searchBar form #selectCity {
+    display: none; }
+  section#searchBar form #busquedaText {
+    width: 50%; }
+    section#searchBar form #busquedaText input {
+      width: 100%;
+      padding: 5px 20px;
+      border: solid 1px #133C55; }
+  section#searchBar form #addFiltros .fa-minus-square {
+    display: none; }
+  section#searchBar form #addFiltros a {
+    font-size: 2em;
+    margin: 0px 10px;
+    color: #133C55;
+    transition: ease-in-out 0.4s;
+    cursor: pointer; }
+    section#searchBar form #addFiltros a:hover {
+      color: #1282A2; }
+  section#searchBar form #filtros {
+    display: none;
+    justify-content: flex-end;
+    margin-right: 26%;
+    transition: ease-in-out 0.5s; }
+    section#searchBar form #filtros li {
+      margin: 0px 5px; }
+  section#searchBar button {
+    background-color: #157A6E;
+    color: white;
+    border: solid 1px #133C55;
+    padding: 5px 20px;
+    transition: ease-in-out 0.3s;
+    opacity: 0.2; }
+    section#searchBar button:hover {
+      background-color: #1D567A; }
 
 section#destacados div#films {
   display: flex;
   flex-wrap: wrap;
   width: 80%;
   margin-left: 10%;
-  margin-right: 10%;
-}
-
-section#destacados div#films a {
-  display: flex;
-  width: 19%;
-  margin: 0px 5px 10px;
-  height: 230px;
-  background-size: cover;
-  text-decoration: none;
-  flex-flow: column;
-  justify-content: space-between;
-}
-
-section#destacados div#films a h3 {
-  text-align: center;
-  color: #fff;
-}
-
+  margin-right: 10%; }
+  section#destacados div#films a {
+    display: flex;
+    width: 19%;
+    margin: 0px 5px 10px;
+    height: 230px;
+    background-size: cover;
+    text-decoration: none;
+    flex-flow: column;
+    justify-content: space-between; }
+    section#destacados div#films a h3 {
+      text-align: center;
+      color: #fff; }
 section#destacados h2 {
   display: flex;
   justify-content: center;
   width: 80%;
   padding-top: 10px;
   margin-right: 10%;
-  margin-left: 10%;
-}
+  margin-left: 10%; }
 
 section#search {
   display: flex;
   flex-flow: row;
   justify-content: space-between;
-  background-color: #eee;
-}
-
-section#search #results {
-  display: flex;
-  flex-flow: column;
-  width: 55%;
-}
-
-section#search #results > div {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
-  align-items: stretch;
-  padding-top: 2em;
-}
-
-section#search #results > div > div {
-  display: flex;
-  flex-flow: column;
-  justify-content: space-around;
-  border: 1px solid #ddd;
-  width: 30%;
-  flex-basis: 30%;
-  background-color: white;
-  margin: 2em 1%;
-}
-
-section#search #results > div > div img {
-  width: 90%;
-  margin: .5em auto;
-}
-
-section#search #results > div > div h3 {
-  margin: .5em 1em;
-}
-
-section#search #results > div > div ul.showtimes {
-  list-style: none;
-  display: flex;
-  flex-flow: column;
-  align-self: center;
-  padding: 0;
-}
-
-section#search #results > div > div ul.showtimes li {
-  list-style: none;
-  display: flex;
-  flex-flow: row wrap;
-  padding: .2em 0;
-}
-
-section#search #results > div > div ul.showtimes li label {
-  padding: 0 2em;
-  cursor: pointer;
-}
-
-section#search #results > div > div ul.showtimes li input {
-  cursor: pointer;
-}
-
-section#search #results > div > div ul.showtimes li span.color1 {
-  color: #E5C120;
-}
-
-section#search #results > div > div ul.showtimes li span.color2 {
-  color: #71C63F;
-}
-
-section#search #results > div > div ul.showtimes li span.color3 {
-  color: #BF2C0B;
-}
-
-section#search #results > div > div div.buy {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
-  margin: 1em;
-}
-
-section#search #results > div > div div.buy span {
-  flex-basis: 65%;
-  width: 65%;
-  align-self: center;
-}
-
-section#search #results > div > div div.buy span input {
-  max-width: 30%;
-}
-
-section#search #results > div > div div.buy span label {
-  margin-left: .5em;
-  max-width: 65%;
-}
-
-section#search #results > div > div div.buy a {
-  padding: .3em .5em;
-  background-color: #157A6E;
-  color: white;
-  border-radius: .5em;
-  border: 2px solid #157A6E;
-  transition: all .3s ease-in-out;
-  flex-basis: 30%;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-section#search #results > div > div div.buy a:hover {
-  background-color: white;
-  color: #157A6E;
-}
-
-section#search .map {
-  width: 45%;
-  border-left: 1px solid black;
-  position: fixed !important;
-  right: 0;
-  top: 106px;
-  height: calc(100% - 106px);
-}
+  background-color: #eee; }
+  section#search #results {
+    display: flex;
+    flex-flow: column;
+    width: 55%; }
+    section#search #results > div {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-around;
+      align-items: stretch;
+      padding-top: 2em; }
+      section#search #results > div > div {
+        display: flex;
+        flex-flow: column;
+        justify-content: space-around;
+        border: 1px solid #ddd;
+        width: 30%;
+        flex-basis: 30%;
+        background-color: white;
+        margin: 2em 1%; }
+        section#search #results > div > div img {
+          width: 90%;
+          margin: .5em auto; }
+        section#search #results > div > div h3 {
+          margin: .5em 1em; }
+        section#search #results > div > div ul.showtimes {
+          list-style: none;
+          display: flex;
+          flex-flow: column;
+          align-self: center;
+          padding: 0; }
+          section#search #results > div > div ul.showtimes li {
+            list-style: none;
+            display: flex;
+            flex-flow: row wrap;
+            padding: .2em 0; }
+            section#search #results > div > div ul.showtimes li label {
+              padding: 0 2em;
+              cursor: pointer; }
+            section#search #results > div > div ul.showtimes li input {
+              cursor: pointer; }
+            section#search #results > div > div ul.showtimes li span.color1 {
+              color: #E5C120; }
+            section#search #results > div > div ul.showtimes li span.color2 {
+              color: #71C63F; }
+            section#search #results > div > div ul.showtimes li span.color3 {
+              color: #BF2C0B; }
+        section#search #results > div > div div.buy {
+          display: flex;
+          flex-flow: row wrap;
+          justify-content: space-around;
+          margin: 1em; }
+          section#search #results > div > div div.buy span {
+            flex-basis: 65%;
+            width: 65%;
+            align-self: center; }
+            section#search #results > div > div div.buy span input {
+              max-width: 30%; }
+            section#search #results > div > div div.buy span label {
+              margin-left: .5em;
+              max-width: 65%; }
+          section#search #results > div > div div.buy a {
+            padding: .3em .5em;
+            background-color: #157A6E;
+            color: white;
+            border-radius: .5em;
+            border: 2px solid #157A6E;
+            transition: all .3s ease-in-out;
+            flex-basis: 30%;
+            text-decoration: none;
+            font-weight: bold; }
+            section#search #results > div > div div.buy a:hover {
+              background-color: white;
+              color: #157A6E; }
+  section#search .map {
+    width: 45%;
+    border-left: 1px solid black;
+    position: fixed !important;
+    right: 0;
+    top: 106px;
+    height: calc(100% - 106px); }
 
 footer {
   background-color: #133C55;
-  color: white;
-}
+  color: white; }
+  footer #zonas {
+    display: flex;
+    justify-content: space-around;
+    padding: 0 0 10px 0;
+    border-style: none none solid;
+    border-color: white;
+    margin: 0 15%;
+    border-width: 1px;
+    padding-top: 20px; }
+    footer #zonas ul {
+      list-style-type: none; }
+  footer #contacta {
+    display: flex;
+    justify-content: center;
+    margin: 10px 20%; }
+    footer #contacta #social {
+      display: flex;
+      justify-content: center space-around; }
+  footer p {
+    display: flex;
+    justify-content: center;
+    margin: 30px 50px 0px;
+    padding: 0 0 15px; }
 
-footer #zonas {
-  display: flex;
-  justify-content: space-around;
-  padding: 0 0 10px 0;
-  border-style: none none solid;
-  border-color: white;
-  margin: 0 15%;
-  border-width: 1px;
-  padding-top: 20px;
-}
-
-footer #zonas ul {
-  list-style-type: none;
-}
-
-footer #contacta {
-  display: flex;
-  justify-content: center;
-  margin: 10px 20%;
-}
-
-footer #contacta #social {
-  display: flex;
-  justify-content: center space-around;
-}
-
-footer p {
-  display: flex;
-  justify-content: center;
-  margin: 30px 50px 0px;
-  padding: 0 0 15px;
-}
+/*# sourceMappingURL=main.css.map */
