@@ -70,40 +70,33 @@ section#imagen {
 	}
 }
 
-	section#searchBar{
-		position: absolute;
-		bottom: 0;
-		width: 100%;
-		padding: 20px 10%;
-		background: rgba(233,233,233,0.45);
+section#searchBar{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	padding: 20px 10%;
+	background: rgba(233,233,233,0.45);
 
-		form {
-			ul {
-				display: flex;
-				justify-content: center;
-				margin: 10px 10%;
-				list-style-type: none;
-			}
-
-			#selectCity {
-				display: none;
-			}
-
-			#busquedaText {
-				width: 50%;
-
-				input {
-					width: 100%;
-					padding: 5px 20px;
-					border: solid 1px #133C55;
-				}
-			}
-
+	//form {
 		ul {
 			display: flex;
 			justify-content: center;
 			margin: 10px 10%;
 			list-style-type: none;
+		}
+
+		#selectCity {
+			display: none;
+		}
+
+		#busquedaText {
+			width: 50%;
+
+			input {
+				width: 100%;
+				padding: 5px 20px;
+				border: solid 1px #133C55;
+			}
 		}
 
 		#selectCity {
@@ -116,34 +109,15 @@ section#imagen {
 				border: 1px solid $azulOscuro;
 				padding: 4px 20px;
 			}
-			#addFiltros {
+			a {
+				font-size: 2em;
+				margin: 0px 10px;
+				color: $azulOscuro;
+				transition: ease-in-out 0.4s;
+				cursor: pointer;
 
-				.fa-minus-square{
-					display: none;
-				}
-
-				a {
-					font-size: 2em;
-					margin: 0px 10px;
-					color: $azulOscuro;
-					transition: ease-in-out 0.4s;
-					cursor: pointer;
-
-					&:hover {
-						color: $azulClarito;
-					}
-				}
-
-			}
-
-			#filtros {
-				display: none;
-				justify-content: flex-end;
-				margin-right: 26%;
-				transition: ease-in-out 0.5s;
-
-				li {
-					margin: 0px 5px;
+				&:hover {
+					color: $azulClarito;
 				}
 			}
 
@@ -155,33 +129,20 @@ section#imagen {
 			border: solid 1px $azulOscuro;
 			padding: 5px 20px;
 			transition: ease-in-out 0.3s;
-			cursor: pointer;
+			cursor: not-allowed;
+			opacity: 0.2;
 
 			&:hover{
-				background-color: #1D567A;
+				cursor: pointer;
+				color: white;
+				background-color: $azulOscuro;
+			}
+
+			i {
+				margin: 0 5px;
 			}
 		}
-	}
-
-	button {
-		background-color: $verde;
-		color: white;
-		border: solid 1px $azulOscuro;
-		padding: 5px 20px;
-		transition: ease-in-out 0.3s;
-		cursor: not-allowed;
-		opacity: 0.2;
-
-		&:hover{
-			cursor: pointer;
-			color: white;
-			background-color: $azulOscuro;
-		}
-
-		i {
-			margin: 0 5px;
-		}
-	}
+	//}
 }
 
 section#destacados{
