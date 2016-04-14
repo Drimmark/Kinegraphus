@@ -108,6 +108,7 @@ def search_positions():
 
 @app.route('/searchcinemas')
 def search_cinemas():
+    cities = db.session.query(Cinema.city).distinct()
     movie_id = request.args.get('movie_id', None)
     city = request.args.get('city', None)
     time = request.args.get('time', None)
@@ -123,7 +124,7 @@ def search_cinemas():
         if time is not None:
             cinemas = cinemas.filter(ShowTime.time >= time)
 
-        return render_template('searchcinemas.html', cinemas=cinemas.all(), city=city, movie_id=movie_id, time=time)
+        return render_template('searchcinemas.html', cinemas=cinemas.all(), city=city, movie_id=movie_id, time=time, cities=cities)
     else:
         return redirect(url_for('index'))
 

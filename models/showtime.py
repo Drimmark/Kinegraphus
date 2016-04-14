@@ -13,4 +13,4 @@ class ShowTime(db.Model):
         self.time = time
 
     def __repr__(self):
-        pass
+        return str(self.movie_id) + ' - ' + self.time
