@@ -3,24 +3,23 @@
 
 {% block content %}
 
-<section class="search">
-    <div class="results">
-        <div class="filters">
+<section id="search">
+    <div id="results">
+        <div id="filters">
             <form action="?" method="get">
                 <input type="hidden" name="movie_id" value="{{ movie_id }}">
 
-                <select>
+                <select name="city">
 					{% for r in cities %}
-					<option value="{{ city }}">{{ r.city }}</option>
+					<option value="{{ r.city }}">{{ r.city }}</option>
 					{% endfor %}
 				</select>
 
-                
-
+                <input type="text" id="time" name="time" value="{{ time if time != None else '00:00' }}" />
             </form>
         </div>
 
-        <div class="cinemas">
+        <div id="cinemas">
             {% for cinema in cinemas %}
                 <div class="cinema" data-id="{{ cinema.id }}">
                     <img width="100%" src="https://maps.googleapis.com/maps/api/streetview?size=400x200&location={{ cinema.street }},{{ cinema.city }}" alt="{{ cinema.name }}" />
@@ -44,4 +43,10 @@
     </div>
 </section>
 
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script type="text/javascript" src="{{ url_for('static', filename='js/jquery-clockpicker.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/search.js') }}"></script>
 {% endblock %}
