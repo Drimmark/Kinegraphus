@@ -617,9 +617,34 @@ section#search #results > div > div {
   margin: 2em 1%;
 }
 
-section#search #results > div > div img {
+section#search #results > div > div > span {
   width: 90%;
   margin: .5em auto;
+  position: relative;
+}
+
+section#search #results > div > div > span a {
+  position: absolute;
+  background: #FABB00;
+  padding: .5em 1em;
+  right: 0;
+  bottom: 0;
+  border-radius: .4em 0 0;
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: .9em;
+}
+
+section#search #results > div > div > span a:hover i.fa:before {
+  opacity: 1;
+  visibility: visible;
+}
+
+section#search #results > div > div > span a i.fa:before {
+  transition: all .3s ease-in-out;
+  opacity: 0;
+  visibility: hidden;
 }
 
 section#search #results > div > div h3 {
