@@ -103,7 +103,7 @@ section#searchBar{
 	width: 80%;
 	margin: 0px 10%;
 
-	form {
+	//form {
 		ul {
 			display: flex;
 			justify-content: center;
@@ -113,6 +113,14 @@ section#searchBar{
 
 		#selectCity {
 			display: none;
+			width: 20%;
+			select {
+				width: 100%;
+				background-color: $azulClarito;
+				color: white;
+				border: 1px solid $azulOscuro;
+				padding: 4px 20px;
+			}
 		}
 
 		#busquedaText {
@@ -156,7 +164,7 @@ section#searchBar{
 			}
 		}
 
-	}
+	//}
 
 	button {
 		background-color: $verde;

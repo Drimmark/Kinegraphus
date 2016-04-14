@@ -23,28 +23,17 @@ $(document).ready(function () {
 			$( "#inputText" ).autocomplete({
 				minLength: 3,
    				select: function( event, ui ) {
-   					console.log(ui);
-   					console.log(ui.item['id']);
    					$('#busqueda').css('opacity', 1);
 					$('#busqueda').css('cursor', 'pointer');
-					$('#busqueda').attr('type', 'submit');
-					//$('#selectCity').css('display', 'flex');
-					if (ui.tipo == 1){ //PELICULA
-						request = $.ajax({
-							url: "/searchcinemas",
-							type: "get",
-							data: "movie_id="+ui.item['id']
+					//$('#busqueda').attr('type', 'submit');
+					if (ui.item['tipo'] == 1){ //PELICULA
+						$('#selectCity').animate({
+							width: 'toggle'
 						});
+   						$('#aBusqueda').attr('href', '/searchcinemas?movie_id='+ui.item['id']);
 					} else { //CINE
-						request = $.ajax({
-							url: "/searchmovies",
-							type: "get",
-							data: "cinema_id="+ui.item['id']
-						});
+						$('#aBusqueda').attr('href', '/searchmovies?cinema_id='+ui.item['id']);
 					}
-   				},
-   				response: function( event, ui ) {
-   					console.log(ui);
    				},
 				source: lista
    			});

@@ -107,12 +107,12 @@ def search_positions():
 
 
 @app.route('/searchcinemas', methods=['GET'])
-def search_cinemas():
+def searchcinemas():
     cities = db.session.query(Cinema.city).distinct()
     movie_id = request.args.get('movie_id', None)
     city = request.args.get('city', None)
     time = request.args.get('time', None)
-
+    print movie_id
 
     if movie_id is not None:
         cinemas = Cinema.query.join(Cinema.show_times)\
@@ -130,7 +130,7 @@ def search_cinemas():
 
 
 @app.route('/searchmovies', methods=['GET'])
-def search_movies():
+def searchmovies():
     cinema_id = request.args.get('cinema_id', None)
     time = request.args.get('time', None)
 

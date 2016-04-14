@@ -20,24 +20,23 @@
 
 	<section id='searchBar'>
 
-		<form method='GET' action="{{ url_for('searchcinemas') }}">
-		<form method='GET' action="{{ url_for('searchmovies') }}">
-			<ul>
-				<li id='busquedaText'>
-					<input id='inputText' type='text' placeholder="Película o cine" value=''/>
-				</li>
-				<li id="selectCity">
-					<select>
-						{% for r in cities %}
-						<option value="{{ r.city }}">{{ r.city }}</option>
-						{% endfor %}
-					</select>
-				</li>
-				<li>
-					<button id='busqueda' type='button'>Buscar</button>
-				</li>
-			</ul>
-		</form>
+	<!--<form method="GET">-->
+		<ul>
+			<li id='busquedaText'>
+				<input id='inputText' type='text' placeholder="Película o cine" value=''/>
+			</li>
+			<li id="selectCity">
+				<select>
+					{% for r in cities %}
+					<option value="{{ r.city }}">{{ r.city }}</option>
+					{% endfor %}
+				</select>
+			</li>
+			<li>
+				<a id='aBusqueda'><button id='busqueda' type='button'>Buscar</button></a>
+			</li>
+		</ul>
+	<!--</form>-->
 	</section>
 </section>
 
