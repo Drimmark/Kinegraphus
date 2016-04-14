@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% block title %}kinegraphus.com - Búsqueda de películas{% endblock %}
+
+{% block content %}
+
+<section id="search">
+    <div id="results">
+        <div id="filters">
+            <form action="?" method="get">
+                <input type="hidden" name="cinema_id" value="{{ cinema_id }}">
+
+                <input type="text" id="time" name="time" value="{{ time if time != None else '00:00' }}" />
+            </form>
+        </div>
+
+        <div id="movies">
+
+        </div>
+    </div>
+
+    <div class="map">
+
+    </div>
+</section>
+
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script type="text/javascript" src="{{ url_for('static', filename='js/jquery-clockpicker.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/search.js') }}"></script>
+{% endblock %}
