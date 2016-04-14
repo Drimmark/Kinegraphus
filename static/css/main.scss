@@ -16,6 +16,11 @@ html {
 
 
 header {
+
+	#indexHeader {
+		position: absolute;
+	}
+
 	div{
 		display: flex;
 		justify-content: space-between;
@@ -47,9 +52,6 @@ header {
 
 	#indexHeader {
 		background-color: transparent;
-		z-index: 10;
-		position: absolute;
-		top: 0;
 	}
 }
 
@@ -57,89 +59,18 @@ section#main {
 	background-color: $gris;
 }
 
-section#imagen {
-	position: relative;
-	height: 80vh;
-	overflow: hidden;
+section#imagen{
 
 	video {
-		width: 100%;
+		width:100%;
+		min-height: 100%;
 	}
-
-	section#searchBar{
+	i{
+		font-size: 5em;
 		position: absolute;
-		bottom: 0;
-		width: 100%;
-		padding: 20px 10%;
-		background: rgba(233,233,233,0.45);
-
-		form {
-			ul {
-				display: flex;
-				justify-content: center;
-				margin: 10px 10%;
-				list-style-type: none;
-			}
-
-			#selectCity {
-				display: none;
-			}
-
-			#busquedaText {
-				width: 50%;
-
-				input {
-					width: 100%;
-					padding: 5px 20px;
-					border: solid 1px #133C55;
-				}
-			}
-
-			#addFiltros {
-
-				.fa-minus-square{
-					display: none;
-				}
-
-				a {
-					font-size: 2em;
-					margin: 0px 10px;
-					color: $azulOscuro;
-					transition: ease-in-out 0.4s;
-					cursor: pointer;
-
-					&:hover {
-						color: $azulClarito;
-					}
-				}
-
-			}
-
-			#filtros {
-				display: none;
-				justify-content: flex-end;
-				margin-right: 26%;
-				transition: ease-in-out 0.5s;
-
-				li {
-					margin: 0px 5px;
-				}
-			}
-
-		}
-
-		button {
-			background-color: $verde;
-			color: white;
-			border: solid 1px $azulOscuro;
-			padding: 5px 20px;
-			transition: ease-in-out 0.3s;
-			cursor: pointer;
-
-			&:hover{
-				background-color: #1D567A;
-			}
-		}
+		bottom: 70px;
+		left: 50%;
+		color: white;
 	}
 }
 
@@ -158,6 +89,82 @@ section#imagen {
 			cursor: pointer;
 			color: white;
 			background-color: $azulOscuro;
+		}
+	}
+}
+
+section#searchBar{
+
+	border-style: none none solid;
+	border-width: 1px;
+	width: 80%;
+	margin: 0px 10%;
+
+	form {
+		ul {
+			display: flex;
+			justify-content: center;
+			margin: 10px 10%;
+			list-style-type: none;
+		}
+
+		#selectCity {
+			display: none;
+		}
+
+		#busquedaText {
+			width: 50%;
+
+			input {
+				width: 100%;
+				padding: 5px 20px;
+				border: solid 1px #133C55;
+			}
+		}
+
+		#addFiltros {
+
+			.fa-minus-square{
+				display: none;
+			}
+
+			a {
+				font-size: 2em;
+				margin: 0px 10px;
+				color: $azulOscuro;
+				transition: ease-in-out 0.4s;
+				cursor: pointer;
+
+				&:hover {
+					color: $azulClarito;
+				}
+			}
+
+		}
+
+		#filtros {
+			display: none;
+			justify-content: flex-end;
+			margin-right: 26%;
+			transition: ease-in-out 0.5s;
+
+			li {
+				margin: 0px 5px;
+			}
+		}
+
+	}
+
+	button {
+		background-color: $verde;
+		color: white;
+		border: solid 1px $azulOscuro;
+		padding: 5px 20px;
+		transition: ease-in-out 0.3s;
+		cursor: pointer;
+
+		&:hover{
+			background-color: #1D567A;
 		}
 	}
 }
@@ -194,6 +201,73 @@ section#destacados{
 		padding-top: 10px;
 		margin-right: 10%;
 		margin-left: 10%;
+	}
+}
+
+section.search {
+	display: flex;
+	flex-flow: row;
+	justify-content: space-between;
+	background-color: #eee;
+
+	.results {
+		display: flex;
+		flex-flow: column;
+		width: 50%;
+
+		& > div {
+			display: flex;
+			flex-flow: row wrap;
+			justify-content: space-around;
+			align-items: stretch;
+
+			& > div {
+				display: flex;
+				flex-flow: column;
+				justify-content: space-around;
+				border: 1px solid;
+				width: 30%;
+				flex-basis: 30%;
+				background-color: white;
+
+				img {
+					width: 90%;
+					margin: .5em auto;
+				}
+				div.showtimes {}
+				div.buy {
+					display: flex;
+					flex-flow: row wrap;
+					justify-content: space-around;
+
+					span {
+						input {
+							max-width: 30%;
+						}
+						label {
+							margin-left: .5em;
+						}
+					}
+					a {
+						padding: .3em .5em;
+						background-color: $verde;
+						color: white;
+						border-radius: 1em;
+						border: 1px solid $verde;
+						transition: all .3s ease-in-out;
+
+						&:hover {
+							background-color: white;
+							color: $verde;
+						}
+					}
+				}
+			}
+		}
+	}
+	.map {
+		width: 45%;
+		border-left: 1px solid black;
 	}
 }
 
