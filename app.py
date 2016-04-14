@@ -112,6 +112,7 @@ def search_cinemas():
     city = request.args.get('city', None)
     time = request.args.get('time', None)
 
+    
     if movie_id is not None:
         cinemas = Cinema.query.join(Cinema.show_times)\
             .filter(ShowTime.movie_id == movie_id)

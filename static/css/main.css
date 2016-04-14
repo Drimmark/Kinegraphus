@@ -419,28 +419,50 @@ section#imagen i {
       color: white;
       background-color: #133C55; }
 
-section#searchBar form ul {
-  display: flex;
-  justify-content: center;
-  margin: 10px 10%;
-  list-style-type: none; }
-section#searchBar form #selectCity {
-  display: none; }
-section#searchBar form #busquedaText {
-  width: 50%; }
-  section#searchBar form #busquedaText input {
-    width: 100%;
+section#searchBar {
+  border-style: none none solid;
+  border-width: 1px;
+  width: 80%;
+  margin: 0px 10%; }
+  section#searchBar form ul {
+    display: flex;
+    justify-content: center;
+    margin: 10px 10%;
+    list-style-type: none; }
+  section#searchBar form #selectCity {
+    display: none; }
+  section#searchBar form #busquedaText {
+    width: 50%; }
+    section#searchBar form #busquedaText input {
+      width: 100%;
+      padding: 5px 20px;
+      border: solid 1px #133C55; }
+  section#searchBar form #addFiltros .fa-minus-square {
+    display: none; }
+  section#searchBar form #addFiltros a {
+    font-size: 2em;
+    margin: 0px 10px;
+    color: #133C55;
+    transition: ease-in-out 0.4s;
+    cursor: pointer; }
+    section#searchBar form #addFiltros a:hover {
+      color: #1282A2; }
+  section#searchBar form #filtros {
+    display: none;
+    justify-content: flex-end;
+    margin-right: 26%;
+    transition: ease-in-out 0.5s; }
+    section#searchBar form #filtros li {
+      margin: 0px 5px; }
+  section#searchBar button {
+    background-color: #157A6E;
+    color: white;
+    border: solid 1px #133C55;
     padding: 5px 20px;
-    border: solid 1px #133C55; }
-section#searchBar button {
-  background-color: #157A6E;
-  color: white;
-  border: solid 1px #133C55;
-  padding: 5px 20px;
-  transition: ease-in-out 0.3s;
-  cursor: pointer; }
-  section#searchBar button:hover {
-    background-color: #1D567A; }
+    transition: ease-in-out 0.3s;
+    cursor: pointer; }
+    section#searchBar button:hover {
+      background-color: #1D567A; }
 
 section#destacados div#films {
   display: flex;

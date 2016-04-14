@@ -13,6 +13,8 @@ $gris: #e9e9e9;
 html {
 	height: 100%;
 }
+
+
 header {
 
 	div{
@@ -78,7 +80,7 @@ section#imagen{
 		background-color: white;
 		transition: ease-in-out  0.1s;
 		border: none;
-		
+
 		&:hover{
 			cursor: pointer;
 			color: white;
@@ -88,6 +90,11 @@ section#imagen{
 }
 
 section#searchBar{
+
+	border-style: none none solid;
+	border-width: 1px;
+	width: 80%;
+	margin: 0px 10%;
 
 	form {
 		ul {
@@ -108,6 +115,37 @@ section#searchBar{
 				width: 100%;
 				padding: 5px 20px;
 				border: solid 1px #133C55;
+			}
+		}
+
+		#addFiltros {
+
+			.fa-minus-square{
+				display: none;
+			}
+
+			a {
+				font-size: 2em;
+				margin: 0px 10px;
+				color: $azulOscuro;
+				transition: ease-in-out 0.4s;
+				cursor: pointer;
+
+				&:hover {
+					color: $azulClarito;
+				}
+			}
+			
+		}
+
+		#filtros {
+			display: none;
+			justify-content: flex-end;
+			margin-right: 26%;
+			transition: ease-in-out 0.5s;
+
+			li {
+				margin: 0px 5px;
 			}
 		}
 
