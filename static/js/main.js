@@ -1,5 +1,9 @@
 $(document).ready(function () {
 	$('#inputText').keyup(function() {
+
+		$('#busqueda').css('opacity', 0.2);
+		$('#busqueda').css('cursor', 'none');
+
 		request = $.ajax({
 			url: "/searchsuggestions",
 			type: "get",
@@ -14,8 +18,17 @@ $(document).ready(function () {
 			}
 			$( "#inputText" ).autocomplete({
 				minLength: 3,
+   				open: function( event, ui ) {
+   					$('#ui-id-1 li div').click(function () {
+						$('#busqueda').css('opacity', 1);
+						$('#busqueda').css('cursor', 'pointer');
+					});
+   				},
 				source: lista
    			});
+
+
+   			
 
 		});
     
@@ -30,26 +43,30 @@ $(document).ready(function () {
     
 	});
 
-	$('#busqueda').click(function() {
-		request = $.ajax({
-	        url: "/searchcinemas",
-	        type: "get",
-	        data: "movie_id=30611"
-		});
+	//$('#busqueda').click(function() {
+	//	request = $.ajax({
+	//        url: "/searchcinemas",
+	//        type: "get",
+	//        data: "movie_id=30611"
+	//	});
+	//});
+
+	$('#ui-id-1 li div').click(function () {
+		$('#busqueda').css('opacity', 1);
+		$('#busqueda').css('cursor', 'pointer');
 	});
 
-	$('#addFiltros').click(function(){
-		if ($('#filtros').css('display') == 'flex') {
-			$('.fa-plus-square').css('display','flex');
-			$('.fa-minus-square').css('display','none');
-			$('#filtros').css('display','none');
-		}
-		else{
-			$('.fa-minus-square').css('display','flex');
-			$('.fa-plus-square').css('display','none');
-			$('#filtros').css('display','flex');
-		}
-	});
-
+	//$('#addFiltros').click(function(){
+	//	if ($('#filtros').css('display') == 'flex') {
+	//		$('.fa-plus-square').css('display','flex');
+	//		$('.fa-minus-square').css('display','none');
+	//		$('#filtros').css('display','none');
+	//	}
+	//	else{
+	//		$('.fa-minus-square').css('display','flex');
+	//		$('.fa-plus-square').css('display','none');
+	//		$('#filtros').css('display','flex');
+	//	}
+	//});
 
 });

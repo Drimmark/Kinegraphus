@@ -164,7 +164,8 @@ section#searchBar{
 		border: solid 1px $azulOscuro;
 		padding: 5px 20px;
 		transition: ease-in-out 0.3s;
-		cursor: pointer;
+		//cursor: pointer;
+		opacity: 0.2;
 
 		&:hover{
 			background-color: #1D567A;
