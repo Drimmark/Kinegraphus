@@ -10,8 +10,9 @@
                 <input type="hidden" name="movie_id" value="{{ movie_id }}">
 
                 <select name="city">
+                    <option value="">Todas</option>
 					{% for r in cities %}
-					<option value="{{ r.city }}">{{ r.city }}</option>
+					<option value="{{ r.city }}" {% if r.city == city %}selected{% endif %}>{{ r.city }}</option>
 					{% endfor %}
 				</select>
 
