@@ -626,6 +626,42 @@ section#search #results > div > div h3 {
   margin: .5em 1em;
 }
 
+section#search #results > div > div ul.showtimes {
+  list-style: none;
+  display: flex;
+  flex-flow: column;
+  align-self: center;
+  padding: 0;
+}
+
+section#search #results > div > div ul.showtimes li {
+  list-style: none;
+  display: flex;
+  flex-flow: row wrap;
+  padding: .2em 0;
+}
+
+section#search #results > div > div ul.showtimes li label {
+  padding: 0 2em;
+  cursor: pointer;
+}
+
+section#search #results > div > div ul.showtimes li input {
+  cursor: pointer;
+}
+
+section#search #results > div > div ul.showtimes li span.color1 {
+  color: #E5C120;
+}
+
+section#search #results > div > div ul.showtimes li span.color2 {
+  color: #71C63F;
+}
+
+section#search #results > div > div ul.showtimes li span.color3 {
+  color: #BF2C0B;
+}
+
 section#search #results > div > div div.buy {
   display: flex;
   flex-flow: row wrap;
