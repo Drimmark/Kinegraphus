@@ -3,7 +3,7 @@
 
 {% block header %}
 <div id='indexHeader'>
-	<a href='/'> <img alt='logo' id='logo' src='static/images/logo.png'></a>
+	<a href='/'><img alt='logo' id='logo' src='static/images/logo.png'></a>
 	<nav>
 		<li><a href="#">Ayuda</a></li>
 		<li><a href="#">Regístrate</a></li>
@@ -17,43 +17,42 @@
     <video autoplay loop class="fillWidth">
         <source src="static/videos/A-Director-View.webm" type="video/webm" />
     </video>
-   <a href='#searchBar'><i class="fa fa-angle-double-down" aria-hidden="true"></i></a>
-</section>
 
-<section id='searchBar'>
-	<form action='?' method='get'>
-		<ul>
-			<li id='busquedaText'>
-				<input id='inputText' type='text' placeholder="Película o cine" value=''/>
-			</li>
-			<li id="selectCity">
-				<select>
-					{% for r in cities %}
-					<option value="{{ r.city }}">{{ r.city }}</option>
-					{% endfor %}
-				</select>
-			</li>
-			<li id='addFiltros'>
-				<a class='fa fa-plus-square'></a>
-				<a class='fa fa-minus-square'></a>
-			</li>
-			<li>
-				<button id='busqueda' type='button'>Buscar</button>
-			</li>
-		</ul>
+	<section id='searchBar'>
+		<form action='?' method='get'>
+			<ul>
+				<li id='busquedaText'>
+					<input id='inputText' type='text' placeholder="Película o cine" value=''/>
+				</li>
+				<li id="selectCity">
+					<select>
+						{% for r in cities %}
+						<option value="{{ r.city }}">{{ r.city }}</option>
+						{% endfor %}
+					</select>
+				</li>
+				<li id='addFiltros'>
+					<a class='fa fa-plus-square'></a>
+					<a class='fa fa-minus-square'></a>
+				</li>
+				<li>
+					<button id='busqueda' type='button'>Buscar</button>
+				</li>
+			</ul>
 
-		<ul id='filtros'>
-			<li>
-				<input type='checkbox' value='2D'>2D
-			</li>
-			<li>
-				<input type='checkbox' value='3D'>3D
-			</li>
-			<li>
-				<input type='checkbox' value='VOSE'>VOSE
-			</li>
-		</ul>
-	</form>
+			<ul id='filtros'>
+				<li>
+					<input type='checkbox' value='2D'>2D
+				</li>
+				<li>
+					<input type='checkbox' value='3D'>3D
+				</li>
+				<li>
+					<input type='checkbox' value='VOSE'>VOSE
+				</li>
+			</ul>
+		</form>
+	</section>
 </section>
 
 <section id='destacados'>

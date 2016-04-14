@@ -16,16 +16,11 @@ html {
 
 
 header {
-
-	#indexHeader {
-		position: absolute;
-	}
-
 	div{
 		display: flex;
 		justify-content: space-between;
 		background-color: $azulOscuro;
-		
+
 		width: 100%;
 		padding: 10px 5%;
 
@@ -52,6 +47,9 @@ header {
 
 	#indexHeader {
 		background-color: transparent;
+		z-index: 10;
+		position: absolute;
+		top: 0;
 	}
 }
 
@@ -59,18 +57,89 @@ section#main {
 	background-color: $gris;
 }
 
-section#imagen{
+section#imagen {
+	position: relative;
+	height: 80vh;
+	overflow: hidden;
 
 	video {
-		width:100%;
-		min-height: 100%;
+		width: 100%;
 	}
-	i{
-		font-size: 5em;
+
+	section#searchBar{
 		position: absolute;
-		bottom: 70px;
-		left: 50%;
-		color: white;
+		bottom: 0;
+		width: 100%;
+		padding: 20px 10%;
+		background: rgba(233,233,233,0.45);
+
+		form {
+			ul {
+				display: flex;
+				justify-content: center;
+				margin: 10px 10%;
+				list-style-type: none;
+			}
+
+			#selectCity {
+				display: none;
+			}
+
+			#busquedaText {
+				width: 50%;
+
+				input {
+					width: 100%;
+					padding: 5px 20px;
+					border: solid 1px #133C55;
+				}
+			}
+
+			#addFiltros {
+
+				.fa-minus-square{
+					display: none;
+				}
+
+				a {
+					font-size: 2em;
+					margin: 0px 10px;
+					color: $azulOscuro;
+					transition: ease-in-out 0.4s;
+					cursor: pointer;
+
+					&:hover {
+						color: $azulClarito;
+					}
+				}
+
+			}
+
+			#filtros {
+				display: none;
+				justify-content: flex-end;
+				margin-right: 26%;
+				transition: ease-in-out 0.5s;
+
+				li {
+					margin: 0px 5px;
+				}
+			}
+
+		}
+
+		button {
+			background-color: $verde;
+			color: white;
+			border: solid 1px $azulOscuro;
+			padding: 5px 20px;
+			transition: ease-in-out 0.3s;
+			cursor: pointer;
+
+			&:hover{
+				background-color: #1D567A;
+			}
+		}
 	}
 }
 
@@ -79,7 +148,7 @@ section#imagen{
 	overflow-y: scroll;
 	overflow-x: hidden;
 	border: 1px solid $azulOscuro;
-	
+
 	li div {
 		background-color: white;
 		transition: ease-in-out  0.1s;
@@ -89,82 +158,6 @@ section#imagen{
 			cursor: pointer;
 			color: white;
 			background-color: $azulOscuro;
-		}
-	}
-}
-
-section#searchBar{
-
-	border-style: none none solid;
-	border-width: 1px;
-	width: 80%;
-	margin: 0px 10%;
-
-	form {
-		ul {
-			display: flex;
-			justify-content: center;
-			margin: 10px 10%;
-			list-style-type: none;
-		}
-
-		#selectCity {
-			display: none;
-		}
-
-		#busquedaText {
-			width: 50%;
-
-			input {
-				width: 100%;
-				padding: 5px 20px;
-				border: solid 1px #133C55;
-			}
-		}
-
-		#addFiltros {
-
-			.fa-minus-square{
-				display: none;
-			}
-
-			a {
-				font-size: 2em;
-				margin: 0px 10px;
-				color: $azulOscuro;
-				transition: ease-in-out 0.4s;
-				cursor: pointer;
-
-				&:hover {
-					color: $azulClarito;
-				}
-			}
-			
-		}
-
-		#filtros {
-			display: none;
-			justify-content: flex-end;
-			margin-right: 26%;
-			transition: ease-in-out 0.5s;
-
-			li {
-				margin: 0px 5px;
-			}
-		}
-
-	}
-
-	button {
-		background-color: $verde;
-		color: white;
-		border: solid 1px $azulOscuro;
-		padding: 5px 20px;
-		transition: ease-in-out 0.3s;
-		cursor: pointer;
-
-		&:hover{
-			background-color: #1D567A;
 		}
 	}
 }
