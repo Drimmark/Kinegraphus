@@ -106,7 +106,7 @@ def search_positions():
                     mimetype="application/json")
 
 
-@app.route('/searchcinemas')
+@app.route('/searchcinemas', methods=['GET'])
 def search_cinemas():
     cities = db.session.query(Cinema.city).distinct()
     movie_id = request.args.get('movie_id', None)
@@ -129,7 +129,7 @@ def search_cinemas():
         return redirect(url_for('index'))
 
 
-@app.route('/searchmovies')
+@app.route('/searchmovies', methods=['GET'])
 def search_movies():
     cinema_id = request.args.get('cinema_id', None)
     time = request.args.get('time', None)
