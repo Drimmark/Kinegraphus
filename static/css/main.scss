@@ -9,6 +9,9 @@ $azulClarito: #1282A2;
 $verde: #157A6E;
 $flashReverso: #FABB00;
 $gris: #e9e9e9;
+$full: #BF2C0B;
+$empty: #E5C120;
+$half: #71C63F;
 
 html {
 	height: 100%;
@@ -239,7 +242,39 @@ section#search {
 				h3 {
 					margin: .5em 1em;
 				}
-				div.showtimes {}
+				ul.showtimes {
+					list-style: none;
+					display: flex;
+					flex-flow: column;
+					align-self: center;
+					padding: 0;
+
+					li {
+						list-style: none;
+						display: flex;
+						flex-flow: row wrap;
+						padding: .2em 0;
+
+						label {
+							padding: 0 2em;
+							cursor: pointer;
+						}
+						input {
+							cursor: pointer;
+						}
+						span {
+							&.color1 {
+								color: $empty;
+							}
+							&.color2 {
+								color: $half;
+							}
+							&.color3 {
+								color: $full;
+							}
+						}
+					}
+				}
 				div.buy {
 					display: flex;
 					flex-flow: row wrap;
