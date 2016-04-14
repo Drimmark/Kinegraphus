@@ -124,7 +124,7 @@ def search_cinemas():
         if time is not None:
             cinemas = cinemas.filter(ShowTime.time >= time)
 
-        return render_template('searchcinemas.html', cinemas=cinemas.all(), city=city, movie_id=movie_id, time=time, cities=cities)
+        return render_template('searchcinemas.html', cinemas=cinemas.all(), city=city, movie_id=movie_id, time=time, cities=cities, randoms=[1,2,3])
     else:
         return redirect(url_for('index'))
 
@@ -135,13 +135,13 @@ def search_movies():
     time = request.args.get('time', None)
 
     if cinema_id is not None:
-        movies = Movie.query.join(Cinema.show_times)\
+        movies = Movie.query.join(Movie.show_times)\
             .filter(ShowTime.cinema_id == cinema_id)
 
         if time is not None:
             movies = movies.filter(ShowTime.time >= time)
 
-        return render_template('searchmovies.html', movies=movies.all(), cinema_id=cinema_id, time=time)
+        return render_template('searchmovies.html', movies=movies.all(), cinema_id=cinema_id, time=time, randoms=[1,2,3])
     else:
         return redirect(url_for('index'))
 
