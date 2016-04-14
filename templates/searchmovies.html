@@ -14,7 +14,30 @@
         </div>
 
         <div id="movies">
-
+            {% for movie in movies %}
+                <div class="movie" data-id="{{ movie.id }}">
+                    <img width="100%" src="http://cine.entradas.com/entradas/contenidos/peliculas/{{ movie.cartel }}" alt="{{ movie.title }}" />
+                    <h3>{{ movie.title }}</h3>
+                    <ul class="showtimes">
+                        {% for time in movie.show_times %}
+                            {% if time.cinema_id|int() == cinema_id|int() %}
+                                <li>
+                                    <input id="time-{{ time.cinema_id }}-{{ time.time }}" type="radio" name="time" value="{{ time.time }}">
+                                    <label for="time-{{ time.cinema_id }}-{{ time.time }}">{{ time.time }}</label>
+                                    <span class="fa fa-signal color{{ randoms|random }}" aria-hidden="true"></span>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                    <div class="buy">
+                        <span>
+                            <input type="number" id="value" value="1">
+                            <label for="value">x 4,90 €</label>
+                        </span>
+                        <a href="#">Comprar</a>
+                    </div>
+                </div>
+            {% endfor %}
         </div>
     </div>
 

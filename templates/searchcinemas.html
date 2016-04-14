@@ -25,8 +25,17 @@
                 <div class="cinema" data-id="{{ cinema.id }}">
                     <img width="100%" src="https://maps.googleapis.com/maps/api/streetview?size=400x200&location={{ cinema.street }},{{ cinema.city }}" alt="{{ cinema.name }}" />
                     <h3>{{ cinema.name }}</h3>
-                    <div class="showtimes">
-                    </div>
+                    <ul class="showtimes">
+                        {% for time in cinema.show_times %}
+                            {% if time.movie_id|int() == movie_id|int() %}
+                                <li>
+                                    <input id="time-{{ time.movie_id}}-{{ time.time }}" type="radio" name="time" value="{{ time.time }}">
+                                    <label for="time-{{ time.movie_id}}-{{ time.time }}">{{ time.time }}</label>
+                                    <span class="fa fa-signal color{{ randoms|random }}" aria-hidden="true"></span>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
                     <div class="buy">
                         <span>
                             <input type="number" id="value" value="1">
