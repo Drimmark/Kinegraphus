@@ -19,7 +19,9 @@
     </video>
 
 	<section id='searchBar'>
-		<form action='?' method='get'>
+
+		<form method='GET' action="{{ url_for('searchcinemas') }}">
+		<form method='GET' action="{{ url_for('searchmovies') }}">
 			<ul>
 				<li id='busquedaText'>
 					<input id='inputText' type='text' placeholder="Película o cine" value=''/>
