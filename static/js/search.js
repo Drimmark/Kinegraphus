@@ -15,12 +15,12 @@ $(document).ready(function(){
 	$(window).scroll(function(){
 		x = document.getElementById('search').offsetHeight;
 		//$(this).scrollTop() < footer
-		if( $(this).scrollTop() < 106){//Estamos arriba
+		if( $(this).scrollTop() < 110){//Estamos arriba
 			//$('#map').removeClass('map3');
 			$('#map').removeClass('map2');
 			$('#map').addClass('map');
 		}	
-		else if( $(this).scrollTop() > 106 && $(this).scrollTop() < x-400){//estamos en medio
+		else if( $(this).scrollTop() > 110 && $(this).scrollTop() < x-400){//estamos en medio
 			$('#map').removeClass('map3');
 			$('#map').removeClass('map');
 			$('#map').addClass('map2');
