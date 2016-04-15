@@ -10,6 +10,9 @@
                 <input type="hidden" name="cinema_id" value="{{ cinema_id }}">
 
                 <input type="text" id="time" name="time" value="{{ time if time != None else '00:00' }}" />
+                <input type="text" id="time" name="time" value="{{ time if time != None else '00:00' }}" />
+                <input type="checkbox" id="2d" name="d2" {{ d2 if d2 != None }}/>2D <input type="checkbox" id="3d" name="d3" {{ d3 if d3 != None }}/> 3D
+                <input type="checkbox" id="vose" name="vose" {{ vose if vose != None }}/> VOSE 
             </form>
         </div>
 
