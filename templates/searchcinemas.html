@@ -15,8 +15,6 @@
 					<option value="{{ r.city }}" {% if r.city == city %}selected{% endif %}>{{ r.city }}</option>
 					{% endfor %}
 				</select>
-
-                <input type="text" id="time" name="time" value="{{ time if time != None else '00:00' }}" />
             </form>
         </div>
 
