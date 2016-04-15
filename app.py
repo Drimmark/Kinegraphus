@@ -151,11 +151,10 @@ def searchmovies():
             if d2 is None:
                 movies = movies.filter(Movie.format.like('%3D%'))
         if vose is not None:
-            print 'OLAAAAAAAAAAAAAAAAAAAAAAAAAAAAa'
-            movies = movies.filter(Movie.vose == '1')
             vose = 'checked'
+            movies = movies.filter(Movie.vose == '1')
 
-        return render_template('searchmovies.html', movies=movies.all(), cinema_id=cinema_id, time=time, d2=d2, d3=d3, vose = vose, randoms=[1,2,3])
+        return render_template('searchmovies.html', movies=movies.all(), cinema_id=cinema_id, time=time, d2=d2, d3=d3, vose=vose, randoms=[1,2,3])
     else:
         return redirect(url_for('index'))
 

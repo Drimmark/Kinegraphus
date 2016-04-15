@@ -9,6 +9,7 @@
             <form action="?" method="get">
                 <input type="hidden" name="movie_id" value="{{ movie_id }}">
 
+                <input type="text" id="time" name="time" value="{{ time if time != None else '00:00' }}" />
                 <select name="city">
                     <option value="">Todas</option>
 					{% for r in cities %}
