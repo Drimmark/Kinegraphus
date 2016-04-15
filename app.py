@@ -132,6 +132,9 @@ def searchcinemas():
 def searchmovies():
     cinema_id = request.args.get('cinema_id', None)
     time = request.args.get('time', None)
+    d2 = request.args.get('d2', None)
+    d3 = request.args.get('d3', None)
+    vose = request.args.get('vose', None)
 
     if cinema_id is not None:
         movies = Movie.query.join(Movie.show_times)\
@@ -139,8 +142,20 @@ def searchmovies():
 
         if time is not None:
             movies = movies.filter(ShowTime.time >= time)
+        if d2 is not None:
+            d2 = 'checked'
+            if d3 is None:
+                movies = movies.filter(Movie.format.like('%2D%'))
+        if d3 is not None:
+            d3 = 'checked'
+            if d2 is None:
+                movies = movies.filter(Movie.format.like('%3D%'))
+        if vose is not None:
+            print 'OLAAAAAAAAAAAAAAAAAAAAAAAAAAAAa'
+            movies = movies.filter(Movie.vose == '1')
+            vose = 'checked'
 
-        return render_template('searchmovies.html', movies=movies.all(), cinema_id=cinema_id, time=time, randoms=[1,2,3])
+        return render_template('searchmovies.html', movies=movies.all(), cinema_id=cinema_id, time=time, d2=d2, d3=d3, vose = vose, randoms=[1,2,3])
     else:
         return redirect(url_for('index'))
 
