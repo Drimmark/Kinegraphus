@@ -37,6 +37,7 @@ header {
 		    justify-content: space-around;
 		    margin: 30px 50px 20px 20px;
 		    list-style-type: none;
+		    width: 30%;
 
 		    li {
 		    	margin: 0px 10px;
@@ -54,6 +55,77 @@ header {
 		position: absolute;
 		top: 0;
 	}
+
+	section#barBusq{
+		width: 100%;
+		padding: 20px 10%;
+		ul {
+			display: flex;
+			justify-content: center;
+			margin: 10px 5%;
+			list-style-type: none;
+		}
+
+		#selectCity {
+			display: none;
+		}
+
+		#busquedaText {
+			width: 50%;
+
+			input {
+				width: 100%;
+				padding: 5px 20px;
+				border: solid 1px #133C55;
+			}
+		}
+
+		#selectCity {
+			display: none;
+			width: 20%;
+			select {
+				width: 100%;
+				background-color: $azulClarito;
+				color: white;
+				border: 1px solid $azulOscuro;
+				padding: 4px 20px;
+			}
+			a {
+				font-size: 2em;
+				margin: 0px 10px;
+				color: $azulOscuro;
+				transition: ease-in-out 0.4s;
+				cursor: pointer;
+
+				&:hover {
+					color: $azulClarito;
+				}
+			}
+
+		}
+
+		button {
+			background-color: $verde;
+			color: white;
+			border: solid 1px $azulOscuro;
+			padding: 5px 20px;
+			transition: ease-in-out 0.3s;
+			cursor: not-allowed;
+			opacity: 0.2;
+
+			&:hover{
+				cursor: pointer;
+				color: white;
+				background-color: $azulOscuro;
+			}
+
+			i {
+				margin: 0 5px;
+			}
+		}
+	}
+
+
 }
 
 section#main {
