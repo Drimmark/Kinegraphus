@@ -635,6 +635,22 @@ section#search {
     top: 106px;
     height: calc(100% - 106px); }
 
+  section#search .map2 {
+    width: 45%;
+    border-left: 1px solid black;
+    position: fixed !important;
+    top: 0px;
+    right: 0;
+    height: 100%;  }
+
+section#search .map3 {
+    width: 45%;
+    border-left: 1px solid black;
+    position: fixed !important;
+    right: 0;
+    bottom: 262px;
+    height: calc(100% - 262px);  }
+
 footer {
   background-color: #133C55;
   color: white; }
