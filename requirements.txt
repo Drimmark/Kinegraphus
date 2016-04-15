@@ -28,7 +28,6 @@ ptyprocess==0.5
 pyOpenSSL==0.15.1
 pyasn1==0.1.9
 pycurl==7.43.0
-pygobject==3.18.2
 python-apt==1.1.0b2
 python-debian==0.1.27
 python-debianbts==2.6.0
