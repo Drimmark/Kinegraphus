@@ -5,11 +5,11 @@ $(document).ready(function(){
 		lng: -3.8546396,
 		zoom: 6,
 	});
-	//for(var i = 0; i< /*positions.length*/5; i++){
+	for(var i = 0; i< positions.length; i++){
 		map.addMarker({
-			lat: 38.8802,//positions[i].latitude, 
-			lng: -7.02625,//positions[i].longitude,
-			title: city//positions[i].name
+			lat: positions[i].latitude, 
+			lng: positions[i].longitude,
+			title: positions[i].name
 		})
-	//}
+	}
 });
