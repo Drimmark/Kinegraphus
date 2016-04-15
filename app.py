@@ -4,7 +4,7 @@ from models import db, Cinema, Movie, ShowTime
 from difflib import SequenceMatcher
 
 app = Flask(__name__)
-app.config.from_pyfile('config_heroku.cfg')
+app.config.from_pyfile('config_file.cfg')
 db.app = app
 db.init_app(app)
 
