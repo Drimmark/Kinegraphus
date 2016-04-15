@@ -20,6 +20,26 @@
 			{% block header %}
 			<div>
 				<a href="/"><img alt='logo' id='logo' src='static/images/logo.png'></a>
+
+				<section id='barBusq'>
+					<ul>
+						<li id='busquedaText'>
+							<input id='inputText' type='text' placeholder="Película o cine" value=''/>
+						</li>
+						<li id="selectCity">
+							<select>
+								<option value="">Ciudades </option>
+								{% for r in cities %}
+								<option value="{{ r.city }}">{{ r.city }}</option>
+								{% endfor %}
+							</select>
+						</li>
+						<li>
+							<a id='aBusqueda'><button id='busqueda' type='button'><i class='fa fa-search'></i>Buscar</button></a>
+						</li>
+					</ul>
+				</section>
+
 				<nav>
 					<li><a href="#">Ayuda</a></li>
 					<li><a href="#">Regístrate</a></li>
