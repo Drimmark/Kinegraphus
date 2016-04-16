@@ -51,7 +51,7 @@ $(document).ready(function () {
     
 	});
 
-	$( "#selectCity option" ).click(function() {
+	$("#selectCity select").on('change',function() {
 		ruta = $('#aBusqueda').attr('href').split('&')[0];
 		$('#aBusqueda').attr('href', ruta+'&city='+this.value);
 	});
