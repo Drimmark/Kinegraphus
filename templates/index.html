@@ -46,7 +46,7 @@
 
 	<div id='films'>
 		{% for movie in premieres %}
-		<a href='/searchcinemas?movie_id={{ movie.id }}' style="background-image: url('http://cine.entradas.com/entradas/contenidos/peliculas/{{ movie.cartel }}')">
+		<a href='/searchcinemas?movie_id={{ movie.id }}' style="background-image: url('//cine.entradas.com/entradas/contenidos/peliculas/{{ movie.cartel }}')">
 			<h3>{{ movie.title }}</h3>
 		</a>
 		{% endfor %}
