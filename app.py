@@ -68,8 +68,8 @@ def index():
 def search_suggestions():
     term = request.args.get('term', None)
     if term is not None:
-        cinemas = Cinema.query.filter(Cinema.name.like('%' + term + '%')).all()
-        movies = Movie.query.filter(Movie.title.like('%' + term + '%')).all()
+        cinemas = Cinema.query.filter(Cinema.name.ilike('%' + term + '%')).all()
+        movies = Movie.query.filter(Movie.title.ilike('%' + term + '%')).all()
 
         results = []
         results.extend([{'type': 0, 'value': cinema.name, 'id': cinema.id} for cinema in cinemas])

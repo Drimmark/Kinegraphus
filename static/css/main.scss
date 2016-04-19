@@ -17,6 +17,37 @@ html {
 	height: 100%;
 }
 
+ul.ui-autocomplete {
+	li.ui-menu-item div {
+		padding: 10px;
+		transition: background 0.2s;
+
+		i {
+			font-size: 19px;
+			margin-right: 10px;
+			transition: color 0.2s;
+
+			&.fa-film {
+				color: $azulOscuro;
+			}
+
+			&.fa-building {
+				color: $azulClarito;
+			}
+		}
+
+		&.ui-state-active {
+			background: $azulOscuro;
+			border: none !important;
+			margin: 0 !important;
+
+			i {
+				color: #ddd;
+			}
+		}
+	}
+}
+
 
 header {
 	div{
@@ -56,78 +87,10 @@ header {
 		top: 0;
 	}
 
-	section#barBusq{
+	section#barBusq {
 		width: 100%;
 		padding: 20px 10%;
-		ul {
-			display: flex;
-			justify-content: center;
-			margin: 10px 5%;
-			list-style-type: none;
-		}
-
-		#selectCity {
-			display: none;
-		}
-
-		#busquedaText {
-			width: 50%;
-
-			input {
-				width: 100%;
-				padding: 5px 20px;
-				border: solid 1px #133C55;
-			}
-		}
-
-		#selectCity {
-			display: none;
-			width: 20%;
-			select {
-				width: 100%;
-				background-color: $azulClarito;
-				color: white;
-				border: 1px solid $azulOscuro;
-				padding: 4px 20px;
-			}
-			a {
-				font-size: 2em;
-				margin: 0px 10px;
-				color: $azulOscuro;
-				transition: ease-in-out 0.4s;
-				cursor: pointer;
-
-				&:hover {
-					color: $azulClarito;
-				}
-			}
-
-		}
-
-		button {
-			background-color: $verde;
-			color: white;
-			border: solid 1px $azulOscuro;
-			padding: 5px 20px;
-			transition: ease-in-out 0.3s;
-
-			&:disabled {
-				cursor: not-allowed;
-				opacity: 0.2;
-			}
-
-			&:hover{
-				cursor: pointer;
-				color: white;
-				background-color: $azulOscuro;
-			}
-
-			i {
-				margin: 0 5px;
-			}
-		}
 	}
-
 
 }
 
@@ -145,82 +108,66 @@ section#imagen {
 	}
 }
 
-section#searchBar{
+section#searchBar {
 	position: absolute;
 	bottom: 0;
 	width: 100%;
 	padding: 20px 10%;
 	background: rgba(233,233,233,0.45);
+}
 
-	//form {
-		ul {
-			display: flex;
-			justify-content: center;
-			margin: 10px 10%;
-			list-style-type: none;
+form.search {
+	ul {
+		display: flex;
+		justify-content: center;
+		margin: 10px 10%;
+		list-style-type: none;
+	}
+
+	#busquedaText {
+		width: 50%;
+
+		input {
+			width: 100%;
+			padding: 6px 15px;
+			border: solid 1px #133C55;
 		}
+	}
 
-		#selectCity {
-			display: none;
-		}
-
-		#busquedaText {
-			width: 50%;
-
-			input {
-				width: 100%;
-				padding: 5px 20px;
-				border: solid 1px #133C55;
-			}
-		}
-
-		#selectCity {
-			display: none;
-			width: 20%;
-			select {
-				width: 100%;
-				background-color: $azulClarito;
-				color: white;
-				border: 1px solid $azulOscuro;
-				padding: 4px 20px;
-			}
-			a {
-				font-size: 2em;
-				margin: 0px 10px;
-				color: $azulOscuro;
-				transition: ease-in-out 0.4s;
-				cursor: pointer;
-
-				&:hover {
-					color: $azulClarito;
-				}
-			}
-
-		}
-
-		button {
-			background-color: $verde;
+	#selectCity {
+		display: none;
+		width: 20%;
+		select {
+			width: 100%;
+			background-color: $azulClarito;
 			color: white;
-			border: solid 1px $azulOscuro;
-			padding: 5px 20px;
-			transition: ease-in-out 0.3s;
-			
-			&:disabled {
-				cursor: not-allowed;
-				opacity: 0.2;
-			}
-
-			&:hover{
-				cursor: pointer;
-				color: white;
-				background-color: $azulOscuro;
-			}
-
-			i {
-				margin: 0 5px;
-			}
+			border: 1px solid $azulOscuro;
+			padding: 5px 15px;
 		}
-	//}
+	}
+
+	button {
+		background-color: $verde;
+		color: white;
+		border: solid 1px $azulOscuro;
+		padding: 6px 15px;
+		transition: all 0.3s ease-in-out;
+
+		&:disabled {
+			cursor: not-allowed;
+			opacity: 0.2;
+		}
+
+		&:hover{
+			cursor: pointer;
+			color: white;
+			background-color: $azulOscuro;
+		}
+
+		i {
+			margin: 0 5px;
+		}
+	}
 }
 
 section#destacados{

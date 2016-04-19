@@ -22,22 +22,17 @@
 				<a href="/"><img alt='logo' id='logo' src='static/images/logo.png'></a>
 
 				<section id='barBusq'>
-					<ul>
-						<li id='busquedaText'>
-							<input id='inputText' type='text' placeholder="Película o cine" value=''/>
-						</li>
-						<li id="selectCity">
-							<select>
-								<option value="">Ciudades </option>
-								{% for r in cities %}
-								<option value="{{ r.city }}">{{ r.city }}</option>
-								{% endfor %}
-							</select>
-						</li>
-						<li>
-							<a id='aBusqueda'><button id='busqueda' type='button'><i class='fa fa-search'></i>Buscar</button></a>
-						</li>
-					</ul>
+					<form method="GET" action="?" class="search">
+						<ul>
+							<li id='busquedaText'>
+								<input id='inputText' type='text' placeholder="Película o cine"/>
+							</li>
+							<li>
+								<input id="hidden" type="hidden" name="" value="">
+								<button id="busqueda" type="submit" disabled><i class='fa fa-search'></i>Buscar</button>
+							</li>
+						</ul>
+					</form>
 				</section>
 
 				<nav>
