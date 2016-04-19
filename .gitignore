@@ -1,3 +1,4 @@
 .idea
 *.pyc
+Procfile
 config_file.cfg

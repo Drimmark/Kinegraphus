@@ -8,6 +8,7 @@ app.config.from_pyfile('config_file.cfg')
 db.app = app
 db.init_app(app)
 
+
 @app.route('/')
 def index():
     cities = db.session.query(Cinema.city).distinct()
