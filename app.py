@@ -8,7 +8,6 @@ app.config.from_pyfile('config_file.cfg')
 db.app = app
 db.init_app(app)
 
-
 @app.route('/')
 def index():
     cities = db.session.query(Cinema.city).distinct()
@@ -96,6 +95,7 @@ def searchmovies():
 
 @app.route('/buy', methods=['POST'])
 def buy():
+    
     cinema_id = request.form.get('cinema_id', None)
     movie_id = request.form.get('movie_id', None)
     number = request.form.get('number', None)

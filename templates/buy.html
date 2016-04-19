@@ -3,9 +3,47 @@
 
 {% block content %}
 
+
+
 	{{ showtime.cinema.name }}
 	{{ showtime.movie.title }}
 	{{ showtime.time }}
 	{{ number }}
 
+{% endblock %}
+
+{% block scripts %}
+	<script>
+		var butacas = Math.random()*2[
+							{% for cinema in cinemas %}
+                                {% if cinema.latitude is not none and cinema.longitude is not none %}
+    								{% if loop.last %}
+    									{
+    										latitude: {{ cinema.latitude }},
+    										longitude: {{ cinema.longitude }},
+    										name: "{{ cinema.name }}",
+    										id: {{ cinema.id }}
+    									}
+    								{% else %}
+    									{
+    										latitude: {{ cinema.latitude }},
+    										longitude: {{ cinema.longitude }},
+    										name: "{{ cinema.name }}",
+    										id: {{ cinema.id }}
+    									},
+    								{% endif %}
+                                {% endif %}
+							{% endfor %}
+						];
+		var city = {% if city is not none %} "{{ city }}" {% else %} undefined {% endif %};
+	</script>
+
+{{ super() }}
+<script type="text/javascript" src="{{ url_for('static', filename='js/jquery-clockpicker.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/search.js') }}"></script>
+
+<script type="text/javascript" src="//maps.google.com/maps/api/js?sensor=true"></script>
+<script type="text/javascript" src="//hpneo.github.io/gmaps/gmaps.js"></script>
+<script type="text/javascript" src="//hpneo.github.io/gmaps/prettify/prettify.js"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/maps.js') }}"></script>
 {% endblock %}
