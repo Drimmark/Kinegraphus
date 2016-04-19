@@ -19,25 +19,25 @@
     </video>
 
 	<section id='searchBar'>
-
-	<!--<form method="GET">-->
-		<ul>
-			<li id='busquedaText'>
-				<input id='inputText' type='text' placeholder="Película o cine" value=''/>
-			</li>
-			<li id="selectCity">
-				<select>
-					<option value="">Ciudades </option>
-					{% for r in cities %}
-					<option value="{{ r.city }}">{{ r.city }}</option>
-					{% endfor %}
-				</select>
-			</li>
-			<li>
-				<a id='aBusqueda'><button id='busqueda' type='button'><i class='fa fa-search'></i>Buscar</button></a>
-			</li>
-		</ul>
-	<!--</form>-->
+		<form method="GET" action="?" id="search">
+			<ul>
+				<li id='busquedaText'>
+					<input id='inputText' type='text' placeholder="Película o cine"/>
+				</li>
+				<li id="selectCity">
+					<select name="city">
+						<option value="">Ciudades (todas)</option>
+						{% for r in cities %}
+						<option value="{{ r.city }}">{{ r.city }}</option>
+						{% endfor %}
+					</select>
+				</li>
+				<li>
+					<input id="hidden" type="hidden" name="" value="">
+					<button id="busqueda" type="submit" disabled><i class='fa fa-search'></i>Buscar</button>
+				</li>
+			</ul>
+		</form>
 	</section>
 </section>
 

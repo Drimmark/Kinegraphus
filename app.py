@@ -72,38 +72,16 @@ def search_suggestions():
         movies = Movie.query.filter(Movie.title.like('%' + term + '%')).all()
 
         results = []
-        results.extend([{'type': 0, 'name': cinema.name, 'id': cinema.id} for cinema in cinemas])
-        results.extend([{'type': 1, 'name': movie.title, 'id': movie.id} for movie in movies])
+        results.extend([{'type': 0, 'value': cinema.name, 'id': cinema.id} for cinema in cinemas])
+        results.extend([{'type': 1, 'value': movie.title, 'id': movie.id} for movie in movies])
 
-        results = sorted(results, key=lambda result: 1-SequenceMatcher(None, result['name'].lower(), term.lower()).ratio())
+        results = sorted(results, key=lambda result: 1-SequenceMatcher(None, result['value'].lower(), term.lower()).ratio())
 
         return Response(response=json.dumps(results),
                         status=200,
                         mimetype="application/json")
     else:
         abort(404)
-
-@app.route('/searchpositions')
-def search_positions():
-    term = request.args.get('term', None)
-    if term is not None:
-        cinemas = Cinema.query.filter(Cinema.name.like('%' + term + '%')).all()
-
-        results = []
-        results.extend([{'name': cinema.name, 'id': cinema.id, 'longitude': cinema.longitude, 'latitude': cinema.latitude} for cinema in cinemas])
-
-        results = sorted(results, key=lambda result: 1-SequenceMatcher(None, result['name'].lower(), term.lower()).ratio())
-
-    else:
-        cinemas = Cinema.query.all()
-
-        results = []
-        results.extend([{'name': cinema.name, 'id': cinema.id, 'longitude': cinema.longitude, 'latitude': cinema.latitude} for cinema in cinemas])
-
-
-    return Response(response=json.dumps(results),
-                    status=200,
-                    mimetype="application/json")
 
 
 @app.route('/searchcinemas', methods=['GET'])
