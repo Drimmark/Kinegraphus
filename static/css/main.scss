@@ -314,14 +314,52 @@ section#search {
 							cursor: pointer;
 						}
 						span {
-							&.color1 {
+							position: relative;
+
+							&.color10 {
 								color: $empty;
 							}
-							&.color2 {
+							&.color20 {
+								color: $empty;
+							}
+							&.color30 {
+								color: $empty;
+							}
+							&.color40 {
 								color: $half;
 							}
-							&.color3 {
+							&.color50 {
+								color: $half;
+							}
+							&.color60 {
+								color: $half;
+							}
+							&.color70 {
 								color: $full;
+							}
+							&.color80 {
+								color: $full;
+							}
+							&.color90 {
+								color: $full;
+							}
+							&.tooltip:after {
+								content: attr(data-occupancy);
+								position: absolute;
+								padding: .3em .8em;
+								background-color: black;
+								color: white;
+								top: 0;
+								font-size: .8em;
+								right: -4em;
+							    border-radius: 1em 0;
+								visibility: hidden;
+								opacity: 0;
+								transition: all .5s ease-in-out;
+							}
+							&.tooltip:hover:after {
+								visibility: visible;
+								opacity: 1;
 							}
 						}
 					}
