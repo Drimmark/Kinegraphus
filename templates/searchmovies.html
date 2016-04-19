@@ -23,7 +23,7 @@
                     <input type="hidden" name="movie_id" value="{{ movie.id }}">
                     <span>
                         <img width="100%" src="//cine.entradas.com/entradas/contenidos/peliculas/{{ movie.cartel }}" alt="{{ movie.title }}" />
-                        <a href="http://www.imdb.com/title/{{ movie.imdb }}" target="_blank"><span class="imdb-rate" data-imdbid="{{ movie.imdb }}"></span> IMDb <i class="fa fa-external-link-square" aria-hidden="true"></i></a>
+                        <a href="http://www.imdb.com/title/{{ movie.imdb }}" target="_blank"><span class="imdb-rate" data-imdb-id></span> IMDb <i class="fa fa-external-link-square" aria-hidden="true"></i></a>
                     </span>
                     <h3>{{ movie.title }}</h3>
                     <ul class="showtimes">
@@ -58,28 +58,14 @@
 
 {% block scripts %}
     <script>
-//        var positions = [
-//                            {% for cinema in cinemas %}
-//                                {% if cinema.latitude is not none and cinema.longitude is not none %}
-//                                    {% if loop.last %}
-//                                        {
-//                                            latitude: {{ cinema.latitude }},
-//                                            longitude: {{ cinema.longitude }},
-//                                            name: "{{ cinema.name }}",
-//                                            id: {{ cinema.id }}
-//                                        }
-//                                    {% else %}
-//                                        {
-//                                            latitude: {{ cinema.latitude }},
-//                                            longitude: {{ cinema.longitude }},
-//                                            name: "{{ cinema.name }}",
-//                                            id: {{ cinema.id }}
-//                                        },
-//                                    {% endif %}
-//                                {% endif %}
-//                            {% endfor %}
-//                        ];
-//        var city = {% if city is not none %} "{{ city }}" {% else %} undefined {% endif %};
+        var positions = [
+                            {
+                                latitude: {{ cinema.latitude }},
+                                longitude: {{ cinema.longitude }},
+                                name: "{{ cinema.name }}",
+                                id: {{ cinema.id }}
+                            }
+                        ];
     </script>
 
 {{ super() }}
@@ -90,5 +76,4 @@
 <script type="text/javascript" src="//hpneo.github.io/gmaps/gmaps.js"></script>
 <script type="text/javascript" src="//hpneo.github.io/gmaps/prettify/prettify.js"></script>
 <script type="text/javascript" src="{{ url_for('static', filename='js/maps.js') }}"></script>
-<script type="text/javascript" src="{{ url_for('static', filename='js/searchMovies.js') }}"></script>
 {% endblock %}

@@ -88,7 +88,8 @@ def searchmovies():
             vose = 'checked'
             movies = movies.filter(Movie.vose == '1')
 
-        return render_template('searchmovies.html', movies=movies.all(), cinema_id=cinema_id, time=time, d2=d2, d3=d3, vose=vose, randoms=[10,20,30,40,50,60,70,80,90])
+        cinema = Cinema.query.filter(Cinema.id == cinema_id).first()
+        return render_template('searchmovies.html', movies=movies.all(), cinema=cinema, cinema_id=cinema_id, time=time, d2=d2, d3=d3, vose=vose, randoms=[10,20,30,40,50,60,70,80,90])
     else:
         return redirect(url_for('index'))
 
