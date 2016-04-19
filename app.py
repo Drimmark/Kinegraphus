@@ -137,5 +137,19 @@ def searchmovies():
         return redirect(url_for('index'))
 
 
+@app.route('/buy', methods=['POST'])
+def buy():
+    cinema_id = request.form.get('cinema_id', None)
+    movie_id = request.form.get('movie_id', None)
+    number = request.form.get('number', None)
+    time = request.form.get('time', None)
+
+    showtime = ShowTime.query.filter(ShowTime.cinema_id==cinema_id,
+                                ShowTime.movie_id==movie_id,
+                                ShowTime.time==time).first_or_404()
+
+    return render_template('buy.html', showtime=showtime, number=number)
+
+
 if __name__ == '__main__':
     app.run(debug=True)
