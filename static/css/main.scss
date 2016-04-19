@@ -433,6 +433,29 @@ section#search {
 	}
 }
 
+section#butacas {
+	display: flex;
+	max-width: 20%;
+	#salas {
+		background-color: $gris;
+		width: 100%;
+		.fila {
+			display: flex;
+			justify-content: space-around;
+			li {
+				display: inline;
+				i {
+					font-size: 1.6em;
+					margin: 0px 5px;
+					&.fa-circle {
+						color: $full;
+					}
+				}
+			}
+		}
+	}
+}
+
 footer {
 	background-color: $azulOscuro;
 	color: white;

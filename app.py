@@ -105,7 +105,25 @@ def buy():
                                 ShowTime.movie_id==movie_id,
                                 ShowTime.time==time).first_or_404()
 
-    return render_template('buy.html', showtime=showtime, number=number)
+    butacas = [[[0,0,0,0,0,0,0,0,0,0,0,0],
+                [0,0,0,0,0,0,0,0,0,0,0,0],
+                [0,0,0,0,0,0,0,0,0,0,0,0],
+                [0,0,0,0,0,0,0,0,0,0],
+                [0,0,0,0,0,0,0,0,0,0],
+                [0,0,0,0,0,0,0,0,0,0,0,0],
+                [0,0,0,0,0,0,0,0,0,0,0,0] ],
+
+               [[0,0,0,0,0,0,0,0,0,0,0,0],
+                [0,0,0,0,0,0,0,0,0,0,0,0],
+                [0,0,0,0,0,0,0,0,0,0],
+                #Aqui un pasillo o argo
+                [0,0,0,0,0,0,0,0,0,0,0,0],
+                [0,0,0,0,0,0,0,0,0,0,0,0],
+                [0,0,0,0,0,0,0,0,0,0,0],
+                [0,0,0,0,0,0,0,0,0] ]
+                ]
+
+    return render_template('buy.html', showtime=showtime, number=number, butacas=butacas)
 
 
 if __name__ == '__main__':
