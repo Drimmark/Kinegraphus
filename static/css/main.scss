@@ -17,6 +17,107 @@ html {
 	height: 100%;
 }
 
+ul.ui-autocomplete {
+	li.ui-menu-item div {
+		padding: 10px;
+		transition: background 0.2s;
+
+		i {
+			font-size: 19px;
+			margin-right: 10px;
+			transition: color 0.2s;
+
+			&.fa-film {
+				color: $azulOscuro;
+			}
+
+			&.fa-building {
+				color: $azulClarito;
+			}
+		}
+
+		&.ui-state-active {
+			background: $azulOscuro;
+			border: none !important;
+			margin: 0 !important;
+
+			i {
+				color: #ddd;
+			}
+		}
+	}
+}
+
+input[type="text"] {
+	padding: 6px 15px;
+	border: solid 1px #133C55;
+}
+
+input[type="number"] {
+	padding: 5px;
+	border: solid 1px #133C55;
+}
+
+select {
+	background-color: $azulClarito;
+	color: white;
+	border: 1px solid $azulOscuro;
+	padding: 5px 15px;
+
+	option {
+		background: #fff;
+		color: #000;
+	}
+}
+
+form.search {
+	ul {
+		display: flex;
+		justify-content: center;
+		margin: 10px 10%;
+		list-style-type: none;
+	}
+
+	#busquedaText {
+		width: 50%;
+
+		input {
+			width: 100%;
+		}
+	}
+
+	#selectCity {
+		display: none;
+		width: 20%;
+		select {
+			width: 100%;
+		}
+	}
+
+	button {
+		background-color: $verde;
+		color: white;
+		border: solid 1px $azulOscuro;
+		padding: 6px 15px;
+		transition: all 0.3s ease-in-out;
+
+		&:disabled {
+			cursor: not-allowed;
+			opacity: 0.2;
+		}
+
+		&:hover{
+			cursor: pointer;
+			color: white;
+			background-color: $azulOscuro;
+		}
+
+		i {
+			margin: 0 5px;
+		}
+	}
+}
+
 
 header {
 	div{
@@ -56,75 +157,10 @@ header {
 		top: 0;
 	}
 
-	section#barBusq{
+	section#barBusq {
 		width: 100%;
 		padding: 20px 10%;
-		ul {
-			display: flex;
-			justify-content: center;
-			margin: 10px 5%;
-			list-style-type: none;
-		}
-
-		#selectCity {
-			display: none;
-		}
-
-		#busquedaText {
-			width: 50%;
-
-			input {
-				width: 100%;
-				padding: 5px 20px;
-				border: solid 1px #133C55;
-			}
-		}
-
-		#selectCity {
-			display: none;
-			width: 20%;
-			select {
-				width: 100%;
-				background-color: $azulClarito;
-				color: white;
-				border: 1px solid $azulOscuro;
-				padding: 4px 20px;
-			}
-			a {
-				font-size: 2em;
-				margin: 0px 10px;
-				color: $azulOscuro;
-				transition: ease-in-out 0.4s;
-				cursor: pointer;
-
-				&:hover {
-					color: $azulClarito;
-				}
-			}
-
-		}
-
-		button {
-			background-color: $verde;
-			color: white;
-			border: solid 1px $azulOscuro;
-			padding: 5px 20px;
-			transition: ease-in-out 0.3s;
-			cursor: not-allowed;
-			opacity: 0.2;
-
-			&:hover{
-				cursor: pointer;
-				color: white;
-				background-color: $azulOscuro;
-			}
-
-			i {
-				margin: 0 5px;
-			}
-		}
 	}
-
 
 }
 
@@ -142,79 +178,12 @@ section#imagen {
 	}
 }
 
-section#searchBar{
+section#searchBar {
 	position: absolute;
 	bottom: 0;
 	width: 100%;
 	padding: 20px 10%;
 	background: rgba(233,233,233,0.45);
-
-	//form {
-		ul {
-			display: flex;
-			justify-content: center;
-			margin: 10px 10%;
-			list-style-type: none;
-		}
-
-		#selectCity {
-			display: none;
-		}
-
-		#busquedaText {
-			width: 50%;
-
-			input {
-				width: 100%;
-				padding: 5px 20px;
-				border: solid 1px #133C55;
-			}
-		}
-
-		#selectCity {
-			display: none;
-			width: 20%;
-			select {
-				width: 100%;
-				background-color: $azulClarito;
-				color: white;
-				border: 1px solid $azulOscuro;
-				padding: 4px 20px;
-			}
-			a {
-				font-size: 2em;
-				margin: 0px 10px;
-				color: $azulOscuro;
-				transition: ease-in-out 0.4s;
-				cursor: pointer;
-
-				&:hover {
-					color: $azulClarito;
-				}
-			}
-
-		}
-
-		button {
-			background-color: $verde;
-			color: white;
-			border: solid 1px $azulOscuro;
-			padding: 5px 20px;
-			transition: ease-in-out 0.3s;
-			cursor: not-allowed;
-			opacity: 0.2;
-
-			&:hover{
-				cursor: pointer;
-				color: white;
-				background-color: $azulOscuro;
-			}
-
-			i {
-				margin: 0 5px;
-			}
-		}
-	//}
 }
 
 section#destacados{
@@ -260,21 +229,32 @@ section#search {
 	background-color: #eee;
 
 	#results {
+		#filters {
+			background: $azulClarito;
+			padding: 15px 0;
+			display: flex;
+			flex-flow: row;
+			justify-content: center;
+
+			label {
+				color: #fff;
+			}
+		}
+
 		display: flex;
 		flex-flow: column;
 		width: 55%;
 
-		& > div {
+		div#movies, div#cinemas {
 			display: flex;
 			flex-flow: row wrap;
-			justify-content: space-around;
 			align-items: stretch;
-			padding-top: 2em;
 
-			& > div {
+			form {
 				display: flex;
 				flex-flow: column;
-				justify-content: space-around;
+				flex-wrap: wrap;
+				justify-content: flex-start;
 				border: 1px solid #ddd;
 				width: 30%;
 				flex-basis: 30%;
@@ -282,8 +262,7 @@ section#search {
 				margin: 2em 1%;
 
 				& > span {
-					width: 90%;
-					margin: .5em auto;
+					width: 100%;
 					position: relative;
 
 					a {
@@ -352,6 +331,7 @@ section#search {
 					flex-flow: row wrap;
 					justify-content: space-around;
 					margin: 1em;
+					align-self: flex-end;
 
 					span {
 						flex-basis: 65%;
@@ -366,16 +346,19 @@ section#search {
 							max-width: 65%;
 						}
 					}
-					a {
+					button {
 						padding: .3em .5em;
 						background-color: $verde;
 						color: white;
-						border-radius: .5em;
+						border-radius: 4px;
 						border: 2px solid $verde;
-						transition: all .3s ease-in-out;
-						flex-basis: 30%;
+						transition: all .2s ease-in-out;
+						flex-basis: 65%;
 						text-decoration: none;
 						font-weight: bold;
+						margin-top: .8em;
+						text-align: center;
+						cursor: pointer;
 
 						&:hover {
 							background-color: white;

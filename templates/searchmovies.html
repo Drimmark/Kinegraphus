@@ -18,9 +18,11 @@
 
         <div id="movies">
             {% for movie in movies %}
-                <div class="movie" data-id="{{ movie.id }}">
+                <form class="movie" data-id="{{ movie.id }}" action="/buy" method="post">
+                    <input type="hidden" name="cinema_id" value="{{ cinema_id }}">
+                    <input type="hidden" name="movie_id" value="{{ movie.id }}">
                     <span>
-                        <img width="100%" src="http://cine.entradas.com/entradas/contenidos/peliculas/{{ movie.cartel }}" alt="{{ movie.title }}" />
+                        <img width="100%" src="//cine.entradas.com/entradas/contenidos/peliculas/{{ movie.cartel }}" alt="{{ movie.title }}" />
                         <a href="http://www.imdb.com/title/{{ movie.imdb }}" target="_blank">IMDb <i class="fa fa-external-link-square" aria-hidden="true"></i></a>
                     </span>
                     <h3>{{ movie.title }}</h3>
@@ -28,8 +30,8 @@
                         {% for time in movie.show_times %}
                             {% if time.cinema_id|int() == cinema_id|int() %}
                                 <li>
-                                    <input id="time-{{ time.cinema_id }}-{{ time.time }}" type="radio" name="time" value="{{ time.time }}">
-                                    <label for="time-{{ time.cinema_id }}-{{ time.time }}">{{ time.time }}</label>
+                                    <input id="time-{{ time.movie_id }}-{{ time.time }}" type="radio" name="time" value="{{ time.time }}">
+                                    <label for="time-{{ time.movie_id }}-{{ time.time }}">{{ time.time }}</label>
                                     <span class="fa fa-signal color{{ randoms|random }}" aria-hidden="true"></span>
                                 </li>
                             {% endif %}
@@ -37,12 +39,12 @@
                     </ul>
                     <div class="buy">
                         <span>
-                            <input type="number" id="value" value="1">
+                            <input type="number" name="number" id="value" value="1">
                             <label for="value">x 4,90 €</label>
                         </span>
-                        <a href="#">Comprar</a>
+                        <button type="submit">Comprar</button>
                     </div>
-                </div>
+                </form>
             {% endfor %}
         </div>
     </div>
@@ -81,12 +83,11 @@
     </script>
 
 {{ super() }}
-<script src="http://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-clockpicker.min.js') }}"></script>
 <script type="text/javascript" src="{{ url_for('static', filename='js/search.js') }}"></script>
 
-<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
-<script type="text/javascript" src="http://hpneo.github.io/gmaps/gmaps.js"></script>
-<script type="text/javascript" src="http://hpneo.github.io/gmaps/prettify/prettify.js"></script>
+<script type="text/javascript" src="//maps.google.com/maps/api/js?sensor=true"></script>
+<script type="text/javascript" src="//hpneo.github.io/gmaps/gmaps.js"></script>
+<script type="text/javascript" src="//hpneo.github.io/gmaps/prettify/prettify.js"></script>
 <script type="text/javascript" src="{{ url_for('static', filename='js/maps.js') }}"></script>
 {% endblock %}

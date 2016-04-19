@@ -13,7 +13,7 @@ class Cinema(db.Model):
     country = db.Column(db.String(128), nullable=False)
     longitude = db.Column(db.Float)
     latitude = db.Column(db.Float)
-    show_times = db.relationship('ShowTime', backref='event')
+    show_times = db.relationship('ShowTime', backref='cinema')
 
     def __init__(self, name, telephone, street, city, state, postal_code, country, longitude, latitude):
         self.name = name
@@ -25,6 +25,6 @@ class Cinema(db.Model):
         self.country = country
         self.longitude = longitude
         self.latitude = latitude
-        
+
     def __repr__(self):
         return self.name

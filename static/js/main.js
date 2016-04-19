@@ -1,68 +1,37 @@
-$(document).ready(function () {
-	$('#inputText').keyup(function() {
+$(function () {
+	$.widget("custom.kineAutocomplete", $.ui.autocomplete, {
+		_renderItem: function(ul, item) {
+			return $("<li>")
+			.append( $( "<div>", {'class': item.type == 1 ? 'film-suggestion' : 'movie-suggestion'} )
+			.html('<i class="fa '+ (item.type == 1 ? 'fa-film' : 'fa-building') + '"></i><span>' + item.label + '</span>') )
+			.appendTo(ul);
+		}
+	})
 
-		$('#busqueda').css('opacity', 0.2);
-		$('#busqueda').css('cursor', 'not-allowed');
+	$('form.search input#inputText').kineAutocomplete({
+		minLength: 2,
+		search: function() {
+			$('form.search button').prop('disabled', 1);
+		},
+		select: function(event, ui) {
+			$('form.search button').prop('disabled', 0);
 
-		request = $.ajax({
-			url: "/searchsuggestions",
-			type: "get",
-			data: "term="+this.value
-		});
-		
-		// Callback handler that will be called on success
-		request.done(function (response, textStatus, jqXHR){
-			
-			lista = [];
-			//console.log(response);
-			for (i = 0; i < response.length; i++) {
-				var pelicula = {value:response[i].name, id:response[i].id, tipo:response[i].type};
-				lista.push(pelicula);
+			if (ui.item['type'] == 1){ //PELICULA
+				$('#selectCity').animate({
+					width: 'toggle'
+				});
+
+				$('form.search').attr('action', '/searchcinemas');
+				$('form.search #hidden').attr('name', 'movie_id').attr('value', ui.item['id']);
+			} else { //CINE
+				$('#selectCity').hide();
+
+				$('form.search').attr('action', '/searchmovies');
+				$('form.search #hidden').attr('name', 'cinema_id').attr('value', ui.item['id']);
 			}
-
-			$( "#inputText" ).autocomplete({
-				minLength: 3,
-   				select: function( event, ui ) {
-   					$('#busqueda').css('opacity', 1);
-					$('#busqueda').css('cursor', 'pointer');
-					//$('#busqueda').attr('type', 'submit');
-					if (ui.item['tipo'] == 1){ //PELICULA
-						$('#selectCity').animate({
-							width: 'toggle'
-						});
-   						$('#aBusqueda').attr('href', '/searchcinemas?movie_id='+ui.item['id']);
-					} else { //CINE
-						$('#aBusqueda').attr('href', '/searchmovies?cinema_id='+ui.item['id']);
-					}
-   				},
-				source: lista
-   			});
-
-		});
-    
-		// Callback handler that will be called on failure
-		request.fail(function (jqXHR, textStatus, errorThrown){
-			// Log the error to the console
-			console.error(
-			"The following error occurred: "+
-			textStatus, errorThrown
-			);
-		});
-    
+		},
+		source: "/searchsuggestions"
 	});
-
-	$("#selectCity select").on('change',function() {
-		ruta = $('#aBusqueda').attr('href').split('&')[0];
-		$('#aBusqueda').attr('href', ruta+'&city='+this.value);
-	});
-
-	//$('#busqueda').click(function() {
-	//	request = $.ajax({
-	//        url: "/searchcinemas",
-	//        type: "get",
-	//        data: "movie_id=30611"
-	//	});
-	//});
 
 	//$('#addFiltros').click(function(){
 	//	if ($('#filtros').css('display') == 'flex') {
@@ -76,5 +45,4 @@ $(document).ready(function () {
 	//		$('#filtros').css('display','flex');
 	//	}
 	//});
-
 });

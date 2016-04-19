@@ -68,42 +68,20 @@ def index():
 def search_suggestions():
     term = request.args.get('term', None)
     if term is not None:
-        cinemas = Cinema.query.filter(Cinema.name.like('%' + term + '%')).all()
-        movies = Movie.query.filter(Movie.title.like('%' + term + '%')).all()
+        cinemas = Cinema.query.filter(Cinema.name.ilike('%' + term + '%')).all()
+        movies = Movie.query.filter(Movie.title.ilike('%' + term + '%')).all()
 
         results = []
-        results.extend([{'type': 0, 'name': cinema.name, 'id': cinema.id} for cinema in cinemas])
-        results.extend([{'type': 1, 'name': movie.title, 'id': movie.id} for movie in movies])
+        results.extend([{'type': 0, 'value': cinema.name, 'id': cinema.id} for cinema in cinemas])
+        results.extend([{'type': 1, 'value': movie.title, 'id': movie.id} for movie in movies])
 
-        results = sorted(results, key=lambda result: 1-SequenceMatcher(None, result['name'].lower(), term.lower()).ratio())
+        results = sorted(results, key=lambda result: 1-SequenceMatcher(None, result['value'].lower(), term.lower()).ratio())
 
         return Response(response=json.dumps(results),
                         status=200,
                         mimetype="application/json")
     else:
         abort(404)
-
-@app.route('/searchpositions')
-def search_positions():
-    term = request.args.get('term', None)
-    if term is not None:
-        cinemas = Cinema.query.filter(Cinema.name.like('%' + term + '%')).all()
-
-        results = []
-        results.extend([{'name': cinema.name, 'id': cinema.id, 'longitude': cinema.longitude, 'latitude': cinema.latitude} for cinema in cinemas])
-
-        results = sorted(results, key=lambda result: 1-SequenceMatcher(None, result['name'].lower(), term.lower()).ratio())
-
-    else:
-        cinemas = Cinema.query.all()
-
-        results = []
-        results.extend([{'name': cinema.name, 'id': cinema.id, 'longitude': cinema.longitude, 'latitude': cinema.latitude} for cinema in cinemas])
-
-
-    return Response(response=json.dumps(results),
-                    status=200,
-                    mimetype="application/json")
 
 
 @app.route('/searchcinemas', methods=['GET'])
@@ -157,6 +135,20 @@ def searchmovies():
         return render_template('searchmovies.html', movies=movies.all(), cinema_id=cinema_id, time=time, d2=d2, d3=d3, vose=vose, randoms=[1,2,3])
     else:
         return redirect(url_for('index'))
+
+
+@app.route('/buy', methods=['POST'])
+def buy():
+    cinema_id = request.form.get('cinema_id', None)
+    movie_id = request.form.get('movie_id', None)
+    number = request.form.get('number', None)
+    time = request.form.get('time', None)
+
+    showtime = ShowTime.query.filter(ShowTime.cinema_id==cinema_id,
+                                ShowTime.movie_id==movie_id,
+                                ShowTime.time==time).first_or_404()
+
+    return render_template('buy.html', showtime=showtime, number=number)
 
 
 if __name__ == '__main__':
