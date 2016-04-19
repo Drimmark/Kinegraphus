@@ -57,7 +57,7 @@ def searchcinemas():
         if time is not None:
             cinemas = cinemas.filter(ShowTime.time >= time)
 
-        return render_template('searchcinemas.html', cinemas=cinemas.all(), city=city, movie_id=movie_id, time=time, cities=cities, randoms=[1,2,3])
+        return render_template('searchcinemas.html', cinemas=cinemas.all(), city=city, movie_id=movie_id, time=time, cities=cities, randoms=[10,20,30,40,50,60,70,80,90])
     else:
         return redirect(url_for('index'))
 
@@ -88,7 +88,7 @@ def searchmovies():
             vose = 'checked'
             movies = movies.filter(Movie.vose == '1')
 
-        return render_template('searchmovies.html', movies=movies.all(), cinema_id=cinema_id, time=time, d2=d2, d3=d3, vose=vose, randoms=[1,2,3])
+        return render_template('searchmovies.html', movies=movies.all(), cinema_id=cinema_id, time=time, d2=d2, d3=d3, vose=vose, randoms=[10,20,30,40,50,60,70,80,90])
     else:
         return redirect(url_for('index'))
 
