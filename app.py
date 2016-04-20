@@ -96,7 +96,6 @@ def searchmovies():
 
 @app.route('/buy', methods=['POST'])
 def buy():
-    
     cinema_id = request.form.get('cinema_id', None)
     movie_id = request.form.get('movie_id', None)
     number = request.form.get('number', None)
