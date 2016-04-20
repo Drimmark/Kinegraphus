@@ -12,6 +12,7 @@ $gris: #e9e9e9;
 $full: #BF2C0B;
 $empty: #E5C120;
 $half: #71C63F;
+$libre: #40C531;
 
 html {
 	height: 100%;
@@ -433,25 +434,50 @@ section#search {
 	}
 }
 
-section#butacas {
+section#compra{
 	display: flex;
-	max-width: 20%;
-	#salas {
-		background-color: $gris;
-		width: 100%;
-		.fila {
-			display: flex;
-			justify-content: space-around;
-			li {
-				display: inline;
-				i {
-					font-size: 1.6em;
+	flex-flow: row;
+
+	.amarillo {
+		color: $flashReverso;
+	}
+	.rojo {
+		color: $full;
+	}
+	.verde {
+		color: $libre;
+	}
+
+	section#butacas {
+		max-width: 33%;
+		padding: 5px 10% 5px 5%;
+		text-align: center;
+
+		//QUIZAS ASI SE HACE LO DE MOSTRAR/ESCONDER
+		//position: relative;
+		//height: 380px;
+		//left: -30%;
+		//width: 100%;
+		//top: 10px;
+
+		#salas {
+			background-color: $gris;
+			.fila {
+				display: flex;
+				justify-content: space-around;
+				li {
+					display: inline;
+					cursor: pointer;
 					margin: 0px 5px;
-					&.fa-circle {
-						color: $full;
+					i {
+						font-size: 1.6em;
 					}
 				}
 			}
+		}
+
+		#leyendaSala {
+			margin-left: 10%;
 		}
 	}
 }

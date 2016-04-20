@@ -3,19 +3,26 @@
 
 {% block content %}
 
-
+<section id="compra">
 	<section id="butacas">
 		<div id="salas">
 		</div>
+		<div id="leyendaSala">
+			<i class="fa fa-circle rojo"></i> Ocupada
+			<i class="fa fa-circle verde"></i> Libre
+			<i class="fa fa-circle amarillo"></i> Seleccionada
+		</div>
 	</section>
 
-	<section id='compra'>
+	<section id="resumen">
 		{{ showtime.cinema.name }}
 		{{ showtime.movie.title }}
 		{{ showtime.time }}
 		{{ number }}
-	</section>
 
+		<i id='showButacas' class="fa fa-plus-square"></i>
+	</section>
+</section>
 {% endblock %}
 
 {% block scripts %}
@@ -34,5 +41,5 @@
 	</script>
 
 {{ super() }}
-<script type="text/javascript" src="{{ url_for('static', filename='js/buy.js') }}"></script>
+<script type="text/javascript" src="{{ url_for("static", filename="js/buy.js") }}"></script>
 {% endblock %}
