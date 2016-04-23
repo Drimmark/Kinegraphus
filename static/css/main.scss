@@ -453,7 +453,7 @@ section#compra{
 		text-align: center;
 		width: 0%;
 		overflow: hidden;
-		transition: cubic-bezier(.65,.05,.36,1) 2s;
+		transition: ease-in-out 1.8s;
 		#salas {
 			background-color: $gris;
 			.fila {
@@ -470,8 +470,10 @@ section#compra{
 			}
 		}
 
-		#leyendaSala {
-		}
+	}
+
+	section#resumen {
+		margin: auto;
 	}
 }
 

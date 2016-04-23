@@ -18,23 +18,30 @@
 		{{ showtime.cinema.name }}
 		{{ showtime.movie.title }}
 		{{ showtime.time }}
-		{{ number }}
+		<!-- se puede cambiar el span, pero que el id sea el mismo -->
+		<span id="numButacas"> {{ number }} </span>
 
-		<i id='showButacas' class="fa fa-plus-square"></i>
+		<i id="showButacas" class="fa fa-plus-square"></i>
 	</section>
 </section>
 {% endblock %}
 
 {% block scripts %}
 	<script>		
+		var predef = {{ number }}; //Número de butacas aleatorias 
 		var sala = {{ butacas }}; //Se elige aleatoriamente entre las salas posibles.
 		sala = sala[parseInt(Math.random()*2)];
 		for (i in sala) {
 			for (k in sala[i]) {
 				var butaca = Math.random()*10;
-				var probab = Math.random()*10;
+				var probab = 2*(Math.random()*5);
 				if (butaca > probab) {
-					sala[i][k]=1;
+					if (predef != 0) {
+						predef--;
+						sala[i][k] = 2;
+					} else {
+						sala[i][k]=1;
+					}
 				}
 			}
 		}
