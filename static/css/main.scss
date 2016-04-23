@@ -455,19 +455,33 @@ section#compra{
 		overflow: hidden;
 		transition: ease-in-out 1.8s;
 		#salas {
+			margin-top: 20px;
 			background-color: $gris;
 			.fila {
 				display: flex;
 				justify-content: center;
+				padding: 0;
 				li {
 					display: inline;
 					cursor: pointer;
 					margin: 0px 5px;
 					i {
-						font-size: 1.6em;
+						font-size: 1.8em;
 					}
 				}
 			}
+		}
+		#pantalla {
+			background-color: black;
+			border-radius: 21px;
+			width: 35%;
+			height: 13px;
+			margin: 50px auto 30px;
+		}
+
+		#leyendaSala {
+			margin-bottom: 30px;
+			font-size: 1.3em;
 		}
 
 	}

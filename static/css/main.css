@@ -682,16 +682,27 @@ section#compra {
     overflow: hidden;
     transition: ease-in-out 1.8s; }
     section#compra section#butacas #salas {
+      margin-top: 20px;
       background-color: #e9e9e9; }
       section#compra section#butacas #salas .fila {
         display: flex;
-        justify-content: center; }
+        justify-content: center;
+        padding: 0; }
         section#compra section#butacas #salas .fila li {
           display: inline;
           cursor: pointer;
           margin: 0px 5px; }
           section#compra section#butacas #salas .fila li i {
-            font-size: 1.6em; }
+            font-size: 1.8em; }
+    section#compra section#butacas #pantalla {
+      background-color: black;
+      border-radius: 21px;
+      width: 35%;
+      height: 13px;
+      margin: 50px auto 30px; }
+    section#compra section#butacas #leyendaSala {
+      margin-bottom: 30px;
+      font-size: 1.3em; }
   section#compra section#resumen {
     margin: auto; }
 
