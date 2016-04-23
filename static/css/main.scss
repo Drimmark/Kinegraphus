@@ -449,22 +449,16 @@ section#compra{
 	}
 
 	section#butacas {
-		max-width: 33%;
-		padding: 5px 10% 5px 5%;
+		max-width: 66%;
 		text-align: center;
-
-		//QUIZAS ASI SE HACE LO DE MOSTRAR/ESCONDER
-		//position: relative;
-		//height: 380px;
-		//left: -30%;
-		//width: 100%;
-		//top: 10px;
-
+		width: 0%;
+		overflow: hidden;
+		transition: cubic-bezier(.65,.05,.36,1) 2s;
 		#salas {
 			background-color: $gris;
 			.fila {
 				display: flex;
-				justify-content: space-around;
+				justify-content: center;
 				li {
 					display: inline;
 					cursor: pointer;
@@ -477,7 +471,6 @@ section#compra{
 		}
 
 		#leyendaSala {
-			margin-left: 10%;
 		}
 	}
 }

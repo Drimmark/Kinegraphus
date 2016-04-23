@@ -649,9 +649,8 @@ section#search {
     border-left: 1px solid black;
     position: fixed !important;
     right: 0;
-    /*top: 110px;*/
-    /*height: calc(100% - 110px); */
-    height: 100%;}
+    top: 110px;
+    height: calc(100% - 110px); }
   section#search .map2 {
     width: 45%;
     border-left: 1px solid black;
@@ -677,22 +676,22 @@ section#compra {
   section#compra .verde {
     color: #40C531; }
   section#compra section#butacas {
-    max-width: 33%;
-    padding: 5px 10% 5px 5%;
-    text-align: center; }
+    max-width: 66%;
+    text-align: center;
+    width: 0%;
+    overflow: hidden;
+    transition: cubic-bezier(0.65, 0.05, 0.36, 1) 2s; }
     section#compra section#butacas #salas {
       background-color: #e9e9e9; }
       section#compra section#butacas #salas .fila {
         display: flex;
-        justify-content: space-around; }
+        justify-content: center; }
         section#compra section#butacas #salas .fila li {
           display: inline;
           cursor: pointer;
           margin: 0px 5px; }
           section#compra section#butacas #salas .fila li i {
             font-size: 1.6em; }
-    section#compra section#butacas #leyendaSala {
-      margin-left: 10%; }
 
 footer {
   background-color: #133C55;
