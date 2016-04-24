@@ -11,44 +11,33 @@ $(function() {
 
     // search
     $(window).scroll(function(){
-	/*	x = document.getElementById('search').offsetHeight;
-		//$(this).scrollTop() < footer
-		if( $(this).scrollTop() < 110){//Estamos arriba
-			//$('#map').removeClass('map3');
-			$('#map').removeClass('map2');
-			$('#map').addClass('map');
-		}
-		else if( $(this).scrollTop() > 110 && $(this).scrollTop() < x-400){//estamos en medio
-			$('#map').removeClass('map3');
-			$('#map').removeClass('map');
-			$('#map').addClass('map2');
-			;
-		} else if ($(this).scrollTop() > x-400){//estamos abajo
-			//$('#map').removeClass('map');
-			$('#map').removeClass('map2');
-			$('#map').addClass('map3')
-		}*/
-
 		x = document.getElementById('search').offsetHeight;
 		h = document.getElementById('header').offsetHeight;
 		f = document.getElementById('footer').offsetHeight;
 		w = window.innerHeight;
-		
-		//$(this).scrollTop() < footer
-		if( $(this).scrollTop() < h){//Estamos arriba
+		aux = 0;
+
+		if (x<w){//Necesario para casos en los que hay muy pocos resultados
+			a = x;
+		}
+		else{
+			a = w;
+		}
+		if (x < w){
+			document.getElementById("map").style.height = String(x) + "px";
+		}
+
+		//Estamos arriba
+		if( $(this).scrollTop() < h){
 			document.getElementById("map").style.top = String(h - $(this).scrollTop()) + "px";
-			//document.getElementById("map").style.height = String(w - $(this).scrollTop()) + "px";
 		}
-		else if( $(this).scrollTop() > h && ($(this).scrollTop() < h+x-w)){//estamos en medio
+		//Estamos en medio
+		else if( $(this).scrollTop() > h && ($(this).scrollTop() < h+x-w)){
 			document.getElementById("map").style.top = "0px";
-			//document.getElementById("map").style.height = String(w) + "px";
 		}
-		else if ($(this).scrollTop() > h+x-w){//estamos abajo
-			document.getElementById("map").style.top = "-" + String(-(x+h-w) + ($(this).scrollTop())) + "px";
-			//document.getElementById("map").style.height = String(w - x - $(this).scrollTop()) + "px";
+		//Estamos abajo
+		else if ($(this).scrollTop() > h+x-a){
+			document.getElementById("map").style.top = "-" + String(-(x+h-a) + ($(this).scrollTop())) + "px";
 		}
-
-		//HAY QUE PONER EL TAMAÑO DEL BICHO TAMBIEN CON LA DIFERENCIA
-
 	});
 })

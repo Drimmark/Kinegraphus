@@ -78,9 +78,8 @@
     								{% endif %}
                                 {% endif %}
 							{% endfor %}
-						];
-        var city = "pedo";                
-		city = {% if city is not none %} "{{ city }}" {% endif %};
+						];                
+		var city = {% if city is not none %} "{{ city }}" {% endif %};
 	</script>
 
 {{ super() }}
