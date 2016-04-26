@@ -1,30 +1,12 @@
 {% extends "layout.html" %}
 
-
 {% block content %}
-
-
-<style>
-#showtimeimgs {
-    width: 30%;
-    height: 30%;
-}
-#showtimepelicula {
-    width: 10%;
-    height: 10%;
-    
-}
-#showtimecine {
-    width: 30%;
-    height: 100%;
-}
-</style>
 
 <section id="compra">
 	<section id="butacas">
 		<div id="salas">
 		</div>
-		
+
 		<div id="pantalla"></div>
 
 		<div id="leyendaSala">
@@ -35,25 +17,46 @@
 	</section>
 
 	<section id="resumen">
-		{{ showtime.cinema.name }}
-		{{ showtime.movie.title }}
-		{{ showtime.time }}
-		<!-- se puede cambiar el span, pero que el id sea el mismo -->
-		<span id="numButacas"> {{ number }} </span>
+        <h2>Ya casi está</h2>
 
-		<i id="showButacas" class="fa fa-plus-square"></i>
+        <p>
+            <input type="number" name="name" value="{{ number }}"> entradas
+            <span id="numButacas"> {{ number }} </span>
+        </p>
+
+        <p>
+            <span id='showtimeimgs'>
+                <img id='showtimepelicula' src="//cine.entradas.com/entradas/contenidos/peliculas/{{ showtime.movie.cartel }}" alt="{{ showtime.movie.title }}" />
+                en
+                <img id='showtimecine' src="https://maps.googleapis.com/maps/api/streetview?size=400x200&location={{ showtime.cinema.street }},{{ showtime.cinema.city }}" alt="{{ showtime.cinema.name }}" />
+            </span>
+            {{ showtime.cinema.name }}
+            {{ showtime.movie.title }}
+         </p>
+
+
+         <p>
+     		{{ showtime.time }}
+         </p>
+
+         <p>
+             Butacas
+             <i id="showButacas" class="fa fa-plus-square"></i>
+         </p>
+
+         <p>
+             Complementos
+         </p>
+
 
 	</section>
-
-<p><span id='showtimeimgs'><img id='showtimepelicula' src="//cine.entradas.com/entradas/contenidos/peliculas/{{ showtime.movie.cartel }}" alt="{{ showtime.movie.title }}" /> en
- <img id='showtimecine' src="https://maps.googleapis.com/maps/api/streetview?size=400x200&location={{ showtime.cinema.street }},{{ showtime.cinema.city }}" alt="{{ showtime.cinema.name }}" /></span></p>
 
 </section>
 {% endblock %}
 
 {% block scripts %}
-	<script>		
-		var predef = {{ number }}; //Número de butacas aleatorias 
+	<script>
+		var predef = {{ number }}; //Número de butacas aleatorias
 		var sala = {{ butacas }}; //Se elige aleatoriamente entre las salas posibles.
 		sala = sala[parseInt(Math.random()*2)];
 		for (i in sala) {
