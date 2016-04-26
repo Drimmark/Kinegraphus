@@ -96,6 +96,40 @@ $(function() {
 			$('#butacas').css('width', '100%');
 		}
 	});
+
+	var complementContainer = document.getElementById('complement');
+
+	for (complementIndex in complementsOptions) {
+		newNode = document.createElement('li');
+		temporalNode = document.createElement('h3');
+		temporalNode.innerHTML = complementsOptions[complementIndex].name;
+		newNode.appendChild(temporalNode);
+		temporalNode = document.createElement('img');
+		temporalNode.src = complementsOptions[complementIndex].image;
+		newNode.appendChild(temporalNode);
+		temporalNode = document.createElement('p');
+		temporalNode.innerHTML = complementsOptions[complementIndex].price + ' €';
+		newNode.appendChild(temporalNode);
+
+		complementContainer.appendChild(newNode);
+
+		console.log(newNode);
+
+		console.log(complementsOptions[complementIndex]);
+	}
+
+	//Show complements
+	$('#showComplements').click(function(){
+		if ( $('#complements').css('width') != '0px'){
+			$('#showComplements').removeClass("fa fa-minus-square");
+			$('#showComplements').addClass("fa fa-plus-square");
+			$('#complements').css('width', '0%');
+		} else {
+			$('#showComplements').removeClass("fa fa-plus-square");
+			$('#showComplements').addClass("fa fa-minus-square");
+			$('#complements').css('width', '100%');
+		}
+	});
 });
 
 function getCardType(number) {
