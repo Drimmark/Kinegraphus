@@ -48,6 +48,7 @@
 
              <article>
                  Complementos
+				 <i id="showComplements" class="fa fa-plus-square"></i>
              </article>
 
              <article>
@@ -86,11 +87,49 @@
         </form>
 	</section>
 
+	<section id="complements">
+		<ul id="complement">
+		</ul>
+	</section>
+
 </section>
 {% endblock %}
 
 {% block scripts %}
 	<script>
+		var complementsOptions = [
+			{
+				name: 'Palomitas',
+				image: '{{ url_for("static", filename="images/popcorn.png") }}',
+				price: 2.50
+			},
+			{
+				name: 'Nachos',
+				image: '{{ url_for("static", filename="images/nachos.png") }}',
+				price: 4
+			},
+			{
+				name: 'Coca Cola',
+				image: '{{ url_for("static", filename="images/cola.png") }}',
+				price: 1.80
+			},
+			{
+				name: 'Coca Cola Zero',
+				image: '{{ url_for("static", filename="images/cola-zero.png") }}',
+				price: 2
+			},
+			{
+				name: 'Nestea',
+				image: '{{ url_for("static", filename="images/nestea.png") }}',
+				price: 2.5
+			},
+			{
+				name: 'Golosinas',
+				image: '{{ url_for("static", filename="images/golosina.png") }}',
+				price: 1
+			},
+		];
+		var complements = [];
 		var predef = {{ number }}; //Número de butacas aleatorias
 		var sala = {{ butacas }}; //Se elige aleatoriamente entre las salas posibles.
 		sala = sala[parseInt(Math.random()*2)];
