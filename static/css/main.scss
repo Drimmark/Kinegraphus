@@ -473,6 +473,34 @@ section#compra{
 
 	}
 
+	section#complements {
+		max-width: 66%;
+		text-align: center;
+		width: 0%;
+		overflow: hidden;
+		transition: ease-in-out 1.8s;
+
+		ul {
+			list-style: none;
+			display: flex;
+			flex-flow: row;
+			justify-content: space-around;
+
+			li {
+				width: 25%;
+				margin: 0 2%;
+				border: 1px solid #aaa;
+
+				img {
+					max-width: 90%;
+					padding: 1%;
+					border: 1px solid #ddd;
+					background-color: white;
+				}
+			}
+		}
+	}
+
 	section#resumen {
 		margin: auto;
 
