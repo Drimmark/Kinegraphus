@@ -17,38 +17,72 @@
 	</section>
 
 	<section id="resumen">
-        <h2>Ya casi está</h2>
+        <form action="/buy" method="post">
+            <h2>Ya casi está</h2>
 
-        <p>
-            <input type="number" name="name" value="{{ number }}"> entradas
-            <span id="numButacas"> {{ number }} </span>
-        </p>
+            <article>
+                <input type="number" name="name" value="{{ number }}"> entradas
+                <span id="numButacas"> {{ number }} </span>
+            </article>
 
-        <p>
-            <span id='showtimeimgs'>
-                <img id='showtimepelicula' src="//cine.entradas.com/entradas/contenidos/peliculas/{{ showtime.movie.cartel }}" alt="{{ showtime.movie.title }}" />
-                en
-                <img id='showtimecine' src="https://maps.googleapis.com/maps/api/streetview?size=400x200&location={{ showtime.cinema.street }},{{ showtime.cinema.city }}" alt="{{ showtime.cinema.name }}" />
-            </span>
-            {{ showtime.cinema.name }}
-            {{ showtime.movie.title }}
-         </p>
-
-
-         <p>
-     		{{ showtime.time }}
-         </p>
-
-         <p>
-             Butacas
-             <i id="showButacas" class="fa fa-plus-square"></i>
-         </p>
-
-         <p>
-             Complementos
-         </p>
+            <article id="info">
+                <span id='showtimeimgs'>
+                    <img id='showtimepelicula' src="//cine.entradas.com/entradas/contenidos/peliculas/{{ showtime.movie.cartel }}" alt="{{ showtime.movie.title }}" />
+                    en
+                    <img id='showtimecine' src="https://maps.googleapis.com/maps/api/streetview?size=400x200&location={{ showtime.cinema.street }},{{ showtime.cinema.city }}" alt="{{ showtime.cinema.name }}" />
+                </span>
+                {{ showtime.cinema.name }}
+                {{ showtime.movie.title }}
+             </article>
 
 
+             <article>
+         		{{ showtime.time }}
+             </article>
+
+             <article>
+                 Butacas
+                 <i id="showButacas" class="fa fa-plus-square"></i>
+             </article>
+
+             <article>
+                 Complementos
+             </article>
+
+             <article>
+                 Precio
+             </article>
+
+             <article id="payment">
+                 <h3>Métodos de pago</h3>
+
+                 <label><input type="radio" name="payment_t" value="0"> PayPal</label>
+                 <label><input type="radio" name="payment_t" value="1"> Tarjeta bancaria</label>
+
+                 <div id="card" style="display: none">
+                    <i class="fa fa-credit-card big"></i>
+                    <div>
+                        <div class="card_number">
+                            <i class="fa fa-credit-card"></i>
+                            <input type="text" placeholder="Card Number" id="card_number" />
+                        </div>
+                        <div class="card_expiration">
+                            <i class="fa fa-calendar-times-o"></i>
+                            <input type="text" maxlength="7" placeholder="MM / YY" id="card_expiration"/>
+                        </div>
+                        <div class="card_cvx">
+                            <i class="fa fa-lock"></i>
+                            <input type="text" maxlength="4" placeholder="CVC" id="card_cvx"/>
+                        </div>
+                        <p class="errors"></p>
+                    </div>
+                </div>
+
+
+             </article>
+
+             <button class="action-button" type="submit">Confirmar</button>
+        </form>
 	</section>
 
 </section>
