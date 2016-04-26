@@ -2,6 +2,7 @@
 from flask import Flask, render_template, request, redirect, url_for, json, abort, Response
 from models import db, Cinema, Movie, ShowTime
 from difflib import SequenceMatcher
+from datetime import *
 
 app = Flask(__name__)
 app.config.from_pyfile('config_file.cfg')
@@ -46,6 +47,7 @@ def searchcinemas():
     movie_id = request.args.get('movie_id', None)
     city = request.args.get('city', None)
     time = request.args.get('time', None)
+    date = datetime.strptime(request.args.get('date'), "%Y-%m-%d") if request.args.get('date', None) is not None else datetime.today()
 
     if movie_id is not None:
         cinemas = Cinema.query.join(Cinema.show_times)\
@@ -57,7 +59,7 @@ def searchcinemas():
         if time is not None:
             cinemas = cinemas.filter(ShowTime.time >= time)
 
-        return render_template('searchcinemas.html', cinemas=cinemas.all(), city=city, movie_id=movie_id, time=time, cities=cities, randoms=[10,20,30,40,50,60,70,80,90])
+        return render_template('searchcinemas.html', cinemas=cinemas.all(), city=city, movie_id=movie_id, time=time, date=date, cities=cities, randoms=[10,20,30,40,50,60,70,80,90])
     else:
         return redirect(url_for('index'))
 
@@ -66,6 +68,7 @@ def searchcinemas():
 def searchmovies():
     cinema_id = request.args.get('cinema_id', None)
     time = request.args.get('time', None)
+    date = datetime.strptime(request.args.get('date'), "%Y-%m-%d") if request.args.get('date', None) is not None else datetime.today()
     d2 = request.args.get('d2', None)
     d3 = request.args.get('d3', None)
     vose = request.args.get('vose', None)
@@ -89,7 +92,7 @@ def searchmovies():
             movies = movies.filter(Movie.vose == '1')
 
         cinema = Cinema.query.filter(Cinema.id == cinema_id).first()
-        return render_template('searchmovies.html', movies=movies.all(), cinema=cinema, cinema_id=cinema_id, time=time, d2=d2, d3=d3, vose=vose, randoms=[10,20,30,40,50,60,70,80,90])
+        return render_template('searchmovies.html', movies=movies.all(), cinema=cinema, cinema_id=cinema_id, time=time, date=date, d2=d2, d3=d3, vose=vose, randoms=[10,20,30,40,50,60,70,80,90])
     else:
         return redirect(url_for('index'))
 
@@ -99,6 +102,7 @@ def buy():
     cinema_id = request.form.get('cinema_id', None)
     movie_id = request.form.get('movie_id', None)
     number = request.form.get('number', None)
+    date = datetime.strptime(request.form.get('date'), "%Y-%m-%d") if request.form.get('date', None) is not None else datetime.today()
     time = request.form.get('time', None)
 
     showtime = ShowTime.query.filter(ShowTime.cinema_id==cinema_id,
@@ -123,7 +127,7 @@ def buy():
                 [0,0,0,0,0,0,0,0,0] ]
                 ]
 
-    return render_template('buy.html', showtime=showtime, number=number, butacas=butacas)
+    return render_template('buy.html', showtime=showtime, number=number, date=date, butacas=butacas)
 
 
 if __name__ == '__main__':

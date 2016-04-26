@@ -16,6 +16,8 @@
 					<option value="{{ r.city }}" {% if r.city == city %}selected{% endif %}>{{ r.city }}</option>
 					{% endfor %}
 				</select>
+
+                <input type="date" name="date" value="">
             </form>
         </div>
 
@@ -24,9 +26,11 @@
                 <form class="cinema" data-id="{{ cinema.id }}" action="/buy" method="post">
                     <input type="hidden" name="cinema_id" value="{{ cinema.id }}">
                     <input type="hidden" name="movie_id" value="{{ movie_id }}">
+                    <input type="hidden" name="date" value="{{ date.strftime("%Y-%m-%d") }}">
                     <img width="100%" src="https://maps.googleapis.com/maps/api/streetview?size=400x200&location={{ cinema.street }},{{ cinema.city }}" alt="{{ cinema.name }}" />
                     <h3>{{ cinema.name }}</h3>
                     <ul class="showtimes">
+                        {{ date.strftime("%A %d/%m") }}
                         {% for time in cinema.show_times %}
                             {% if time.movie_id|int() == movie_id|int() %}
                                 <li>
