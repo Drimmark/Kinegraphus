@@ -503,20 +503,27 @@ section#compra{
 
 	section#resumen {
 		margin: auto;
+		text-align: center;
+
+		article#entradas input {
+			width: 55px;
+		}
 
 		article#info {
+			span {
+				display: inline-block;
+				margin: 20px 10px;
+			}				
 			#showtimeimgs {
-			    width: 30%;
-			    height: 30%;
+			    display: flex;
+			    align-items: center;
 			}
 			#showtimepelicula {
-			    width: 10%;
-			    height: 10%;
+			    width: 55%;
 
 			}
 			#showtimecine {
-			    width: 30%;
-			    height: 100%;
+			    width: 80%;
 			}
 		}
 

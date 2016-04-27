@@ -20,19 +20,26 @@
         <form action="/buy" method="post">
             <h2>Ya casi está</h2>
 
-            <article>
+            <article id="entradas">
                 <input type="number" name="name" value="{{ number }}"> entradas
-                <span id="numButacas"> {{ number }} </span>
+                <!--<span id="numButacas"> {{ number }} </span>-->
             </article>
 
             <article id="info">
-                <span id='showtimeimgs'>
-                    <img id='showtimepelicula' src="//cine.entradas.com/entradas/contenidos/peliculas/{{ showtime.movie.cartel }}" alt="{{ showtime.movie.title }}" />
+                <span id="showtimeimgs">
+                    <span><img id="showtimepelicula" src="//cine.entradas.com/entradas/contenidos/peliculas/{{ showtime.movie.cartel }}" alt="{{ showtime.movie.title }}" 
+                    /><br>
+                    {{ showtime.movie.title }}
+                    </span>
+
                     en
-                    <img id='showtimecine' src="https://maps.googleapis.com/maps/api/streetview?size=400x200&location={{ showtime.cinema.street }},{{ showtime.cinema.city }}" alt="{{ showtime.cinema.name }}" />
-                </span>
-                {{ showtime.cinema.name }}
-                {{ showtime.movie.title }}
+
+                    <span><img id="showtimecine" src="https://maps.googleapis.com/maps/api/streetview?size=400x200&location={{ showtime.cinema.street }},{{ showtime.cinema.city }}" alt="{{ showtime.cinema.name }}" />
+                    <br>
+                    {{ showtime.cinema.name }}
+                    </span>
+                </span>               
+                
              </article>
 
 
@@ -42,8 +49,8 @@
              </article>
 
              <article>
-                 Butacas
                  <i id="showButacas" class="fa fa-plus-square"></i>
+                 Butacas
              </article>
 
              <article>
