@@ -86,6 +86,11 @@ $(function() {
 
 	//Hay que actualizar tambien el número de entradas.
 	$('#showButacas').click(function(){
+		if ( $('#complements').css('width') != '0px'){
+			$('#showComplements').removeClass("fa fa-minus-square");
+			$('#showComplements').addClass("fa fa-plus-square");
+			$('#complements').css('width', '0%');
+		}
 		if ( $('#butacas').css('width') != '0px'){
 			$('#showButacas').removeClass("fa fa-minus-square");
 			$('#showButacas').addClass("fa fa-plus-square");
@@ -120,6 +125,11 @@ $(function() {
 
 	//Show complements
 	$('#showComplements').click(function(){
+		if ( $('#butacas').css('width') != '0px'){
+			$('#showButacas').removeClass("fa fa-minus-square");
+			$('#showButacas').addClass("fa fa-plus-square");
+			$('#butacas').css('width', '0%');
+		}
 		if ( $('#complements').css('width') != '0px'){
 			$('#showComplements').removeClass("fa fa-minus-square");
 			$('#showComplements').addClass("fa fa-plus-square");
