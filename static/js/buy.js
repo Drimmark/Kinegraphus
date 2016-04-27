@@ -85,19 +85,21 @@ $(function() {
 	});
 
 	//Hay que actualizar tambien el número de entradas.
-	$('#showButacas').click(function(){
+	$('#showButacas a').click(function(e){
+		e.preventDefault();
+
 		if ( $('#complements').css('width') != '0px'){
-			$('#showComplements').removeClass("fa fa-minus-square");
-			$('#showComplements').addClass("fa fa-plus-square");
+			$('#showComplements a i').removeClass("fa-minus-square");
+			$('#showComplements a i').addClass("fa-plus-square");
 			$('#complements').css('width', '0%');
 		}
 		if ( $('#butacas').css('width') != '0px'){
-			$('#showButacas').removeClass("fa fa-minus-square");
-			$('#showButacas').addClass("fa fa-plus-square");
+			$('#showButacas a i').removeClass("fa-minus-square");
+			$('#showButacas a i').addClass("fa-plus-square");
 			$('#butacas').css('width', '0%');
 		} else {
-			$('#showButacas').removeClass("fa fa-plus-square");
-			$('#showButacas').addClass("fa fa-minus-square");
+			$('#showButacas a i').removeClass("fa-plus-square");
+			$('#showButacas a i').addClass("fa-minus-square");
 			$('#butacas').css('width', '100%');
 		}
 	});
@@ -124,19 +126,21 @@ $(function() {
 	}
 
 	//Show complements
-	$('#showComplements').click(function(){
+	$('#showComplements a').click(function(e){
+		e.preventDefault();
+
 		if ( $('#butacas').css('width') != '0px'){
-			$('#showButacas').removeClass("fa fa-minus-square");
-			$('#showButacas').addClass("fa fa-plus-square");
+			$('#showButacas a i').removeClass("fa-minus-square");
+			$('#showButacas a i').addClass("fa-plus-square");
 			$('#butacas').css('width', '0%');
 		}
 		if ( $('#complements').css('width') != '0px'){
-			$('#showComplements').removeClass("fa fa-minus-square");
-			$('#showComplements').addClass("fa fa-plus-square");
+			$('#showComplements a i').removeClass("fa-minus-square");
+			$('#showComplements a i').addClass("fa-plus-square");
 			$('#complements').css('width', '0%');
 		} else {
-			$('#showComplements').removeClass("fa fa-plus-square");
-			$('#showComplements').addClass("fa fa-minus-square");
+			$('#showComplements a i').removeClass("fa-plus-square");
+			$('#showComplements a i').addClass("fa-minus-square");
 			$('#complements').css('width', '100%');
 		}
 	});

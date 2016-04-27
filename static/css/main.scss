@@ -442,7 +442,7 @@ section#compra{
 		display: flex;
 		width: 0%;
 		overflow: hidden;
-		transition: ease-in-out 1.8s;
+		transition: ease-in-out 0.9s;
 
 		#salas {
 			margin-top: 20px;
@@ -486,7 +486,7 @@ section#compra{
 		text-align: center;
 		width: 0%;
 		overflow: hidden;
-		transition: ease-in-out 1.8s;
+		transition: ease-in-out 0.9s;
 
 		ul {
 			list-style: none;
@@ -514,71 +514,87 @@ section#compra{
 		margin-bottom: 30px;
 		text-align: center;
 
-		article#entradas input {
-			width: 55px;
+		article#entradas {
+			margin: 15px 0;
+			input {
+				width: 55px;
+			}
 		}
 
 		article#info {
-			span {
-				display: inline-block;
-				margin: 20px 10px;
-			}				
-			#showtimeimgs {
-			    display: flex;
-			    align-items: center;
-			}
-			#showtimepelicula {
-			    width: 55%;
+			margin: 20px 0;
+			display: flex;
+			align-items: center;
 
-			}
-			#showtimecine {
-			    width: 80%;
+			div {
+
+				#showtimepelicula {
+				    width: 55%;
+
+				}
+				#showtimecine {
+				    width: 80%;
+				}
 			}
 		}
 
 		article#fecha {
-			display: flex;
-			justify-content: space-between;
-			margin: 0px 25% 20px;
-		}
+			text-align: center;
+			margin: 15px 0;
 
-		article#butacas {
-			display: flex;
-			justify-content: flex-start;
-			align-items: center;
-			margin-left: 20%;
-			font-size:1.3em;
-
-			i{
-				cursor: pointer;
-				margin-right: 10px; 
-				font-size: 1.6em;
-				color: $azulClarito;
+			b {
+				margin: 0 10px;
 			}
 		}
 
-		article#complementos{
-			display: flex;
-			justify-content: flex-end;
-			align-items: center;
-			margin-right: 20%;
-			font-size:1.3em;
-			margin-bottom: 20px;
-			i {
-				cursor: pointer;
-				margin-left: 10px;
-				font-size: 1.6em;
-				color: $azulClarito;
+		article#showButacas, article#showComplements {
+			margin: 15px 0;
+			a {
+				display: flex;
+				justify-content: flex-start;
+				align-items: center;
+				font-size:1.3em;
+				color: #000;
+				text-decoration: none;
+				margin-left: 20%;
+
+				i {
+					cursor: pointer;
+					margin-right: 10px;
+					font-size: 1.6em;
+					color: $azulClarito;
+					margin-right: 10px;
+				}
 			}
+		}
+
+		article#showComplements{
+			a {
+				justify-content: flex-end;
+				margin-right: 20%;
+
+				i {
+					margin-left: 10px;
+				}
+			}
+		}
+
+		article#precios {
+			margin: 15px 0;
 		}
 
 		article#payment {
 			text-align: left;
-			border-top: solid #999;
+			border-top: 2px dashed #999;
+			text-align: center;
 
-			label {
-				display: block;
-				padding: 5px 0;
+			div#methods {
+				margin: 15px 0;
+
+				label {
+					display: block;
+					padding: 5px 0;
+				}
 			}
 
 			div#card {
@@ -586,7 +602,6 @@ section#compra{
 				justify-content: center;
 				margin: 0 auto;
 				padding: 20px 0;
-				margin-top: 20px;
 
 				i.big {
 					font-size: 5.3em;

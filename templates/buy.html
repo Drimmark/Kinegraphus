@@ -22,41 +22,41 @@
 
             <article id="entradas">
                 <input type="number" name="name" value="{{ number }}"> entradas
-                <!--<span id="numButacas"> {{ number }} </span>-->
             </article>
 
             <article id="info">
-                <span id="showtimeimgs">
-                    <span><img id="showtimepelicula" src="//cine.entradas.com/entradas/contenidos/peliculas/{{ showtime.movie.cartel }}" alt="{{ showtime.movie.title }}" 
-                    /><br>
-                    {{ showtime.movie.title }}
-                    </span>
+                <div>
+					<img id="showtimepelicula" src="//cine.entradas.com/entradas/contenidos/peliculas/{{ showtime.movie.cartel }}" alt="{{ showtime.movie.title }}"/>
+					<p>{{ showtime.movie.title }}</p>
+				</div>
 
-                    en
+                en
 
-                    <span><img id="showtimecine" src="https://maps.googleapis.com/maps/api/streetview?size=400x200&location={{ showtime.cinema.street }},{{ showtime.cinema.city }}" alt="{{ showtime.cinema.name }}" />
-                    <br>
-                    {{ showtime.cinema.name }}
-                    </span>
-                </span>               
-                
+                <div>
+					<img id="showtimecine" src="https://maps.googleapis.com/maps/api/streetview?size=400x200&location={{ showtime.cinema.street }},{{ showtime.cinema.city }}" alt="{{ showtime.cinema.name }}" />
+            		<p>{{ showtime.cinema.name }}</p>
+				</div>
              </article>
 
 
              <article id="fecha">
 				<b>{{ date.strftime("%A %d/%m") }}</b>
-				a las 
+				a las
          		<b>{{ showtime.time }}</b>
              </article>
 
-             <article id="butacas">
-                 <i id="showButacas" class="fa fa-plus-square"></i>
-                 Butacas
+             <article id="showButacas">
+				<a href="?">
+                	<i class="fa fa-plus-square"></i>
+                	Butacas
+				</a>
              </article>
 
-             <article id="complementos">
-                 Complementos
-				 <i id="showComplements" class="fa fa-plus-square"></i>
+             <article id="showComplements">
+				<a href="?">
+                	Complementos
+                	<i class="fa fa-plus-square"></i>
+				</a>
              </article>
 
              <article id="precios">
@@ -69,8 +69,10 @@
              <article id="payment">
                  <h3>Métodos de pago</h3>
 
-                 <label><input type="radio" name="payment_t" value="0"> PayPal</label>
-                 <label><input type="radio" name="payment_t" value="1"> Tarjeta bancaria</label>
+				<div id="methods">
+	                 <label><input type="radio" name="payment_t" value="0"> PayPal</label>
+	                 <label><input type="radio" name="payment_t" value="1"> Tarjeta bancaria</label>
+				</div>
 
                  <div id="card" style="display: none">
                     <i class="fa fa-credit-card big"></i>
