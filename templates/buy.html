@@ -43,23 +43,27 @@
              </article>
 
 
-             <article>
-				{{ date.strftime("%A %d/%m") }}
-         		{{ showtime.time }}
+             <article id="fecha">
+				<b>{{ date.strftime("%A %d/%m") }}</b>
+				a las 
+         		<b>{{ showtime.time }}</b>
              </article>
 
-             <article>
+             <article id="butacas">
                  <i id="showButacas" class="fa fa-plus-square"></i>
                  Butacas
              </article>
 
-             <article>
+             <article id="complementos">
                  Complementos
 				 <i id="showComplements" class="fa fa-plus-square"></i>
              </article>
 
-             <article>
-                 Precio
+             <article id="precios">
+             	<div>
+             		Entradas: <span id="conteo"></span><span id="total"></span>
+             	</div>
+                Precio <span></span>
              </article>
 
              <article id="payment">
