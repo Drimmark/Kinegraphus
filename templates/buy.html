@@ -142,19 +142,39 @@
 				name: 'Golosinas',
 				image: '{{ url_for("static", filename="images/golosina.png") }}',
 				price: 1
-			},
+			}
 		];
 		var complements = [
 			{
-				name: 'Golosinas',
-				amount: 2,
-				price: 1
+				name: 'Palomitas',
+				amount: 0,
+				price: 2.50
+			},
+			{
+				name: 'Nachos',
+				amount: 0,
+				price: 4
+			},
+			{
+				name: 'Coca Cola',
+				amount: 0,
+				price: 1.80
+			},
+			{
+				name: 'Coca Cola Zero',
+				amount: 0,
+				price: 2
 			},
 			{
 				name: 'Nestea',
-				amount: 3,
-				price: 1
+				amount: 0,
+				price: 2.5
 			},
+			{
+				name: 'Golosinas',
+				amount: 0,
+				price: 1
+			}
 		];
 		var predef = {{ number }}; //Número de butacas aleatorias
 		var sala = {{ butacas }}; //Se elige aleatoriamente entre las salas posibles.
