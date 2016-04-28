@@ -9,13 +9,15 @@ html {
   -ms-text-size-adjust: 100%;
   /* 2 */
   -webkit-text-size-adjust: 100%;
-  /* 2 */ }
+  /* 2 */
+}
 
 /**
  * Remove the margin in all browsers (opinionated).
  */
 body {
-  margin: 0; }
+  margin: 0;
+}
 
 /* HTML5 display definitions
    ========================================================================== */
@@ -37,7 +39,8 @@ nav,
 section,
 summary {
   /* 1 */
-  display: block; }
+  display: block;
+}
 
 /**
  * Add the correct display in IE 9-.
@@ -46,20 +49,23 @@ audio,
 canvas,
 progress,
 video {
-  display: inline-block; }
+  display: inline-block;
+}
 
 /**
  * Add the correct display in iOS 4-7.
  */
 audio:not([controls]) {
   display: none;
-  height: 0; }
+  height: 0;
+}
 
 /**
  * Add the correct vertical alignment in Chrome, Firefox, and Opera.
  */
 progress {
-  vertical-align: baseline; }
+  vertical-align: baseline;
+}
 
 /**
  * Add the correct display in IE 10-.
@@ -67,7 +73,8 @@ progress {
  */
 template,
 [hidden] {
-  display: none; }
+  display: none;
+}
 
 /* Links
    ========================================================================== */
@@ -79,7 +86,8 @@ a {
   background-color: transparent;
   /* 1 */
   -webkit-text-decoration-skip: objects;
-  /* 2 */ }
+  /* 2 */
+}
 
 /**
  * Remove the outline on focused links when they are also active or hovered
@@ -87,7 +95,8 @@ a {
  */
 a:active,
 a:hover {
-  outline-width: 0; }
+  outline-width: 0;
+}
 
 /* Text-level semantics
    ========================================================================== */
@@ -101,27 +110,31 @@ abbr[title] {
   text-decoration: underline;
   /* 2 */
   text-decoration: underline dotted;
-  /* 2 */ }
+  /* 2 */
+}
 
 /**
  * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
  */
 b,
 strong {
-  font-weight: inherit; }
+  font-weight: inherit;
+}
 
 /**
  * Add the correct font weight in Chrome, Edge, and Safari.
  */
 b,
 strong {
-  font-weight: bolder; }
+  font-weight: bolder;
+}
 
 /**
  * Add the correct font style in Android 4.3-.
  */
 dfn {
-  font-style: italic; }
+  font-style: italic;
+}
 
 /**
  * Correct the font size and margin on `h1` elements within `section` and
@@ -129,20 +142,23 @@ dfn {
  */
 h1 {
   font-size: 2em;
-  margin: 0.67em 0; }
+  margin: 0.67em 0;
+}
 
 /**
  * Add the correct background and color in IE 9-.
  */
 mark {
   background-color: #ff0;
-  color: #000; }
+  color: #000;
+}
 
 /**
  * Add the correct font size in all browsers.
  */
 small {
-  font-size: 80%; }
+  font-size: 80%;
+}
 
 /**
  * Prevent `sub` and `sup` elements from affecting the line height in
@@ -153,13 +169,16 @@ sup {
   font-size: 75%;
   line-height: 0;
   position: relative;
-  vertical-align: baseline; }
+  vertical-align: baseline;
+}
 
 sub {
-  bottom: -0.25em; }
+  bottom: -0.25em;
+}
 
 sup {
-  top: -0.5em; }
+  top: -0.5em;
+}
 
 /* Embedded content
    ========================================================================== */
@@ -167,13 +186,15 @@ sup {
  * Remove the border on images inside links in IE 10-.
  */
 img {
-  border-style: none; }
+  border-style: none;
+}
 
 /**
  * Hide the overflow in IE.
  */
 svg:not(:root) {
-  overflow: hidden; }
+  overflow: hidden;
+}
 
 /* Grouping content
    ========================================================================== */
@@ -188,13 +209,15 @@ samp {
   font-family: monospace, monospace;
   /* 1 */
   font-size: 1em;
-  /* 2 */ }
+  /* 2 */
+}
 
 /**
  * Add the correct margin in IE 8.
  */
 figure {
-  margin: 1em 40px; }
+  margin: 1em 40px;
+}
 
 /**
  * 1. Add the correct box sizing in Firefox.
@@ -206,7 +229,8 @@ hr {
   height: 0;
   /* 1 */
   overflow: visible;
-  /* 2 */ }
+  /* 2 */
+}
 
 /* Forms
    ========================================================================== */
@@ -221,13 +245,15 @@ textarea {
   font: inherit;
   /* 1 */
   margin: 0;
-  /* 2 */ }
+  /* 2 */
+}
 
 /**
  * Restore the font weight unset by the previous rule.
  */
 optgroup {
-  font-weight: bold; }
+  font-weight: bold;
+}
 
 /**
  * Show the overflow in IE.
@@ -236,7 +262,8 @@ optgroup {
 button,
 input {
   /* 1 */
-  overflow: visible; }
+  overflow: visible;
+}
 
 /**
  * Remove the inheritance of text transform in Edge, Firefox, and IE.
@@ -245,7 +272,8 @@ input {
 button,
 select {
   /* 1 */
-  text-transform: none; }
+  text-transform: none;
+}
 
 /**
  * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
@@ -257,7 +285,8 @@ html [type="button"],
 [type="reset"],
 [type="submit"] {
   -webkit-appearance: button;
-  /* 2 */ }
+  /* 2 */
+}
 
 /**
  * Remove the inner border and padding in Firefox.
@@ -267,7 +296,8 @@ button::-moz-focus-inner,
 [type="reset"]::-moz-focus-inner,
 [type="submit"]::-moz-focus-inner {
   border-style: none;
-  padding: 0; }
+  padding: 0;
+}
 
 /**
  * Restore the focus styles unset by the previous rule.
@@ -276,7 +306,8 @@ button:-moz-focusring,
 [type="button"]:-moz-focusring,
 [type="reset"]:-moz-focusring,
 [type="submit"]:-moz-focusring {
-  outline: 1px dotted ButtonText; }
+  outline: 1px dotted ButtonText;
+}
 
 /**
  * Change the border, margin, and padding in all browsers (opinionated).
@@ -284,7 +315,8 @@ button:-moz-focusring,
 fieldset {
   border: 1px solid #c0c0c0;
   margin: 0 2px;
-  padding: 0.35em 0.625em 0.75em; }
+  padding: 0.35em 0.625em 0.75em;
+}
 
 /**
  * 1. Correct the text wrapping in Edge and IE.
@@ -304,13 +336,15 @@ legend {
   padding: 0;
   /* 3 */
   white-space: normal;
-  /* 1 */ }
+  /* 1 */
+}
 
 /**
  * Remove the default vertical scrollbar in IE.
  */
 textarea {
-  overflow: auto; }
+  overflow: auto;
+}
 
 /**
  * 1. Add the correct box sizing in IE 10-.
@@ -321,14 +355,16 @@ textarea {
   box-sizing: border-box;
   /* 1 */
   padding: 0;
-  /* 2 */ }
+  /* 2 */
+}
 
 /**
  * Correct the cursor style of increment and decrement buttons in Chrome.
  */
 [type="number"]::-webkit-inner-spin-button,
 [type="number"]::-webkit-outer-spin-button {
-  height: auto; }
+  height: auto;
+}
 
 /**
  * 1. Correct the odd appearance in Chrome and Safari.
@@ -338,21 +374,24 @@ textarea {
   -webkit-appearance: textfield;
   /* 1 */
   outline-offset: -2px;
-  /* 2 */ }
+  /* 2 */
+}
 
 /**
  * Remove the inner padding and cancel buttons in Chrome and Safari on OS X.
  */
 [type="search"]::-webkit-search-cancel-button,
 [type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none; }
+  -webkit-appearance: none;
+}
 
 /**
  * Correct the text style of placeholders in Chrome, Edge, and Safari.
  */
 ::-webkit-input-placeholder {
   color: inherit;
-  opacity: 0.54; }
+  opacity: 0.54;
+}
 
 /**
  * 1. Correct the inability to style clickable types in iOS and Safari.
@@ -362,48 +401,67 @@ textarea {
   -webkit-appearance: button;
   /* 1 */
   font: inherit;
-  /* 2 */ }
+  /* 2 */
+}
 
 * {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 html {
-  height: 100%; }
+  height: 100%;
+}
 
 ul.ui-autocomplete li.ui-menu-item div {
   padding: 10px;
-  transition: background 0.2s; }
-  ul.ui-autocomplete li.ui-menu-item div i {
-    font-size: 19px;
-    margin-right: 10px;
-    transition: color 0.2s; }
-    ul.ui-autocomplete li.ui-menu-item div i.fa-film {
-      color: #133C55; }
-    ul.ui-autocomplete li.ui-menu-item div i.fa-building {
-      color: #1282A2; }
-  ul.ui-autocomplete li.ui-menu-item div.ui-state-active {
-    background: #133C55;
-    border: none !important;
-    margin: 0 !important; }
-    ul.ui-autocomplete li.ui-menu-item div.ui-state-active i {
-      color: #ddd; }
+  transition: background 0.2s;
+}
+
+ul.ui-autocomplete li.ui-menu-item div i {
+  font-size: 19px;
+  margin-right: 10px;
+  transition: color 0.2s;
+}
+
+ul.ui-autocomplete li.ui-menu-item div i.fa-film {
+  color: #133C55;
+}
+
+ul.ui-autocomplete li.ui-menu-item div i.fa-building {
+  color: #1282A2;
+}
+
+ul.ui-autocomplete li.ui-menu-item div.ui-state-active {
+  background: #133C55;
+  border: none !important;
+  margin: 0 !important;
+}
+
+ul.ui-autocomplete li.ui-menu-item div.ui-state-active i {
+  color: #ddd;
+}
 
 input[type="text"] {
   padding: 6px 15px;
-  border: solid 1px #133C55; }
+  border: solid 1px #133C55;
+}
 
 input[type="number"] {
   padding: 5px;
-  border: solid 1px #133C55; }
+  border: solid 1px #133C55;
+}
 
 select {
   background-color: #1282A2;
   color: white;
   border: 1px solid #133C55;
-  padding: 5px 15px; }
-  select option {
-    background: #fff;
-    color: #000; }
+  padding: 5px 15px;
+}
+
+select option {
+  background: #fff;
+  color: #000;
+}
 
 button.action-button {
   padding: .3em .5em;
@@ -415,88 +473,127 @@ button.action-button {
   text-decoration: none;
   font-weight: bold;
   text-align: center;
-  cursor: pointer; }
-  button.action-button:hover {
-    background-color: white;
-    color: #157A6E; }
+  cursor: pointer;
+}
+
+button.action-button:hover {
+  background-color: white;
+  color: #157A6E;
+}
 
 form.search ul {
   display: flex;
   justify-content: center;
   margin: 10px 10%;
-  list-style-type: none; }
+  list-style-type: none;
+}
+
 form.search #busquedaText {
-  width: 50%; }
-  form.search #busquedaText input {
-    width: 100%; }
+  width: 50%;
+}
+
+form.search #busquedaText input {
+  width: 100%;
+}
+
 form.search #selectCity {
   display: none;
-  width: 20%; }
-  form.search #selectCity select {
-    width: 100%; }
+  width: 20%;
+}
+
+form.search #selectCity select {
+  width: 100%;
+}
+
 form.search button {
   background-color: #157A6E;
   color: white;
   border: solid 1px #133C55;
   padding: 6px 15px;
-  transition: all 0.3s ease-in-out; }
-  form.search button:disabled {
-    cursor: not-allowed;
-    opacity: 0.2; }
-  form.search button:hover {
-    cursor: pointer;
-    color: white;
-    background-color: #133C55; }
-  form.search button i {
-    margin: 0 5px; }
+  transition: all 0.3s ease-in-out;
+}
+
+form.search button:disabled {
+  cursor: not-allowed;
+  opacity: 0.2;
+}
+
+form.search button:hover {
+  cursor: pointer;
+  color: white;
+  background-color: #133C55;
+}
+
+form.search button i {
+  margin: 0 5px;
+}
 
 ul {
-  list-style: none; }
+  list-style: none;
+}
 
 header div {
   display: flex;
   justify-content: space-between;
   background-color: #133C55;
   width: 100%;
-  padding: 10px 5%; }
-  header div img {
-    margin: 10px 10px 10px 30px; }
-  header div nav {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
-    margin: 30px 50px 20px 20px;
-    list-style-type: none;
-    width: 30%; }
-    header div nav li {
-      margin: 0px 10px; }
-      header div nav li a {
-        color: #FABB00; }
+  padding: 10px 5%;
+}
+
+header div img {
+  margin: 10px 10px 10px 30px;
+}
+
+header div nav {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  margin: 30px 50px 20px 20px;
+  list-style-type: none;
+  width: 30%;
+}
+
+header div nav li {
+  margin: 0px 10px;
+}
+
+header div nav li a {
+  color: #FABB00;
+}
+
 header #indexHeader {
   background-color: transparent;
   z-index: 10;
   position: absolute;
-  top: 0; }
+  top: 0;
+}
+
 header section#barBusq {
   width: 100%;
-  padding: 20px 10%; }
+  padding: 20px 10%;
+}
 
 section#main {
-  background-color: #e9e9e9; }
+  background-color: #e9e9e9;
+}
 
 section#imagen {
   position: relative;
   height: 80vh;
-  overflow: hidden; }
-  section#imagen video {
-    width: 100%; }
+  overflow: hidden;
+}
+
+section#imagen video {
+  width: 100%;
+}
 
 section#searchBar {
   position: absolute;
   bottom: 0;
   width: 100%;
   padding: 20px 10%;
-  background: rgba(233, 233, 233, 0.45); }
+  background: rgba(233, 233, 233, 0.45);
+}
 
 section#destacados div#films {
   display: flex;
@@ -504,337 +601,524 @@ section#destacados div#films {
   width: 80%;
   margin-left: 10%;
   margin-right: 10%;
-  justify-content: center; }
-  section#destacados div#films a {
-    display: flex;
-    width: 19%;
-    margin: 0px 5px 10px;
-    height: 230px;
-    background-size: cover;
-    text-decoration: none;
-    flex-flow: column;
-    justify-content: space-between; }
-    section#destacados div#films a h3 {
-      text-align: center;
-      color: #fff; }
+  justify-content: center;
+}
+
+section#destacados div#films a {
+  display: flex;
+  width: 19%;
+  margin: 0px 5px 10px;
+  height: 230px;
+  background-size: cover;
+  text-decoration: none;
+  flex-flow: column;
+  justify-content: space-between;
+}
+
+section#destacados div#films a h3 {
+  text-align: center;
+  color: #fff;
+}
+
 section#destacados h2 {
   display: flex;
   justify-content: center;
   width: 80%;
   padding-top: 10px;
   margin-right: 10%;
-  margin-left: 10%; }
+  margin-left: 10%;
+}
 
 section#search {
   display: flex;
   flex-flow: row;
   justify-content: space-between;
-  background-color: #eee; }
-  section#search #results {
-    display: flex;
-    flex-flow: column;
-    width: 55%; }
-    section#search #results #filters {
-      background: #1282A2;
-      padding: 15px 0;
-      display: flex;
-      flex-flow: row;
-      justify-content: center; }
-      section#search #results #filters label {
-        color: #fff; }
-    section#search #results div#movies, section#search #results div#cinemas {
-      display: flex;
-      flex-flow: row wrap;
-      align-items: stretch; }
-      section#search #results div#movies form, section#search #results div#cinemas form {
-        display: flex;
-        flex-flow: column;
-        flex-wrap: wrap;
-        justify-content: flex-start;
-        border: 1px solid #ddd;
-        width: 30%;
-        flex-basis: 30%;
-        background-color: white;
-        margin: 2em 1%; }
-        section#search #results div#movies form > span, section#search #results div#cinemas form > span {
-          width: 100%;
-          position: relative; }
-          section#search #results div#movies form > span a, section#search #results div#cinemas form > span a {
-            position: absolute;
-            background: #FABB00;
-            padding: .5em 1em;
-            right: 0;
-            bottom: 0;
-            border-radius: .4em 0 0;
-            color: black;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: .9em; }
-            section#search #results div#movies form > span a:hover i.fa:before, section#search #results div#cinemas form > span a:hover i.fa:before {
-              opacity: 1;
-              visibility: visible; }
-            section#search #results div#movies form > span a i.fa:before, section#search #results div#cinemas form > span a i.fa:before {
-              transition: all .3s ease-in-out;
-              opacity: 0;
-              visibility: hidden; }
-        section#search #results div#movies form h3, section#search #results div#cinemas form h3 {
-          margin: .5em 1em; }
-        section#search #results div#movies form ul.showtimes, section#search #results div#cinemas form ul.showtimes {
-          list-style: none;
-          display: flex;
-          flex-flow: column;
-          align-self: center;
-          padding: 0; }
-          section#search #results div#movies form ul.showtimes li, section#search #results div#cinemas form ul.showtimes li {
-            list-style: none;
-            display: flex;
-            flex-flow: row wrap;
-            padding: .2em 0; }
-            section#search #results div#movies form ul.showtimes li label, section#search #results div#cinemas form ul.showtimes li label {
-              padding: 0 2em;
-              cursor: pointer; }
-            section#search #results div#movies form ul.showtimes li input, section#search #results div#cinemas form ul.showtimes li input {
-              cursor: pointer; }
-            section#search #results div#movies form ul.showtimes li span, section#search #results div#cinemas form ul.showtimes li span {
-              position: relative; }
-              section#search #results div#movies form ul.showtimes li span.color10, section#search #results div#cinemas form ul.showtimes li span.color10 {
-                color: #E5C120; }
-              section#search #results div#movies form ul.showtimes li span.color20, section#search #results div#cinemas form ul.showtimes li span.color20 {
-                color: #E5C120; }
-              section#search #results div#movies form ul.showtimes li span.color30, section#search #results div#cinemas form ul.showtimes li span.color30 {
-                color: #E5C120; }
-              section#search #results div#movies form ul.showtimes li span.color40, section#search #results div#cinemas form ul.showtimes li span.color40 {
-                color: #71C63F; }
-              section#search #results div#movies form ul.showtimes li span.color50, section#search #results div#cinemas form ul.showtimes li span.color50 {
-                color: #71C63F; }
-              section#search #results div#movies form ul.showtimes li span.color60, section#search #results div#cinemas form ul.showtimes li span.color60 {
-                color: #71C63F; }
-              section#search #results div#movies form ul.showtimes li span.color70, section#search #results div#cinemas form ul.showtimes li span.color70 {
-                color: #BF2C0B; }
-              section#search #results div#movies form ul.showtimes li span.color80, section#search #results div#cinemas form ul.showtimes li span.color80 {
-                color: #BF2C0B; }
-              section#search #results div#movies form ul.showtimes li span.color90, section#search #results div#cinemas form ul.showtimes li span.color90 {
-                color: #BF2C0B; }
-              section#search #results div#movies form ul.showtimes li span.tooltip:after, section#search #results div#cinemas form ul.showtimes li span.tooltip:after {
-                content: attr(data-occupancy);
-                position: absolute;
-                padding: .3em .8em;
-                background-color: black;
-                color: white;
-                top: 0;
-                font-size: .8em;
-                right: -4em;
-                border-radius: 1em 0;
-                visibility: hidden;
-                opacity: 0;
-                transition: all .5s ease-in-out; }
-              section#search #results div#movies form ul.showtimes li span.tooltip:hover:after, section#search #results div#cinemas form ul.showtimes li span.tooltip:hover:after {
-                visibility: visible;
-                opacity: 1; }
-        section#search #results div#movies form div.buy, section#search #results div#cinemas form div.buy {
-          display: flex;
-          flex-flow: row wrap;
-          justify-content: space-around;
-          margin: 1em;
-          align-self: flex-end; }
-          section#search #results div#movies form div.buy span, section#search #results div#cinemas form div.buy span {
-            flex-basis: 65%;
-            width: 65%;
-            align-self: center; }
-            section#search #results div#movies form div.buy span input, section#search #results div#cinemas form div.buy span input {
-              max-width: 30%; }
-            section#search #results div#movies form div.buy span label, section#search #results div#cinemas form div.buy span label {
-              margin-left: .5em;
-              max-width: 65%; }
-          section#search #results div#movies form div.buy button, section#search #results div#cinemas form div.buy button {
-            padding: .3em .5em;
-            flex-basis: 65%;
-            margin-top: .8em; }
-  section#search .map {
-    width: 45%;
-    border-left: 1px solid black;
-    position: fixed !important;
-    right: 0;
-    height: 100%; }
+  background-color: #eee;
+}
+
+section#search #results {
+  display: flex;
+  flex-flow: column;
+  width: 55%;
+}
+
+section#search #results #filters {
+  background: #1282A2;
+  padding: 15px 0;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+}
+
+section#search #results #filters label {
+  color: #fff;
+}
+
+section#search #results div#movies, section#search #results div#cinemas {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: stretch;
+}
+
+section#search #results div#movies form, section#search #results div#cinemas form {
+  display: flex;
+  flex-flow: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  border: 1px solid #ddd;
+  width: 30%;
+  flex-basis: 30%;
+  background-color: white;
+  margin: 2em 1%;
+}
+
+section#search #results div#movies form > span, section#search #results div#cinemas form > span {
+  width: 100%;
+  position: relative;
+}
+
+section#search #results div#movies form > span a, section#search #results div#cinemas form > span a {
+  position: absolute;
+  background: #FABB00;
+  padding: .5em 1em;
+  right: 0;
+  bottom: 0;
+  border-radius: .4em 0 0;
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: .9em;
+}
+
+section#search #results div#movies form > span a:hover i.fa:before, section#search #results div#cinemas form > span a:hover i.fa:before {
+  opacity: 1;
+  visibility: visible;
+}
+
+section#search #results div#movies form > span a i.fa:before, section#search #results div#cinemas form > span a i.fa:before {
+  transition: all .3s ease-in-out;
+  opacity: 0;
+  visibility: hidden;
+}
+
+section#search #results div#movies form h3, section#search #results div#cinemas form h3 {
+  margin: .5em 1em;
+}
+
+section#search #results div#movies form ul.showtimes, section#search #results div#cinemas form ul.showtimes {
+  list-style: none;
+  display: flex;
+  flex-flow: column;
+  align-self: center;
+  padding: 0;
+}
+
+section#search #results div#movies form ul.showtimes li, section#search #results div#cinemas form ul.showtimes li {
+  list-style: none;
+  display: flex;
+  flex-flow: row wrap;
+  padding: .2em 0;
+}
+
+section#search #results div#movies form ul.showtimes li label, section#search #results div#cinemas form ul.showtimes li label {
+  padding: 0 2em;
+  cursor: pointer;
+}
+
+section#search #results div#movies form ul.showtimes li input, section#search #results div#cinemas form ul.showtimes li input {
+  cursor: pointer;
+}
+
+section#search #results div#movies form ul.showtimes li span, section#search #results div#cinemas form ul.showtimes li span {
+  position: relative;
+}
+
+section#search #results div#movies form ul.showtimes li span.color10, section#search #results div#cinemas form ul.showtimes li span.color10 {
+  color: #E5C120;
+}
+
+section#search #results div#movies form ul.showtimes li span.color20, section#search #results div#cinemas form ul.showtimes li span.color20 {
+  color: #E5C120;
+}
+
+section#search #results div#movies form ul.showtimes li span.color30, section#search #results div#cinemas form ul.showtimes li span.color30 {
+  color: #E5C120;
+}
+
+section#search #results div#movies form ul.showtimes li span.color40, section#search #results div#cinemas form ul.showtimes li span.color40 {
+  color: #71C63F;
+}
+
+section#search #results div#movies form ul.showtimes li span.color50, section#search #results div#cinemas form ul.showtimes li span.color50 {
+  color: #71C63F;
+}
+
+section#search #results div#movies form ul.showtimes li span.color60, section#search #results div#cinemas form ul.showtimes li span.color60 {
+  color: #71C63F;
+}
+
+section#search #results div#movies form ul.showtimes li span.color70, section#search #results div#cinemas form ul.showtimes li span.color70 {
+  color: #BF2C0B;
+}
+
+section#search #results div#movies form ul.showtimes li span.color80, section#search #results div#cinemas form ul.showtimes li span.color80 {
+  color: #BF2C0B;
+}
+
+section#search #results div#movies form ul.showtimes li span.color90, section#search #results div#cinemas form ul.showtimes li span.color90 {
+  color: #BF2C0B;
+}
+
+section#search #results div#movies form ul.showtimes li span.tooltip:after, section#search #results div#cinemas form ul.showtimes li span.tooltip:after {
+  content: attr(data-occupancy);
+  position: absolute;
+  padding: .3em .8em;
+  background-color: black;
+  color: white;
+  top: 0;
+  font-size: .8em;
+  right: -4em;
+  border-radius: 1em 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: all .5s ease-in-out;
+}
+
+section#search #results div#movies form ul.showtimes li span.tooltip:hover:after, section#search #results div#cinemas form ul.showtimes li span.tooltip:hover:after {
+  visibility: visible;
+  opacity: 1;
+}
+
+section#search #results div#movies form div.buy, section#search #results div#cinemas form div.buy {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  margin: 1em;
+  align-self: flex-end;
+}
+
+section#search #results div#movies form div.buy span, section#search #results div#cinemas form div.buy span {
+  flex-basis: 65%;
+  width: 65%;
+  align-self: center;
+}
+
+section#search #results div#movies form div.buy span input, section#search #results div#cinemas form div.buy span input {
+  max-width: 30%;
+}
+
+section#search #results div#movies form div.buy span label, section#search #results div#cinemas form div.buy span label {
+  margin-left: .5em;
+  max-width: 65%;
+}
+
+section#search #results div#movies form div.buy button, section#search #results div#cinemas form div.buy button {
+  padding: .3em .5em;
+  flex-basis: 65%;
+  margin-top: .8em;
+}
+
+section#search .map {
+  width: 45%;
+  border-left: 1px solid black;
+  position: fixed !important;
+  right: 0;
+  height: 100%;
+}
 
 section#compra {
   display: flex;
-  flex-flow: row; }
-  section#compra .amarillo {
-    color: #FABB00; }
-  section#compra .rojo {
-    color: #BF2C0B; }
-  section#compra .verde {
-    color: #40C531; }
-  section#compra section#butacas {
-    max-width: 66%;
-    flex-flow: column nowrap;
-    align-items: center;
-    display: flex;
-    width: 0%;
-    overflow: hidden;
-    transition: ease-in-out 0.9s; }
-    section#compra section#butacas #salas {
-      margin-top: 20px;
-      display: flex;
-      flex-flow: column nowrap;
-      background-color: #e9e9e9; }
-      section#compra section#butacas #salas .fila {
-        display: flex;
-        justify-content: center;
-        padding: 0; }
-        section#compra section#butacas #salas .fila li {
-          display: inline;
-          cursor: pointer;
-          margin: 0px 5px; }
-          section#compra section#butacas #salas .fila li i {
-            font-size: 1.8em; }
-    section#compra section#butacas #pantalla {
-      background-color: black;
-      border-radius: 21px;
-      width: 35%;
-      height: 13px;
-      margin: 50px auto 30px; }
-    section#compra section#butacas #leyendaSala {
-      margin-bottom: 30px;
-      font-size: 1.3em; }
-  section#compra section#complements {
-    max-width: 66%;
-    text-align: center;
-    width: 0%;
-    overflow: hidden;
-    transition: ease-in-out 0.9s; }
-    section#compra section#complements ul {
-      list-style: none;
-      display: flex;
-      flex-flow: row;
-      justify-content: space-around; }
-      section#compra section#complements ul li {
-        width: 25%;
-        margin: 0 2%;
-        border: 1px solid #aaa; }
-        section#compra section#complements ul li img {
-          max-width: 90%;
-          padding: 1%;
-          border: 1px solid #ddd;
-          background-color: white; }
-  section#compra section#resumen {
-    margin: auto;
-    margin-bottom: 30px;
-    text-align: center; }
-    section#compra section#resumen article#entradas {
-      margin: 15px 0; }
-      section#compra section#resumen article#entradas input {
-        width: 55px; }
-    section#compra section#resumen article#info {
-      margin: 20px 0;
-      display: flex;
-      align-items: center; }
-      section#compra section#resumen article#info div #showtimepelicula {
-        width: 55%; }
-      section#compra section#resumen article#info div #showtimecine {
-        width: 80%; }
-    section#compra section#resumen article#fecha {
-      text-align: center;
-      margin: 15px 0; }
-      section#compra section#resumen article#fecha b {
-        margin: 0 10px; }
-    section#compra section#resumen article#showButacas, section#compra section#resumen article#showComplements {
-      margin: 15px 0; }
-      section#compra section#resumen article#showButacas a, section#compra section#resumen article#showComplements a {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        font-size: 1.3em;
-        color: #000;
-        text-decoration: none;
-        margin-left: 20%; }
-        section#compra section#resumen article#showButacas a i, section#compra section#resumen article#showComplements a i {
-          cursor: pointer;
-          margin-right: 10px;
-          font-size: 1.6em;
-          color: #1282A2;
-          margin-right: 10px; }
-    section#compra section#resumen article#showComplements a {
-      justify-content: flex-end;
-      margin-right: 20%; }
-      section#compra section#resumen article#showComplements a i {
-        margin-left: 10px; }
-    section#compra section#resumen article#precios {
-      margin: 15px 0; }
-    section#compra section#resumen article#payment {
-      text-align: left;
-      border-top: 2px dashed #999;
-      padding: 0px 20px; }
-      section#compra section#resumen article#payment div#methods {
-        margin: 15px 0; }
-        section#compra section#resumen article#payment div#methods label {
-          display: block;
-          padding: 5px 0; }
-      section#compra section#resumen article#payment div#card {
-        display: flex;
-        justify-content: center;
-        margin: 0 auto;
-        padding: 20px 0; }
-        section#compra section#resumen article#payment div#card i.big {
-          font-size: 5.3em;
-          transition: all 0.3s; }
-          section#compra section#resumen article#payment div#card i.big.error {
-            color: #ff5c61; }
-        section#compra section#resumen article#payment div#card > div {
-          margin-left: 50px;
-          width: 180px;
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: space-between;
-          align-content: space-around; }
-          section#compra section#resumen article#payment div#card > div div {
-            display: flex;
-            align-items: center;
-            padding: 7px 3px 7px 3px;
-            box-sizing: border-box; }
-            section#compra section#resumen article#payment div#card > div div input {
-              width: 100%;
-              border: none;
-              outline: none;
-              padding: 0 0 0 5px;
-              background: transparent; }
-            section#compra section#resumen article#payment div#card > div div.card_number {
-              width: 100%;
-              border-bottom: 1px solid #A2A2A2; }
-            section#compra section#resumen article#payment div#card > div div.card_cvx, section#compra section#resumen article#payment div#card > div div.card_expiration {
-              width: 48%;
-              border-bottom: 1px solid #A2A2A2; }
-          section#compra section#resumen article#payment div#card > div p.errors {
-            color: #ff5c61;
-            display: none;
-            margin-bottom: 0; }
+  flex-flow: row;
+}
+
+section#compra .amarillo {
+  color: #FABB00;
+}
+
+section#compra .rojo {
+  color: #BF2C0B;
+}
+
+section#compra .verde {
+  color: #40C531;
+}
+
+section#compra section#butacas {
+  max-width: 66%;
+  flex-flow: column nowrap;
+  align-items: center;
+  display: flex;
+  width: 0%;
+  overflow: hidden;
+  transition: ease-in-out 0.9s;
+}
+
+section#compra section#butacas #salas {
+  margin-top: 20px;
+  display: flex;
+  flex-flow: column nowrap;
+  background-color: #e9e9e9;
+}
+
+section#compra section#butacas #salas .fila {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}
+
+section#compra section#butacas #salas .fila li {
+  display: inline;
+  cursor: pointer;
+  margin: 0px 5px;
+}
+
+section#compra section#butacas #salas .fila li i {
+  font-size: 1.8em;
+}
+
+section#compra section#butacas #pantalla {
+  background-color: black;
+  border-radius: 21px;
+  width: 35%;
+  height: 13px;
+  margin: 50px auto 30px;
+}
+
+section#compra section#butacas #leyendaSala {
+  margin-bottom: 30px;
+  font-size: 1.3em;
+}
+
+section#compra section#complements {
+  max-width: 66%;
+  text-align: center;
+  width: 0%;
+  overflow: hidden;
+  transition: ease-in-out 0.9s;
+}
+
+section#compra section#complements ul {
+  list-style: none;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+section#compra section#complements ul li {
+  width: 20%;
+  margin: 1% 2%;
+  border: 1px solid #aaa;
+  background: white;
+  transition: .5s all ease-in-out;
+}
+
+section#compra section#complements ul li:hover {
+  box-shadow: 0px 0px 10px 1px #aaa;
+}
+
+section#compra section#complements ul li img {
+  max-width: 90%;
+  padding: 1%;
+  background-color: white;
+}
+
+section#compra section#complements ul li div {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  padding: 1em 2em;
+}
+
+section#compra section#complements ul li div p {
+  margin: 0;
+}
+
+section#compra section#complements ul li div i {
+  cursor: pointer;
+  transition: .3s all ease-in-out;
+}
+
+section#compra section#complements ul li div i:hover {
+  transform: rotate(180deg);
+}
+
+section#compra section#resumen {
+  margin: auto;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+section#compra section#resumen article#entradas {
+  margin: 15px 0;
+}
+
+section#compra section#resumen article#entradas input {
+  width: 55px;
+}
+
+section#compra section#resumen article#info {
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+}
+
+section#compra section#resumen article#info div #showtimepelicula {
+  width: 55%;
+}
+
+section#compra section#resumen article#info div #showtimecine {
+  width: 80%;
+}
+
+section#compra section#resumen article#fecha {
+  text-align: center;
+  margin: 15px 0;
+}
+
+section#compra section#resumen article#fecha b {
+  margin: 0 10px;
+}
+
+section#compra section#resumen article#showButacas, section#compra section#resumen article#showComplements {
+  margin: 15px 0;
+}
+
+section#compra section#resumen article#showButacas a, section#compra section#resumen article#showComplements a {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 1.3em;
+  color: #000;
+  text-decoration: none;
+  margin-left: 20%;
+}
+
+section#compra section#resumen article#showButacas a i, section#compra section#resumen article#showComplements a i {
+  cursor: pointer;
+  margin-right: 10px;
+  font-size: 1.6em;
+  color: #1282A2;
+  margin-right: 10px;
+}
+
+section#compra section#resumen article#showComplements a {
+  justify-content: flex-end;
+  margin-right: 20%;
+}
+
+section#compra section#resumen article#showComplements a i {
+  margin-left: 10px;
+}
+
+section#compra section#resumen article#precios {
+  margin: 15px 0;
+}
+
+section#compra section#resumen article#payment {
+  text-align: left;
+  border-top: 2px dashed #999;
+  padding: 0px 20px;
+}
+
+section#compra section#resumen article#payment div#methods {
+  margin: 15px 0;
+}
+
+section#compra section#resumen article#payment div#methods label {
+  display: block;
+  padding: 5px 0;
+}
+
+section#compra section#resumen article#payment div#card {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+section#compra section#resumen article#payment div#card i.big {
+  font-size: 5.3em;
+  transition: all 0.3s;
+}
+
+section#compra section#resumen article#payment div#card i.big.error {
+  color: #ff5c61;
+}
+
+section#compra section#resumen article#payment div#card > div {
+  margin-left: 50px;
+  width: 180px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-around;
+}
+
+section#compra section#resumen article#payment div#card > div div {
+  display: flex;
+  align-items: center;
+  padding: 7px 3px 7px 3px;
+  box-sizing: border-box;
+}
+
+section#compra section#resumen article#payment div#card > div div input {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 0 0 0 5px;
+  background: transparent;
+}
+
+section#compra section#resumen article#payment div#card > div div.card_number {
+  width: 100%;
+  border-bottom: 1px solid #A2A2A2;
+}
+
+section#compra section#resumen article#payment div#card > div div.card_cvx, section#compra section#resumen article#payment div#card > div div.card_expiration {
+  width: 48%;
+  border-bottom: 1px solid #A2A2A2;
+}
+
+section#compra section#resumen article#payment div#card > div p.errors {
+  color: #ff5c61;
+  display: none;
+  margin-bottom: 0;
+}
 
 footer {
   background-color: #133C55;
-  color: white; }
-  footer #zonas {
-    display: flex;
-    justify-content: space-around;
-    padding: 0 0 10px 0;
-    border-style: none none solid;
-    border-color: white;
-    margin: 0 15%;
-    border-width: 1px;
-    padding-top: 20px; }
-    footer #zonas ul {
-      list-style-type: none; }
-  footer #contacta {
-    display: flex;
-    justify-content: center;
-    margin: 10px 20%; }
-    footer #contacta #social {
-      display: flex;
-      justify-content: center space-around; }
-  footer p {
-    display: flex;
-    justify-content: center;
-    margin: 30px 50px 0px;
-    padding: 0 0 15px; }
+  color: white;
+}
 
-/*# sourceMappingURL=main.css.map */
+footer #zonas {
+  display: flex;
+  justify-content: space-around;
+  padding: 0 0 10px 0;
+  border-style: none none solid;
+  border-color: white;
+  margin: 0 15%;
+  border-width: 1px;
+  padding-top: 20px;
+}
+
+footer #zonas ul {
+  list-style-type: none;
+}
+
+footer #contacta {
+  display: flex;
+  justify-content: center;
+  margin: 10px 20%;
+}
+
+footer #contacta #social {
+  display: flex;
+  justify-content: center space-around;
+}
+
+footer p {
+  display: flex;
+  justify-content: center;
+  margin: 30px 50px 0px;
+  padding: 0 0 15px;
+}

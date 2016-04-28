@@ -495,19 +495,41 @@ section#compra{
 		ul {
 			list-style: none;
 			display: flex;
-			flex-flow: row;
+			flex-flow: row wrap;
 			justify-content: space-around;
 
 			li {
-				width: 25%;
-				margin: 0 2%;
+				width: 20%;
+				margin: 1% 2%;
 				border: 1px solid #aaa;
+				background: white;
+				transition: .5s all ease-in-out;
 
+				&:hover {
+					box-shadow: 0px 0px 10px 1px #aaa;
+				}
 				img {
 					max-width: 90%;
 					padding: 1%;
-					border: 1px solid #ddd;
 					background-color: white;
+				}
+				div {
+					display: flex;
+					flex-flow: row wrap;
+					justify-content: space-between;
+					padding: 1em 2em;
+
+					p {
+						margin: 0;
+					}
+					i {
+						cursor: pointer;
+						transition: .3s all ease-in-out;
+
+						&:hover {
+							transform: rotate(180deg);
+						}
+					}
 				}
 			}
 		}
@@ -554,7 +576,7 @@ section#compra{
 		article#showButacas, article#showComplements {
 			margin: 15px 0;
 
-			
+
 			a {
 				display: flex;
 				justify-content: flex-start;
