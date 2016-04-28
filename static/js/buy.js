@@ -1,5 +1,9 @@
 $(function() {
 
+	//for (i in butacasSelect){
+	//	$("<li>").html('Butaca: '+ butacasSelect[i][1] + ' Fila: ' + butacasSelect[i][0]).appendTo($('#butacasSelect'));
+	//}
+
 	// Payment methods
 	$('input[name="payment_t"]').on('change', function() {
         if ($(this).val() == 1) {
@@ -77,12 +81,16 @@ $(function() {
 			$(this).toggleClass('verde');
 			$(this).toggleClass('amarillo');
 			if (this.classList[2] == 'verde') {
-				$('#numButacas').html(parseInt($('#numButacas').html()) - 1 );
+				$('#entradas input').val(parseInt($('#entradas input').val()) - 1);
 			} else {
-				$('#numButacas').html(parseInt($('#numButacas').html()) + 1 );
+				$('#entradas input').val(parseInt($('#entradas input').val()) + 1);
+				//butacasSelect.push()
 			}
 		}
 	});
+	//for (i in butacasSelect){
+	//	$("<li>").html('Butaca: '+ butacasSelect[i][1] + ' Fila: ' + butacasSelect[i][0]).appendTo($('#butacasSelect'));
+	//}
 
 	//Hay que actualizar tambien el número de entradas.
 	$('#showButacas a').click(function(e){

@@ -49,7 +49,10 @@
 				<a href="?">
                 	<i class="fa fa-plus-square"></i>
                 	Butacas
+				<!--<ul id="butacasSelect">
+				</ul>-->
 				</a>
+
              </article>
 
              <article id="showComplements">
@@ -145,6 +148,7 @@
 		var complements = [];
 		var predef = {{ number }}; //Número de butacas aleatorias
 		var sala = {{ butacas }}; //Se elige aleatoriamente entre las salas posibles.
+		var butacasSelect = []
 		sala = sala[parseInt(Math.random()*2)];
 		for (i in sala) {
 			for (k in sala[i]) {
@@ -154,6 +158,8 @@
 					if (predef != 0) {
 						predef--;
 						sala[i][k] = 2;
+						//[fila seleccionada, columna]
+						butacasSelect.push([sala.length-i, sala[i].length-k]);
 					} else {
 						sala[i][k]=1;
 					}

@@ -137,6 +137,10 @@ form.search {
 	}
 }
 
+ul {
+	list-style: none;
+}
+
 
 header {
 	div{
@@ -549,6 +553,8 @@ section#compra{
 
 		article#showButacas, article#showComplements {
 			margin: 15px 0;
+
+			
 			a {
 				display: flex;
 				justify-content: flex-start;
@@ -586,7 +592,7 @@ section#compra{
 		article#payment {
 			text-align: left;
 			border-top: 2px dashed #999;
-			text-align: center;
+			padding: 0px 20px;
 
 			div#methods {
 				margin: 15px 0;
