@@ -1,8 +1,8 @@
 $(function() {
 
-	//for (i in butacasSelect){
-	//	$("<li>").html('Butaca: '+ butacasSelect[i][1] + ' Fila: ' + butacasSelect[i][0]).appendTo($('#butacasSelect'));
-	//}
+	for (i in butacasSelect){
+		$("<li>").html('Butaca: '+ butacasSelect[i][1] + ' Fila: ' + butacasSelect[i][0]).appendTo($('#butacasSelect'));
+	}
 
 	// Payment methods
 	$('input[name="payment_t"]').on('change', function() {
@@ -67,11 +67,11 @@ $(function() {
 		ul = $("<ul>",{'class':'fila'}).appendTo("#salas");
 		for (k in sala[i]) {
 			if (sala[i][k] == 0) {
-				$("<li>").html('<i class="fa fa-circle verde" aria-hidden="true"></i>').appendTo(ul);
+				$("<li>").html('<i fila='+ (sala.length-i) +' asiento='+ (sala[i].length-k) +' class="fa fa-circle verde" aria-hidden="true"></i>').appendTo(ul);
 			} else if (sala[i][k] == 1) {
-				$("<li>").html('<i class="fa fa-circle rojo" aria-hidden="true"></i>').appendTo(ul);
+				$("<li>").html('<i fila='+ (sala.length-i) +' asiento='+ (sala[i].length-k)+ ' class="fa fa-circle rojo" aria-hidden="true"></i>').appendTo(ul);
 			} else {
-				$("<li>").html('<i class="fa fa-circle amarillo" aria-hidden="true"></i>').appendTo(ul);
+				$("<li>").html('<i fila='+ (sala.length-i) +' asiento='+ (sala[i].length-k)+ ' class="fa fa-circle amarillo" aria-hidden="true"></i>').appendTo(ul);
 			}
 		}
 	}
@@ -82,9 +82,26 @@ $(function() {
 			$(this).toggleClass('amarillo');
 			if (this.classList[2] == 'verde') {
 				$('#entradas input').val(parseInt($('#entradas input').val()) - 1);
+				butaca = [$(this).attr("fila"), $(this).attr("asiento")];
+				$('#butacasSelect').html("");
+				for (i in butacasSelect){
+					if (butaca[0] == butacasSelect[i][0] && butaca[1] == butacasSelect[i][1]){
+						delete butacasSelect[i];
+						if (parseInt($('#entradas input').val()) == 0)
+							$('#butacasSelect').html("Butacas");
+					}
+					else {
+						$("<li>").html('Butaca: '+ butacasSelect[i][1] + ' Fila: ' + butacasSelect[i][0]).appendTo($('#butacasSelect'));
+					}
+				}
 			} else {
 				$('#entradas input').val(parseInt($('#entradas input').val()) + 1);
-				//butacasSelect.push()
+				$('#butacasSelect').html("");
+				butaca = [$(this).attr("fila"), $(this).attr("asiento")];
+				butacasSelect.push(butaca)
+				for (i in butacasSelect){
+					$("<li>").html('Butaca: '+ butacasSelect[i][1] + ' Fila: ' + butacasSelect[i][0]).appendTo($('#butacasSelect'));
+				}
 			}
 		}
 	});
