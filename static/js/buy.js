@@ -139,15 +139,23 @@ $(function() {
 		temporalNode = document.createElement('img');
 		temporalNode.src = complementsOptions[complementIndex].image;
 		newNode.appendChild(temporalNode);
+		groupNode = document.createElement('div');
 		temporalNode = document.createElement('p');
 		temporalNode.innerHTML = complementsOptions[complementIndex].price + ' €';
-		newNode.appendChild(temporalNode);
+		groupNode.appendChild(temporalNode);
+		plusButton = document.createElement('i');
+		plusButton.className = 'fa fa-plus';
+		plusButton.setAttribute('index', complementIndex);
+		groupNode.appendChild(plusButton);
+		newNode.appendChild(groupNode);
 
 		complementContainer.appendChild(newNode);
 
-		console.log(newNode);
+		plusButton.addEventListener('click', function(e) {
+			var index = e.target.getAttribute('index');
 
-		console.log(complementsOptions[complementIndex]);
+			complements[index].amount += 1;
+		});
 	}
 
 	//Show complements
