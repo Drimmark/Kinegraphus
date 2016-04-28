@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<section id="compraFinalizada">
+    <h1> ¡Su compra ha finalizado con exito! </h1>
+	<p>Descargue el siguiente documento y presentelo en taquilla para recoger sus entradas</p>
+    <button type="button" class="action-button" onclick="generatePDF()">Descargar PDF</button>
+    <br>
+    <h2> ¡Muchas gracias por confiar en entradas.com! </h2>
+    <br>
+    <br>
+    <a href='/'><button type="button" class="action-button">Volver al inicio </button></a>
+
+</section>
+{% endblock %}
+
+{% block scripts %}
+
+
+<script>
+
+function generatePDF() {
+
+
+    var logo = new Image();
+    logo.src = 'static/images/logo.png';
+    var codebar = new Image();
+    codebar.src = 'static/images/codeBar.jpg';
+
+    var butacasNum = "";
+        {% for butaca in butacas %}
+            butacasNum += "{{butaca}}";
+        {% endfor %}    
+
+
+    var doc = new jsPDF();
+    doc.setFontSize(20);
+
+    doc.setFillColor(19,60,85);
+    doc.rect(0, 0, 400, 70, 'F'); //Rectangulo logo
+
+    doc.addImage(logo, 'PNG', 20, 10, 60, 50);      //Imagen del logo
+
+    doc.setFillColor(233,233,233);
+    doc.rect(0, 70, 400, 75, 'F'); //Rectangulo way
+
+
+
+
+    doc.text(22, 90, 'Cine:     {{cine}}');               //Cine
+    doc.text(22, 100, 'Película:    {{pelicula}}');               //Peli
+    doc.text(22, 110, 'Horario:     {{showtime}}');               //Horario
+    doc.text(22, 120, 'Numero:      ' + String(butacasNum));               //butacas
+    doc.text(22, 130, 'precio:      ');               //precio
+
+    doc.setFillColor(0,0,0);
+    doc.rect(0, 145, 400, 1, 'F'); //Linea divisora
+
+    doc.addImage(codebar, 'JPG', 26, 165, 155, 45);               //Ćódigo de barras
+
+    doc.setFillColor(0,0,0);
+    doc.rect(0, 230, 400, 1, 'F'); //Linea divisora
+
+    doc.setFontSize(15);
+    doc.text(22, 245, 'Cupón válido para la sesión del 21/03/2016.');
+    doc.text(22, 255, 'Precio por entrada 5,50€ (todas las entradas para la misma película y sesión).');
+    doc.text(22, 265, 'No se permitirán devoluciones de las entradas.');               //terminos de uso
+    
+    
+    // Save the PDF
+    doc.save('Entradas.pdf');
+}
+
+    </script>
+
+{{ super() }}
+<script src="//mrrio.github.io/jsPDF/dist/jspdf.debug.js"></script>
+{% endblock %}
