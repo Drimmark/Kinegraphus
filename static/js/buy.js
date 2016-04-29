@@ -3,6 +3,8 @@ $(function() {
 	for (i in butacasSelect){
 		$("<li>").html('Butaca: '+ butacasSelect[i][1] + ' Fila: ' + butacasSelect[i][0]).appendTo($('#butacasSelect'));
 	}
+	$('#conteo').html("<b>Entradas:</b> " + $('#entradas input').val() + " x 4.90 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>" + Math.round($('#entradas input').val() * 4.9 * 100) / 100 + " €</b>");
+	$('#total').html("Precio &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + Math.round($('#entradas input').val() * 4.9 * 100) / 100 + " €");
 
 	// Payment methods
 	$('input[name="payment_t"]').on('change', function() {
@@ -82,6 +84,8 @@ $(function() {
 			$(this).toggleClass('amarillo');
 			if (this.classList[2] == 'verde') {
 				$('#entradas input').val(parseInt($('#entradas input').val()) - 1);
+				$('#conteo').html("<b>Entradas:</b> " + $('#entradas input').val() + " x 4.90 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>" + Math.round($('#entradas input').val() * 4.9 * 100) / 100 + " €</b>");
+				$('#total').html("Precio &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + Math.round($('#entradas input').val() * 4.9 * 100) / 100 + " €");
 				butaca = [$(this).attr("fila"), $(this).attr("asiento")];
 				$('#butacasSelect').html("");
 				for (i in butacasSelect){
@@ -96,6 +100,8 @@ $(function() {
 				}
 			} else {
 				$('#entradas input').val(parseInt($('#entradas input').val()) + 1);
+				$('#conteo').html("<b>Entradas:</b> " + $('#entradas input').val() + " x 4.90 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>" + Math.round($('#entradas input').val() * 4.9 * 100) / 100 + " €</b>");
+				$('#total').html("Precio &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + Math.round($('#entradas input').val() * 4.9 * 100) / 100 + " €");
 				$('#butacasSelect').html("");
 				butaca = [$(this).attr("fila"), $(this).attr("asiento")];
 				butacasSelect.push(butaca)
@@ -176,6 +182,13 @@ $(function() {
 			$('#showComplements a i').addClass("fa-minus-square");
 			$('#complements').css('width', '100%');
 		}
+	});
+
+
+	//Actualizar entradas y precio
+	$('#entradas input').on('input', function() {
+		$('#conteo').html("<b>Entradas:</b> " + $('#entradas input').val() + " x 4.90 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>" + Math.round($('#entradas input').val() * 4.9 * 100) / 100 + " €</b>");
+		$('#total').html("Precio &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + Math.round($('#entradas input').val() * 4.9 * 100) / 100 + " €");
 	});
 });
 

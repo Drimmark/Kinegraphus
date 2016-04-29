@@ -63,9 +63,10 @@
 
              <article id="precios">
              	<div>
-             		Entradas: <span id="conteo"></span>{{ number }}<span id="total"></span>
+             		<span id="conteo">Entradas: {{ number }}</span><br>
+             		<span id="total"></span>
              	</div>
-                Precio <span>{{ number }} x 4.90 = </span><span id="preciototal">{{ number|int()*4.9 }}</span> €
+                
              </article>
 
              <article id="payment">

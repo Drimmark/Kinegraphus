@@ -441,9 +441,7 @@ section#compra{
 
 	section#butacas {
 		max-width: 66%;
-		flex-flow: column nowrap;
-		align-items: center;
-		display: flex;
+		text-align: center;
 		width: 0%;
 		overflow: hidden;
 		transition: ease-in-out 0.9s;
@@ -495,7 +493,7 @@ section#compra{
 		ul {
 			list-style: none;
 			display: flex;
-			flex-flow: row wrap;
+			flex-flow: row;
 			justify-content: space-around;
 
 			li {
@@ -573,6 +571,10 @@ section#compra{
 			}
 		}
 
+		article#showButacas {
+			text-align: left;
+		}
+
 		article#showButacas, article#showComplements {
 			margin: 15px 0;
 
@@ -609,6 +611,17 @@ section#compra{
 
 		article#precios {
 			margin: 15px 0;
+
+			#conteo {
+				border-bottom: medium solid;
+				padding-bottom: 10px;
+				margin: 20px 0px 20px;
+				display: inline-block;
+			}
+
+			#total {
+				font-size: 1.2em;
+			}
 		}
 
 		article#payment {
