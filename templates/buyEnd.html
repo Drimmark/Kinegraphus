@@ -30,7 +30,7 @@ function generatePDF() {
 
     var butacasNum = "";
         {% for butaca in butacas %}
-            butacasNum += "{{butaca}}";
+            butacasNum += "{{butaca}}\n";
         {% endfor %}    
 
 
@@ -51,8 +51,8 @@ function generatePDF() {
     doc.text(22, 90, 'Cine:     {{cine}}');               //Cine
     doc.text(22, 100, 'Película:    {{pelicula}}');               //Peli
     doc.text(22, 110, 'Horario:     {{showtime}}');               //Horario
-    doc.text(22, 120, 'Numero:      ' + String(butacasNum));               //butacas
-    doc.text(22, 130, 'precio:      ');               //precio
+    doc.text(22, 120, 'Butacas:      ' + String(butacasNum));    //butacas
+    doc.text(22, 130, 'Precio:      {{precio}} €');               //precio
 
     doc.setFillColor(0,0,0);
     doc.rect(0, 145, 400, 1, 'F'); //Linea divisora
@@ -63,8 +63,8 @@ function generatePDF() {
     doc.rect(0, 230, 400, 1, 'F'); //Linea divisora
 
     doc.setFontSize(15);
-    doc.text(22, 245, 'Cupón válido para la sesión del 21/03/2016.');
-    doc.text(22, 255, 'Precio por entrada 5,50€ (todas las entradas para la misma película y sesión).');
+    doc.text(22, 245, 'Cupón válido para la sesión del {{date}}.');
+    doc.text(22, 255, 'Precio por entrada 4,90€ (todas las entradas para la misma película y sesión).');
     doc.text(22, 265, 'No se permitirán devoluciones de las entradas.');               //terminos de uso
     
     

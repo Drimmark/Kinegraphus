@@ -832,6 +832,10 @@ section#compra {
             display: none;
             margin-bottom: 0; }
 
+section#compraFinalizada {
+  text-align: center;
+  margin: 20px auto; }
+
 footer {
   background-color: #133C55;
   color: white; }

@@ -17,24 +17,25 @@
 	</section>
 
 	<section id="resumen">
-        <form action="/buy" method="post">
+        <form action="/buyEnd" method="post">
             <h2>Ya casi está</h2>
 
             <article id="entradas">
-                <input type="number" name="name" value="{{ number }}"> entradas
+                <input type="number" name="entradas" value="{{ number }}"> entradas
             </article>
 
             <article id="info">
                 <div>
 					<img id="showtimepelicula" src="//cine.entradas.com/entradas/contenidos/peliculas/{{ showtime.movie.cartel }}" alt="{{ showtime.movie.title }}"/>
 					<p>{{ showtime.movie.title }}</p>
+					<input type="hidden" name="pelicula" value="{{ showtime.movie.title }}">
 				</div>
 
                 en
 
                 <div>
 					<img id="showtimecine" src="https://maps.googleapis.com/maps/api/streetview?size=400x200&location={{ showtime.cinema.street }},{{ showtime.cinema.city }}" alt="{{ showtime.cinema.name }}" />
-            		<p>{{ showtime.cinema.name }}</p>
+            		<p>{{ showtime.cinema.name }}</p><input type="hidden" name="cine" value="{{ showtime.cinema.name }}">
 				</div>
              </article>
 
@@ -43,6 +44,8 @@
 				<b>{{ date.strftime("%A %d/%m") }}</b>
 				a las
          		<b>{{ showtime.time }}</b>
+         		<input type="hidden" name="fecha" value="{{ date.strftime("%A %d/%m") }}">
+         		<input type="hidden" name="horario" value="{{ showtime.time }}">
              </article>
 
              <article id="showButacas">
