@@ -32,7 +32,9 @@
                     </span>
                     <h3>{{ movie.title }}</h3>
                     <ul class="showtimes">
-                        {{ date.strftime("%A %d/%m") }}
+                        <p class="date">
+                            {{ date.strftime("%A %d/%m") }}
+                        </p>
                         {% for time in movie.show_times %}
                             {% if time.cinema_id|int() == cinema_id|int() %}
                                 <li>
@@ -48,7 +50,7 @@
                             <input type="number" name="number" id="value" value="1">
                             <label for="value">x 4,90 €</label>
                         </span>
-                        <button class="action-button" type="submit">Siguiente</button>
+                        <button disabled class="action-button" type="submit">Siguiente</button>
                     </div>
                 </form>
             {% endfor %}
@@ -63,6 +65,7 @@
 {% endblock %}
 
 {% block scripts %}
+{{ super() }}
     <script>
         var positions = [
                             {
@@ -73,9 +76,13 @@
                             }
                         ];
         var city = "?";
-    </script>
 
-{{ super() }}
+        $(function() {
+            $('form.movie input[name=time]').on('change', function() {
+                $(this).parent().parent().parent().find('button').attr('disabled', false);
+            })
+        })
+    </script>
 <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-clockpicker.min.js') }}"></script>
 <script type="text/javascript" src="{{ url_for('static', filename='js/search.js') }}"></script>
 

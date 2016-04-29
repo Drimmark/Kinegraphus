@@ -30,7 +30,9 @@
                     <img width="100%" src="https://maps.googleapis.com/maps/api/streetview?size=400x200&location={{ cinema.street }},{{ cinema.city }}" alt="{{ cinema.name }}" />
                     <h3>{{ cinema.name }}</h3>
                     <ul class="showtimes">
-                        {{ date.strftime("%A %d/%m") }}
+                        <p class="date">
+                            {{ date.strftime("%A %d/%m") }}
+                        </p>
                         {% for time in cinema.show_times %}
                             {% if time.movie_id|int() == movie_id|int() %}
                                 <li>
@@ -46,7 +48,7 @@
                             <input type="number" name="number" id="value" value="1">
                             <label for="value">x 4,90 €</label>
                         </span>
-                        <button class="action-button" type="submit">Siguiente</button>
+                        <button disabled class="action-button" type="submit">Siguiente</button>
                     </div>
                 </form>
             {% endfor %}
@@ -61,6 +63,7 @@
 {% endblock %}
 
 {% block scripts %}
+{{ super() }}
 	<script>
         var city = "?";
         var positions = [
@@ -84,9 +87,13 @@
                                 {% endif %}
                             {% endfor %}
                         ];
-	</script>
 
-{{ super() }}
+        $(function() {
+            $('form.cinema input[name=time]').on('change', function() {
+                $(this).parent().parent().parent().find('button').attr('disabled', false);
+            })
+        })
+	</script>
 <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-clockpicker.min.js') }}"></script>
 <script type="text/javascript" src="{{ url_for('static', filename='js/search.js') }}"></script>
 

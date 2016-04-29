@@ -137,6 +137,7 @@ def buy():
 
     return render_template('buy.html', showtime=showtime, number=number, date=date, butacas=butacas)
 
+
 @app.route('/buyEnd', methods=['POST'])
 def buyEnd():
     precio = int(request.form.get('entradas',None))*4.9
@@ -147,6 +148,7 @@ def buyEnd():
     butacas = request.form.getlist('butaca')
     #print request.form
     return render_template('buyEnd.html', cine=cine, pelicula=pelicula, showtime=showtime, precio=precio, date=date, butacas=butacas)
+
 
 if __name__ == '__main__':
     app.run(debug=True)

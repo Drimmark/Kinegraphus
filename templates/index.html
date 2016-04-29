@@ -18,6 +18,8 @@
         <source src="static/videos/A-Director-View.webm" type="video/webm" />
     </video>
 
+	<h1>Tus entradas <span>de cine</span></h1>
+
 	<section id='searchBar'>
 		<form method="GET" action="?" class="search">
 			<ul>
@@ -47,7 +49,7 @@
 	<div id='films'>
 		{% for movie in premieres %}
 		<a href='/searchcinemas?movie_id={{ movie.id }}' style="background-image: url('//cine.entradas.com/entradas/contenidos/peliculas/{{ movie.cartel }}')">
-			<h3>{{ movie.title }}</h3>
+			<!-- <h3>{{ movie.title }}</h3> -->
 		</a>
 		{% endfor %}
 	</div>

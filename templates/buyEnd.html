@@ -3,10 +3,13 @@
 {% block content %}
 
 <section id="compraFinalizada">
-    <h1> ¡Su compra ha finalizado con exito! </h1>
-	<p>Descargue el siguiente documento y presentelo en taquilla para recoger sus entradas</p>
-    <button type="button" class="action-button" onclick="generatePDF()">Descargar PDF</button>
-    <br>
+    <h1>¡Su compra ha finalizado con exito!</h1>
+
+    <article id="pdf">
+        <p>Descargue el siguiente documento y presentelo en taquilla para recoger sus entradas</p>
+        <button type="button" class="action-button" onclick="generatePDF()">Descargar PDF</button>
+    </article>
+
     <h2> ¡Muchas gracias por confiar en entradas.com! </h2>
     <br>
     <br>
@@ -35,7 +38,7 @@ function generatePDF() {
             {% else %}
                 butacasNum += "{{butaca}}, ";
             {% endif %}
-        {% endfor %}    
+        {% endfor %}
 
 
     var doc = new jsPDF();
@@ -70,8 +73,8 @@ function generatePDF() {
     doc.text(22, 245, 'Cupón válido para la sesión del {{date}}.');
     doc.text(22, 255, 'Precio por entrada 4,90€ (todas las entradas para la misma película y sesión).');
     doc.text(22, 265, 'No se permitirán devoluciones de las entradas.');               //terminos de uso
-    
-    
+
+
     // Save the PDF
     doc.save('Entradas.pdf');
 }

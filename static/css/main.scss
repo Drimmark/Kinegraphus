@@ -1,4 +1,6 @@
 @import "normalize.scss";
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700,300,900);
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,600,700);
 
 * {
 	box-sizing: border-box;
@@ -16,6 +18,11 @@ $libre: #40C531;
 
 html {
 	height: 100%;
+	font-family: 'Lato', sans-serif;
+}
+
+h1, h2, h3, h4 {
+	font-family: 'Raleway', sans-serif;
 }
 
 ul.ui-autocomplete {
@@ -87,6 +94,16 @@ button.action-button {
 		background-color: white;
 		color: $verde;
 	}
+
+	&:disabled {
+		background: rgb(152, 152, 152);
+		border-color: rgb(152, 152, 152);
+
+		&:hover {
+			background-color: rgb(152, 152, 152);
+			color: white;
+		}
+	}
 }
 
 form.search {
@@ -146,22 +163,20 @@ header {
 	div{
 		display: flex;
 		justify-content: space-between;
+		align-items: center;
 		background-color: $azulOscuro;
 
 		width: 100%;
-		padding: 10px 5%;
+		padding: 15px 5%;
 
 		img {
-			margin: 10px 10px 10px 30px;
 		}
 
 		nav {
 			display: flex;
 		    flex-flow: row wrap;
 		    justify-content: space-around;
-		    margin: 30px 50px 20px 20px;
 		    list-style-type: none;
-		    width: 30%;
 
 		    li {
 		    	margin: 0px 10px;
@@ -181,8 +196,6 @@ header {
 	}
 
 	section#barBusq {
-		width: 100%;
-		padding: 20px 10%;
 	}
 
 }
@@ -198,6 +211,21 @@ section#imagen {
 
 	video {
 		width:100%;
+	}
+
+	h1 {
+		position: absolute;
+		top: 45%;
+		width: 100%;
+		text-align: center;
+		transform: translateY(-50%);
+		color: #fff;
+		font-size: 2.8em;
+		text-shadow: 0 0 10px rgba(0,0,0,0.4);
+
+		span {
+			color: $verde;
+		}
 	}
 }
 
@@ -277,7 +305,7 @@ section#search {
 				display: flex;
 				flex-flow: column;
 				flex-wrap: wrap;
-				justify-content: flex-start;
+				justify-content: space-between;
 				border: 1px solid #ddd;
 				width: 30%;
 				flex-basis: 30%;
@@ -314,7 +342,7 @@ section#search {
 					}
 				}
 				h3 {
-					margin: .5em 1em;
+					margin: 10px 1em;
 				}
 				ul.showtimes {
 					list-style: none;
@@ -322,12 +350,21 @@ section#search {
 					flex-flow: column;
 					align-self: center;
 					padding: 0;
+					margin: 0;
+
+					p.date {
+						margin: 5px 0;
+					}
 
 					li {
 						list-style: none;
 						display: flex;
 						flex-flow: row wrap;
 						padding: .2em 0;
+
+						&:nth-of-type(n+5) {
+							display: none;
+						}
 
 						label {
 							padding: 0 2em;
@@ -445,6 +482,18 @@ section#compra{
 		width: 0%;
 		overflow: hidden;
 		transition: ease-in-out 0.9s;
+		position: relative;
+
+		// &::after {
+		// 	content: '';
+		//     display: block;
+		//     position: absolute;
+		//     height: 300px;
+		//     border-right: 2px solid #C5C5C5;
+		//     right: 0;
+		//     top: 50%;
+		//     transform: translateY(-50%);
+		// }
 
 		#salas {
 			margin-top: 20px;
@@ -490,6 +539,11 @@ section#compra{
 		overflow: hidden;
 		transition: ease-in-out 0.9s;
 
+		p {
+			font-style: italic;
+			padding: 10px 10%;
+		}
+
 		ul {
 			list-style: none;
 			display: flex;
@@ -534,9 +588,12 @@ section#compra{
 	}
 
 	section#resumen {
-		margin: auto;
-		margin-bottom: 30px;
+		margin: 0 auto 30px;
 		text-align: center;
+
+		button {
+			font-size: 1.4em;
+		}
 
 		article#entradas {
 			margin: 15px 0;
@@ -699,7 +756,19 @@ section#compra{
 
 section#compraFinalizada {
 	text-align: center;
-	margin: 20px auto;
+	padding: 20px 0;
+
+	article#pdf {
+		display: flex;
+		align-items: center;
+		margin: 20px auto;
+		width: 450px;
+
+		p {
+			padding-right: 50px;
+			text-align: left;
+		}
+	}
 }
 
 
