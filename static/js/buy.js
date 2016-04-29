@@ -2,6 +2,7 @@ $(function() {
 
 	for (i in butacasSelect){
 		$("<li>").html('Butaca: '+ butacasSelect[i][1] + ' Fila: ' + butacasSelect[i][0]).appendTo($('#butacasSelect'));
+		$("<li>").html('<input type="hidden" name="butaca" value="Butaca: '+ butacasSelect[i][1] + ' Fila: ' + butacasSelect[i][0]+ '">').appendTo($('#butacasSelect'));
 	}
 	$('#conteo').html("<b>Entradas:</b> " + $('#entradas input').val() + " x 4.90 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>" + Math.round($('#entradas input').val() * 4.9 * 100) / 100 + " €</b>");
 	$('#total').html("Precio &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + Math.round($('#entradas input').val() * 4.9 * 100) / 100 + " €");
@@ -96,6 +97,7 @@ $(function() {
 					}
 					else {
 						$("<li>").html('Butaca: '+ butacasSelect[i][1] + ' Fila: ' + butacasSelect[i][0]).appendTo($('#butacasSelect'));
+						$("<li>").html('<input type="hidden" name="butaca" value="Butaca: '+ butacasSelect[i][1] + ' Fila: ' + butacasSelect[i][0]+ '">').appendTo($('#butacasSelect'));
 					}
 				}
 			} else {
@@ -107,6 +109,7 @@ $(function() {
 				butacasSelect.push(butaca)
 				for (i in butacasSelect){
 					$("<li>").html('Butaca: '+ butacasSelect[i][1] + ' Fila: ' + butacasSelect[i][0]).appendTo($('#butacasSelect'));
+					$("<li>").html('<input type="hidden" name="butaca" value="Butaca: '+ butacasSelect[i][1] + ' Fila: ' + butacasSelect[i][0]+ '">').appendTo($('#butacasSelect'));
 				}
 			}
 		}

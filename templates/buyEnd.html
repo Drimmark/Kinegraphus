@@ -30,7 +30,11 @@ function generatePDF() {
 
     var butacasNum = "";
         {% for butaca in butacas %}
-            butacasNum += "{{butaca}}\n";
+            {% if loop.last %}
+            butacasNum += "{{butaca}}.";
+            {% else %}
+                butacasNum += "{{butaca}}, ";
+            {% endif %}
         {% endfor %}    
 
 

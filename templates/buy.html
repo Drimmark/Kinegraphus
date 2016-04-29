@@ -101,7 +101,7 @@
 
 
              </article>
-
+             
              <button class="action-button" type="submit">Confirmar</button>
         </form>
 	</section>
@@ -183,7 +183,7 @@
 		var predef = {{ number }}; //Número de butacas aleatorias
 		var sala = {{ butacas }}; //Se elige aleatoriamente entre las salas posibles.
 		var butacasSelect = []
-		sala = sala[parseInt(Math.random()*2)];
+		sala = sala[parseInt(Math.random()*3)];
 		for (i in sala) {
 			for (k in sala[i]) {
 				var butaca = Math.random()*10;
