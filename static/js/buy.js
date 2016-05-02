@@ -64,6 +64,16 @@ $(function() {
 		}
     });
 
+	$('div#card input').on('keyup', function()  {
+		if ($('div#card input#card_expiration').val().length > 0 &&
+			$('div#card input#card_number').val().length > 0 &&
+			$('div#card input#card_cvx').val().length > 0) {
+			$('form button').attr('disabled', false);
+		} else {
+			$('form button').attr('disabled', true);
+		}
+	})
+
 
 	//Generación de la sala
 	for (i in sala) {
