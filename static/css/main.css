@@ -702,10 +702,15 @@ section#compra {
   section#compra section#butacas {
     max-width: 66%;
     text-align: center;
-    width: 0%;
     overflow: hidden;
     transition: ease-in-out 0.9s;
-    position: relative; }
+    position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    width: 25%;
+    margin-right: 0px;
+    font-size: 0.5em; }
     section#compra section#butacas #salas {
       margin-top: 20px;
       display: flex;
@@ -731,7 +736,7 @@ section#compra {
       margin-bottom: 30px;
       font-size: 1.3em; }
   section#compra section#complements {
-    max-width: 66%;
+    max-width: 50%;
     text-align: center;
     width: 0%;
     overflow: hidden;
@@ -771,7 +776,7 @@ section#compra {
             section#compra section#complements ul li div i:hover {
               transform: rotate(180deg); }
   section#compra section#resumen {
-    margin: 0 auto 30px;
+    margin: 0 auto 30px 5%;
     text-align: center; }
     section#compra section#resumen button {
       font-size: 1.4em; }

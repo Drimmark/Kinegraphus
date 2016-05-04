@@ -4,6 +4,11 @@ $(function() {
 		$("<li>").html('Butaca: '+ butacasSelect[i][1] + ' Fila: ' + butacasSelect[i][0]).appendTo($('#butacasSelect'));
 		$("<li>").html('<input type="hidden" name="butaca" value="Butaca: '+ butacasSelect[i][1] + ' Fila: ' + butacasSelect[i][0]+ '">').appendTo($('#butacasSelect'));
 	}
+	if ($('#entradas input').val() > 1){
+		$('#entradas span').html($('#entradas input').val() + " entradas");
+	} else {
+		$('#entradas span').html($('#entradas input').val() + " entrada");
+	}
 	$('#conteo').html("<b>Entradas:</b> " + $('#entradas input').val() + " x 4.90 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>" + Math.round($('#entradas input').val() * 4.9 * 100) / 100 + " €</b>");
 	$('#total').html("Precio &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + Math.round($('#entradas input').val() * 4.9 * 100) / 100 + " €");
 
@@ -95,6 +100,11 @@ $(function() {
 			$(this).toggleClass('amarillo');
 			if (this.classList[2] == 'verde') {
 				$('#entradas input').val(parseInt($('#entradas input').val()) - 1);
+				if ($('#entradas input').val() > 1){
+					$('#entradas span').html($('#entradas input').val() + " entradas");
+				} else {
+					$('#entradas span').html($('#entradas input').val() + " entrada");
+				}
 				$('#conteo').html("<b>Entradas:</b> " + $('#entradas input').val() + " x 4.90 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>" + Math.round($('#entradas input').val() * 4.9 * 100) / 100 + " €</b>");
 				$('#total').html("Precio &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + Math.round($('#entradas input').val() * 4.9 * 100) / 100 + " €");
 				butaca = [$(this).attr("fila"), $(this).attr("asiento")];
@@ -112,6 +122,11 @@ $(function() {
 				}
 			} else {
 				$('#entradas input').val(parseInt($('#entradas input').val()) + 1);
+				if ($('#entradas input').val() > 1){
+					$('#entradas span').html($('#entradas input').val() + " entradas");
+				} else {
+					$('#entradas span').html($('#entradas input').val() + " entrada");
+				}
 				$('#conteo').html("<b>Entradas:</b> " + $('#entradas input').val() + " x 4.90 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>" + Math.round($('#entradas input').val() * 4.9 * 100) / 100 + " €</b>");
 				$('#total').html("Precio &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + Math.round($('#entradas input').val() * 4.9 * 100) / 100 + " €");
 				$('#butacasSelect').html("");
@@ -137,13 +152,16 @@ $(function() {
 			$('#showComplements a i').addClass("fa-plus-square");
 			$('#complements').css('width', '0%');
 		}
-		if ( $('#butacas').css('width') != '0px'){
-			$('#showButacas a i').removeClass("fa-minus-square");
-			$('#showButacas a i').addClass("fa-plus-square");
-			$('#butacas').css('width', '0%');
+		if ( $('#butacas').css('font-size') != '8px'){
+			console.log( $('#butacas').css('font-size'));
+			$('#showButacas a i').removeClass("fa-search-minus");
+			$('#showButacas a i').addClass("fa-search-plus");
+			$('#butacas').css('font-size', '8px');
+			$('#butacas').css('width', '25%');
 		} else {
-			$('#showButacas a i').removeClass("fa-plus-square");
-			$('#showButacas a i').addClass("fa-minus-square");
+			$('#showButacas a i').removeClass("fa-search-plus");
+			$('#showButacas a i').addClass("fa-search-minus");
+			$('#butacas').css('font-size', '16px');
 			$('#butacas').css('width', '100%');
 		}
 	});
@@ -182,15 +200,15 @@ $(function() {
 		e.preventDefault();
 
 		if ( $('#butacas').css('width') != '0px'){
-			$('#showButacas a i').removeClass("fa-minus-square");
-			$('#showButacas a i').addClass("fa-plus-square");
+			$('#showButacas a i').removeClass("fa-search-minus");
+			$('#showButacas a i').addClass("fa-search-plus");
 			$('#butacas').css('width', '0%');
 		}
 		if ( $('#complements').css('width') != '0px'){
 			$('#showComplements a i').removeClass("fa-minus-square");
 			$('#showComplements a i').addClass("fa-plus-square");
 			$('#complements').css('width', '0%');
-			
+			$('#butacas').css('width', '40%');
 		} else {
 			$('#showComplements a i').removeClass("fa-plus-square");
 			$('#showComplements a i').addClass("fa-minus-square");

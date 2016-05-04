@@ -492,10 +492,15 @@ section#compra{
 	section#butacas {
 		max-width: 66%;
 		text-align: center;
-		width: 0%;
 		overflow: hidden;
 		transition: ease-in-out 0.9s;
 		position: relative;
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: center;
+		width: 25%;
+		margin-right: 0px;
+		font-size: 0.5em;
 
 		// &::after {
 		// 	content: '';
@@ -546,7 +551,7 @@ section#compra{
 	}
 
 	section#complements {
-		max-width: 66%;
+		max-width: 50%;
 		text-align: center;
 		width: 0%;
 		overflow: hidden;
@@ -603,7 +608,7 @@ section#compra{
 	}
 
 	section#resumen {
-		margin: 0 auto 30px;
+		margin: 0 auto 30px 70px;
 		text-align: center;
 
 		button {

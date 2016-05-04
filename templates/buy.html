@@ -22,10 +22,6 @@
         <form action="/buyEnd" method="post">
             <h2>Ya casi está</h2>
 
-            <article id="entradas">
-                <input type="number" name="entradas" value="{{ number }}"> entradas
-            </article>
-
             <article id="info">
                 <div>
 					<img id="showtimepelicula" src="//cine.entradas.com/entradas/contenidos/peliculas/{{ showtime.movie.cartel }}" alt="{{ showtime.movie.title }}"/>
@@ -53,9 +49,15 @@
          		<input type="hidden" name="horario" value="{{ showtime.time }}">
              </article>
 
+             <article id="entradas">
+                <span>
+                </span>
+                <input disabled=true type="hidden" name="entradas" value="{{ number }}"> 
+            </article>
+
              <article id="showButacas">
 				<a href="?">
-                	<i class="fa fa-plus-square"></i>
+                	<i class="fa fa-search-plus"></i>
 					<ul id="butacasSelect">
 					</ul>
 				</a>
