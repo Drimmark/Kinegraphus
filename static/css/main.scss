@@ -213,6 +213,17 @@ section#imagen {
 		width:100%;
 	}
 
+	div#sombra {
+		position: absolute;
+		top: 50%;
+		background-color: black;
+		height: 100%;
+		transform: translateY(-50%);
+		width: 100%;
+		opacity: 0.2;
+		z-index: 50;
+	}
+
 	h1 {
 		position: absolute;
 		top: 45%;
@@ -222,6 +233,7 @@ section#imagen {
 		color: #fff;
 		font-size: 2.8em;
 		text-shadow: 0 0 10px rgba(0,0,0,0.4);
+		z-index: 100;
 
 		span {
 			color: $verde;
@@ -235,6 +247,7 @@ section#searchBar {
 	width: 100%;
 	padding: 20px 10%;
 	background: rgba(233,233,233,0.45);
+	z-index: 100;
 }
 
 section#destacados{
