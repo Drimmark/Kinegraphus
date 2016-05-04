@@ -5,6 +5,40 @@
 <section id="compraFinalizada">
     <h1>¡Su compra ha finalizado con exito!</h1>
 
+            <article id="info">
+                <div>
+                    <img id="showtimepelicula" src="//cine.entradas.com/entradas/contenidos/peliculas/{{ cartel }}" alt="{{pelicula}}"/>
+                    <p>{{pelicula}}</p>
+                </div>
+
+                en
+
+                <div>
+                    <img id="showtimecine" src="https://maps.googleapis.com/maps/api/streetview?size=400x200&location={{ location }}" />
+                    <p>{{cine}}</p>
+                </div>
+             </article>
+
+
+             <article id="fecha">
+                <b>{{date}}</b> a las <b>{{showtime}}</b>
+             </article>
+
+             <article id="showButacas">
+                 <ul>
+                    {% for butaca in butacas %}
+                        {% if loop.last %}
+                            <li> {{butaca}} </li>
+                        {% endif %}
+                    {% endfor %}
+                 </ul>
+             </article>
+
+             <article id="precios">
+                Precio total: {{precio}} €
+
+             </article>
+
     <article id="pdf">
         <p>Descargue el siguiente documento y presentelo en taquilla para recoger sus entradas</p>
         <button type="button" class="action-button" onclick="generatePDF()">Descargar PDF</button>

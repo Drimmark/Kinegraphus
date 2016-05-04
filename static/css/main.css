@@ -872,7 +872,24 @@ section#compra {
 
 section#compraFinalizada {
   text-align: center;
-  padding: 20px 0; }
+  padding: 20px 0;
+  margin: 0 auto;
+  text-align: center; }
+  section#compraFinalizada article#info {
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    section#compraFinalizada article#info div #showtimepelicula {
+      width: 55%; }
+    section#compraFinalizada article#info div #showtimecine {
+      width: 80%; }
+  section#compraFinalizada article#fecha {
+    margin: 15px 0; }
+    section#compraFinalizada article#fecha b {
+      margin: 0 10px; }
+  section#compraFinalizada article#showButacas ul {
+    padding: 0; }
   section#compraFinalizada article#pdf {
     display: flex;
     align-items: center;

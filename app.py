@@ -142,12 +142,14 @@ def buy():
 def buyEnd():
     precio = int(request.form.get('entradas',None))*4.9
     pelicula = request.form.get('pelicula',None)
+    cartel = request.form.get('id_pelicula', None)
     cine = request.form.get('cine',None)
+    location = request.form.get('maps_cine',None)
     date = request.form.get('fecha',None)
     showtime = request.form.get('horario',None)
     butacas = request.form.getlist('butaca')
     #print request.form
-    return render_template('buyEnd.html', cine=cine, pelicula=pelicula, showtime=showtime, precio=precio, date=date, butacas=butacas)
+    return render_template('buyEnd.html', cine=cine, location=location, pelicula=pelicula, cartel = cartel, showtime=showtime, precio=precio, date=date, butacas=butacas)
 
 
 if __name__ == '__main__':

@@ -31,13 +31,16 @@
 					<img id="showtimepelicula" src="//cine.entradas.com/entradas/contenidos/peliculas/{{ showtime.movie.cartel }}" alt="{{ showtime.movie.title }}"/>
 					<p>{{ showtime.movie.title }}</p>
 					<input type="hidden" name="pelicula" value="{{ showtime.movie.title }}">
+					<input type="hidden" name="id_pelicula" value="{{ showtime.movie.cartel  }}">
 				</div>
 
                 en
 
                 <div>
 					<img id="showtimecine" src="https://maps.googleapis.com/maps/api/streetview?size=400x200&location={{ showtime.cinema.street }},{{ showtime.cinema.city }}" alt="{{ showtime.cinema.name }}" />
-            		<p>{{ showtime.cinema.name }}</p><input type="hidden" name="cine" value="{{ showtime.cinema.name }}">
+            		<p>{{ showtime.cinema.name }}</p>
+            		<input type="hidden" name="cine" value="{{ showtime.cinema.name }}">
+            		<input type="hidden" name="maps_cine" value="{{ showtime.cinema.street }},{{ showtime.cinema.city }}">
 				</div>
              </article>
 
