@@ -190,6 +190,7 @@ $(function() {
 			$('#showComplements a i').removeClass("fa-minus-square");
 			$('#showComplements a i').addClass("fa-plus-square");
 			$('#complements').css('width', '0%');
+			
 		} else {
 			$('#showComplements a i').removeClass("fa-plus-square");
 			$('#showComplements a i').addClass("fa-minus-square");

@@ -551,6 +551,8 @@ section#compra{
 		width: 0%;
 		overflow: hidden;
 		transition: ease-in-out 0.9s;
+		display: flex;
+		flex-flow: column wrap;
 
 		p {
 			font-style: italic;
@@ -560,7 +562,7 @@ section#compra{
 		ul {
 			list-style: none;
 			display: flex;
-			flex-flow: row;
+			flex-flow: row wrap;
 			justify-content: space-around;
 
 			li {

@@ -735,14 +735,16 @@ section#compra {
     text-align: center;
     width: 0%;
     overflow: hidden;
-    transition: ease-in-out 0.9s; }
+    transition: ease-in-out 0.9s;
+    display: flex;
+    flex-flow: column wrap; }
     section#compra section#complements p {
       font-style: italic;
       padding: 10px 10%; }
     section#compra section#complements ul {
       list-style: none;
       display: flex;
-      flex-flow: row;
+      flex-flow: row wrap;
       justify-content: space-around; }
       section#compra section#complements ul li {
         width: 20%;
