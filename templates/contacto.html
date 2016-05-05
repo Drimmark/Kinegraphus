@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<section id="contacto">
+    <h1>Contacto</h1>
+
+    <article class="info">
+        <div>
+            <p>¿Cómo podemos ayudarte?</p>
+        </div>
+        
+        <div>
+            <p>Indicanos en el siguiente formulario tu correo electrónico y cual es tu consulta y te contestaremos cuanto antes.</p>
+        </div>       
+    </article>
+
+    <article id="form">    
+        <form onsubmit="validar()">
+        	<input type="text" name="mail" id="mail"  pattern="^[a-zA-Z0-9.!#$%'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)$" required	placeholder="email"/>
+			<p class="comment">Debe seguir el formato: nombre@dominio.extensión</p>
+        	<textarea rows="6" cols="50" name="consulta"></textarea>
+        	<button class="action-button" type="submit">Enviar</button>
+        </form>
+        
+    </article>
+
+    <article class="info">
+        <div>
+            <h2>También puedes contactarnos por teléfono</h2>
+        </div>
+        
+        <div id="contactos">
+            <div class=tlf>
+                <h3>Atención al cliente</h3>
+                <p class="telefono">902 65 65 79</p>
+                <p class="comment">0,09€ /min (IVA incluido) Establecimiento de llamada: 0,12€ (IVA incluido)</p>
+                <p>Lunes a domingo, de 12 a 21h</p>
+            </div>
+
+            <div class=tlf>
+                <h3>Venta telefónica</h3>
+                <p class="telefono">902 488 488</p>
+                <p class="comment">0,09€ /min (IVA incluido) Establecimiento de llamada: 0,12€ (IVA incluido)</p>
+                <p>Lunes a domingo, de 10 a 24h</p>
+            </div>
+            
+        </div>       
+    </article>
+
+    <h2> ¡Muchas gracias por confiar en entradas.com! </h2>
+    <br>
+    <a href='/'><button type="button" class="action-button">Volver al inicio</button></a>
+
+</section>
+    
+{% endblock %}
+
+{% block scripts %}
+
+<script>
+	function validar(){
+		alert("Tu mensaje ha sido enviado y te contestaremos cuanto antes. \n ¡Muchas gracias por confiar en entradas.com!");
+    }
+</script>
+
+{{ super() }}
+
+{% endblock %}

@@ -64,8 +64,50 @@
 
 {% block scripts %}
 {{ super() }}
+
+    <script>
+        var city = "";
+        var hay_city = 1;
+        var my_latitud;
+        var my_longitud;
+        
+        $(document).ready(function() {
+            localizame(); /*Cuando cargue la página, cargamos nuestra posición*/   
+        });
+        
+        function localizame() {
+            if (navigator.geolocation) { /* Si el navegador tiene geolocalizacion */
+                navigator.geolocation.getCurrentPosition(coordenadas, errores);
+            }else{
+                alert('Oops! Tu navegador no soporta geolocalización. Bájate Chrome, que es gratis!');
+            }
+        }
+        
+        function coordenadas(position) {
+            my_latitud = position.coords.latitude; /*Guardamos nuestra latitud*/
+            my_longitud = position.coords.longitude; /*Guardamos nuestra longitud*/
+        }
+        
+        function errores(err) {
+            hay_city = 0;
+            /*Controlamos los posibles errores */
+            if (err.code == 0) {
+              alert("Oops! Algo ha salido mal");
+            }
+            if (err.code == 1) {
+              alert("Oops! No has aceptado compartir tu posición");
+            }
+            if (err.code == 2) {
+              alert("Oops! No se puede obtener la posición actual");
+            }
+            if (err.code == 3) {
+              alert("Oops! Hemos superado el tiempo de espera");
+            }
+        }
+         
+    </script>
+
 	<script>
-        var city = "?";
         var positions = [
                             {% for cinema in cinemas %}
                                 {% if cinema.latitude is not none and cinema.longitude is not none %}
@@ -87,6 +129,13 @@
                                 {% endif %}
                             {% endfor %}
                         ];
+        {% if city is not none %} city = "{{ city }}" {% endif %};
+        if (city.localeCompare("")){//Si no podemos filtrar por ciudad, vemos si tenemos la geoposicion
+            if(hay_city == 1){//Si la tenemos cambiamos el valor, si no, se queda igual
+                city = "geo";
+            }
+
+        }
 
         $(function() {
             $('form.cinema input[name=time]').on('change', function() {
@@ -94,6 +143,7 @@
             })
         })
 	</script>
+    
 <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-clockpicker.min.js') }}"></script>
 <script type="text/javascript" src="{{ url_for('static', filename='js/search.js') }}"></script>
 

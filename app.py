@@ -153,6 +153,11 @@ def buyEnd():
     #print request.form
     return render_template('buyEnd.html', cine=cine, location=location, pelicula=pelicula, cartel = cartel, showtime=showtime, precio=precio, date=date, butacas=butacas)
 
+@app.route('/contacto')
+def contacto():
+    
+    return render_template('contacto.html')
+
 
 if __name__ == '__main__':
     app.run(debug=True)

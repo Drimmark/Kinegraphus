@@ -65,6 +65,7 @@
 {% endblock %}
 
 {% block scripts %}
+
 {{ super() }}
     <script>
         var positions = [
@@ -76,6 +77,7 @@
                             }
                         ];
         var city = "?";
+        
 
         $(function() {
             $('form.movie input[name=time]').on('change', function() {

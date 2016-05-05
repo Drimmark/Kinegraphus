@@ -10,12 +10,17 @@ $(document).ready(function(){
 	lat = lat/positions.length;
 	lng = lng/positions.length;
 	if (city.localeCompare("")){//Entra al filtrar una ciudad
-		if (positions.length == 1) {
-			zoom = 15;
+		if (positions.length == 1) {//si hay solo un cine, ponemos zoom para ver servicios
+			zoom = 19;
 		}
-		else{
+		else{//Si hay varios, zoom para verlos todos
 			zoom = 12;
 		}	
+	}
+	else if(!city.localeCompare("geo")){//Si no hemos filtrado ciudad y tenemos geolocalizacion, machacamos los centros calculados y usamos los de geolocalizacion
+		lat = my_latitud;
+		lng = my_longitud;
+		zoom = 14;
 	}
 	else{
 		zoom = 4;

@@ -906,6 +906,51 @@ section#compraFinalizada {
       padding-right: 50px;
       text-align: left; }
 
+
+
+section#contacto {
+  text-align: center;
+  padding: 5px 0 25px;
+  margin: 0 auto;
+  text-align: center; }
+  section#contacto article.info {
+    margin: 20px 0;
+    /*display: flex;*/
+    align-items: center;
+    justify-content: center; }
+  section#contacto article#form {
+    margin: 35px 0;
+    display: flex;
+    align-items: left;
+    justify-content: center;
+    text-align: left; } 
+  section#contacto article.info div#contactos {
+    margin: -20px;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+  section#contacto div.tlf {
+    margin: 20px;
+    width: auto;
+    display: inline-block;
+}
+
+  section#contacto div#contactos p.comment {
+    font-size: 70%;
+    margin: 0px; } 
+
+  section#contacto div#contactos p.telefono {
+    margin: 0px;
+    font-size: 200%;
+    font-weight: bold; } 
+  section#contacto p.comment {
+    font-size: 70%;
+    margin-top: 0px;
+    margin-bottom: 10px; }
+
+
+
+
 footer {
   background-color: #133C55;
   color: white; }
