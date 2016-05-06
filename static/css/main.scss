@@ -12,8 +12,8 @@ $verde: #157A6E;
 $flashReverso: #FABB00;
 $gris: #e9e9e9;
 $full: #BF2C0B;
-$empty: #E5C120;
-$half: #71C63F;
+$half: #E5C120;
+$empty: #71C63F;
 $libre: #40C531;
 
 html {
@@ -390,13 +390,13 @@ section#search {
 							position: relative;
 
 							&.color10 {
-								color: $empty;
+								color: $full;
 							}
 							&.color20 {
-								color: $empty;
+								color: $full;
 							}
 							&.color30 {
-								color: $empty;
+								color: $full;
 							}
 							&.color40 {
 								color: $half;
@@ -408,13 +408,13 @@ section#search {
 								color: $half;
 							}
 							&.color70 {
-								color: $full;
+								color: $empty;
 							}
 							&.color80 {
-								color: $full;
+								color: $empty;
 							}
 							&.color90 {
-								color: $full;
+								color: $empty;
 							}
 							&.tooltip:after {
 								content: attr(data-occupancy);
@@ -596,6 +596,7 @@ section#compra{
 					}
 					i {
 						cursor: pointer;
+						align-self: center;
 						transition: .3s all ease-in-out;
 
 						&:hover {
@@ -668,7 +669,7 @@ section#compra{
 				i {
 					cursor: pointer;
 					margin-right: 10px;
-					font-size: 1.6em;
+					font-size: 1em;
 					color: $azulClarito;
 					margin-right: 10px;
 				}
@@ -839,10 +840,10 @@ section#contacto {
 		    margin: -20px;
 		    display: flex;
 		    align-items: center;
-		    justify-content: center; }
+		    justify-content: center;
 		}
 	}
-	
+
 	article#form {
 	    margin: 35px 0;
 	    display: flex;
@@ -855,7 +856,7 @@ section#contacto {
   		p.comment {
 		    font-size: 70%;
 		    margin: 0px;
-		} 
+		}
 
   		p.telefono {
 		    margin: 0px;
@@ -863,7 +864,7 @@ section#contacto {
 		    font-weight: bold;
 		}
 	}
-	
+
   	p.comment {
     	font-size: 70%;
     	margin-top: 0px;
@@ -892,7 +893,7 @@ section#contacto {
     display: flex;
     align-items: left;
     justify-content: center;
-    text-align: left; } 
+    text-align: left; }
   section#contacto article.info div#contactos {
     margin: -20px;
     display: flex;
@@ -906,12 +907,12 @@ section#contacto {
 
   section#contacto div#contactos p.comment {
     font-size: 70%;
-    margin: 0px; } 
+    margin: 0px; }
 
   section#contacto div#contactos p.telefono {
     margin: 0px;
     font-size: 200%;
-    font-weight: bold; } 
+    font-weight: bold; }
   section#contacto p.comment {
     font-size: 70%;
     margin-top: 0px;
