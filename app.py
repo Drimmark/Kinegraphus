@@ -150,12 +150,12 @@ def buyEnd():
     date = request.form.get('fecha',None)
     showtime = request.form.get('horario',None)
     butacas = request.form.getlist('butaca')
-    #print request.form
+    # print request.form
     return render_template('buyEnd.html', cine=cine, location=location, pelicula=pelicula, cartel = cartel, showtime=showtime, precio=precio, date=date, butacas=butacas)
 
 @app.route('/contacto')
 def contacto():
-    
+
     return render_template('contacto.html')
 
 
