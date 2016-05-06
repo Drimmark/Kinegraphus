@@ -10,7 +10,7 @@ $(function() {
 		$('#entradas span').html($('#entradas input').val() + " entrada");
 	}
 	$('#conteo').html("<b>Entradas:</b> " + $('#entradas input').val() + " x 4.90 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>" + Math.round($('#entradas input').val() * 4.9 * 100) / 100 + " €</b>");
-	$('#total').html("Precio &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + Math.round($('#entradas input').val() * 4.9 * 100) / 100 + " €");
+	$('#total').html("Precio &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + getTotal() + " €");
 
 	// Payment methods
 	$('input[name="payment_t"]').on('change', function() {
@@ -106,7 +106,7 @@ $(function() {
 					$('#entradas span').html($('#entradas input').val() + " entrada");
 				}
 				$('#conteo').html("<b>Entradas:</b> " + $('#entradas input').val() + " x 4.90 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>" + Math.round($('#entradas input').val() * 4.9 * 100) / 100 + " €</b>");
-				$('#total').html("Precio &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + Math.round($('#entradas input').val() * 4.9 * 100) / 100 + " €");
+				$('#total').html("Precio &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + getTotal() + " €");
 				butaca = [$(this).attr("fila"), $(this).attr("asiento")];
 				$('#butacasSelect').html("");
 				for (i in butacasSelect){
@@ -128,7 +128,7 @@ $(function() {
 					$('#entradas span').html($('#entradas input').val() + " entrada");
 				}
 				$('#conteo').html("<b>Entradas:</b> " + $('#entradas input').val() + " x 4.90 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>" + Math.round($('#entradas input').val() * 4.9 * 100) / 100 + " €</b>");
-				$('#total').html("Precio &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + Math.round($('#entradas input').val() * 4.9 * 100) / 100 + " €");
+				$('#total').html("Precio &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + getTotal() + " €");
 				$('#butacasSelect').html("");
 				butaca = [$(this).attr("fila"), $(this).attr("asiento")];
 				butacasSelect.push(butaca)
@@ -166,32 +166,25 @@ $(function() {
 		}
 	});
 
-	var complementContainer = document.getElementById('complement');
 
-	for (complementIndex in complementsOptions) {
-		newNode = document.createElement('li');
-		temporalNode = document.createElement('h3');
-		temporalNode.innerHTML = complementsOptions[complementIndex].name;
-		newNode.appendChild(temporalNode);
-		temporalNode = document.createElement('img');
-		temporalNode.src = complementsOptions[complementIndex].image;
-		newNode.appendChild(temporalNode);
-		groupNode = document.createElement('div');
-		temporalNode = document.createElement('p');
-		temporalNode.innerHTML = complementsOptions[complementIndex].price + ' €';
-		groupNode.appendChild(temporalNode);
-		plusButton = document.createElement('i');
-		plusButton.className = 'fa fa-plus';
-		plusButton.setAttribute('index', complementIndex);
-		groupNode.appendChild(plusButton);
-		newNode.appendChild(groupNode);
+	for (complementIndex in complementsOptions){
+		$('<li>').html('<h3>' + complementsOptions[complementIndex].name + '</h3><img src="' + complementsOptions[complementIndex].image + '"></img><div><p>' + complementsOptions[complementIndex].price + ' €</p><i class="fa fa-plus" data-index="' + complementIndex + '" id="' + complementsOptions[complementIndex].slug + '"></i></div>').appendTo($('#complement'));
+		$('#precios div').prepend('<input type="hidden" name="' + complementsOptions[complementIndex].slug + '" id="' + complementsOptions[complementIndex].slug + '" value="0" />');
 
-		complementContainer.appendChild(newNode);
+		$('.fa-plus#' + complementsOptions[complementIndex].slug).on( "click", function(e) {
+			var compIndex = $(e.target).data('index');
+			var elementId = $(e.target).attr('id');
+			var newval = parseInt($('input#' + elementId).val()) + 1;
 
-		plusButton.addEventListener('click', function(e) {
-			var index = e.target.getAttribute('index');
+			if(newval == 1) {
+				$('input#' + elementId).val(newval);
+				$('#precios div').prepend('<span id="' + elementId + '"><b>' + complementsOptions[compIndex].name + '</b>: ' + newval + ' x ' + complementsOptions[compIndex].price + ' &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>' + Math.round(newval * complementsOptions[compIndex].price * 100) / 100 + ' €</b></span><br>');
+			} else {
+				$('input#' + elementId).val(newval);
+				$('span#' + elementId).html('<b>' + complementsOptions[compIndex].name + '</b>: ' + newval + ' x ' + complementsOptions[compIndex].price + ' &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>' + Math.round(newval * complementsOptions[compIndex].price * 100) / 100 + ' €</b>');
+			}
 
-			complements[index].amount += 1;
+			$('#total').html("Precio &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + getTotal() + " €");
 		});
 	}
 
@@ -220,7 +213,7 @@ $(function() {
 	//Actualizar entradas y precio
 	$('#entradas input').on('input', function() {
 		$('#conteo').html("<b>Entradas:</b> " + $('#entradas input').val() + " x 4.90 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>" + Math.round($('#entradas input').val() * 4.9 * 100) / 100 + " €</b>");
-		$('#total').html("Precio &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + Math.round($('#entradas input').val() * 4.9 * 100) / 100 + " €");
+		$('#total').html("Precio &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + getTotal() + " €");
 	});
 });
 
@@ -245,4 +238,19 @@ function getCardType(number) {
         return "jcb";
 
     return null;
+}
+
+function getTotal() {
+	var price = 0;
+
+	for (complementIndex in complementsOptions){
+		var elementPrice = parseInt($('input#' + complementsOptions[complementIndex].slug).val()) * complementsOptions[complementIndex].price;
+		price += elementPrice;
+	}
+
+	var elementPrice = parseInt($('#entradas input').val()) * 4.90;
+
+	price += elementPrice;
+
+	return Math.round(price * 100) / 100;
 }
