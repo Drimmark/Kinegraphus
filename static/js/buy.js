@@ -245,12 +245,15 @@ function getTotal() {
 
 	for (complementIndex in complementsOptions){
 		var elementPrice = parseInt($('input#' + complementsOptions[complementIndex].slug).val()) * complementsOptions[complementIndex].price;
-		price += elementPrice;
+		if (!isNaN(elementPrice)) {
+			price += elementPrice;
+		}
 	}
 
 	var elementPrice = parseInt($('#entradas input').val()) * 4.90;
 
 	price += elementPrice;
+
 
 	return Math.round(price * 100) / 100;
 }
