@@ -148,8 +148,8 @@ $(function() {
 		e.preventDefault();
 
 		if ( $('#complements').css('width') != '0px'){
-			$('#showComplements a i').removeClass("fa-minus-square");
-			$('#showComplements a i').addClass("fa-plus-square");
+			$('#showComplements a i').removeClass("fa-arrow-left");
+			$('#showComplements a i').addClass("fa-arrow-right");
 			$('#complements').css('width', '0%');
 		}
 		if ( $('#butacas').css('font-size') != '8px'){
@@ -205,13 +205,13 @@ $(function() {
 			$('#butacas').css('width', '0%');
 		}
 		if ( $('#complements').css('width') != '0px'){
-			$('#showComplements a i').removeClass("fa-minus-square");
-			$('#showComplements a i').addClass("fa-plus-square");
+			$('#showComplements a i').removeClass("fa-arrow-left");
+			$('#showComplements a i').addClass("fa-arrow-right");
 			$('#complements').css('width', '0%');
 			$('#butacas').css('width', '40%');
 		} else {
-			$('#showComplements a i').removeClass("fa-plus-square");
-			$('#showComplements a i').addClass("fa-minus-square");
+			$('#showComplements a i').removeClass("fa-arrow-right");
+			$('#showComplements a i').addClass("fa-arrow-left");
 			$('#complements').css('width', '100%');
 		}
 	});
