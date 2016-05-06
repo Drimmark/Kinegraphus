@@ -168,7 +168,7 @@ $(function() {
 
 
 	for (complementIndex in complementsOptions){
-		$('<li>').html('<h3>' + complementsOptions[complementIndex].name + '</h3><img src="' + complementsOptions[complementIndex].image + '"></img><div><p>' + complementsOptions[complementIndex].price + ' €</p><i class="fa fa-plus" data-index="' + complementIndex + '" id="' + complementsOptions[complementIndex].slug + '"></i></div>').appendTo($('#complement'));
+		$('<li>').html('<h3>' + complementsOptions[complementIndex].name + '</h3><img src="' + complementsOptions[complementIndex].image + '"></img><div><p>' + complementsOptions[complementIndex].price + ' €</p><i class="fa fa-plus" data-index="' + complementIndex + '" id="' + complementsOptions[complementIndex].slug + '"></i><i class="fa fa-minus" data-index="' + complementIndex + '" id="' + complementsOptions[complementIndex].slug + '"></i></div>').appendTo($('#complement'));
 		$('#precios div').prepend('<input type="hidden" name="' + complementsOptions[complementIndex].slug + '" id="' + complementsOptions[complementIndex].slug + '" value="0" />');
 
 		$('.fa-plus#' + complementsOptions[complementIndex].slug).on( "click", function(e) {
@@ -178,10 +178,26 @@ $(function() {
 
 			if(newval == 1) {
 				$('input#' + elementId).val(newval);
-				$('#precios div').prepend('<span id="' + elementId + '"><b>' + complementsOptions[compIndex].name + '</b>: ' + newval + ' x ' + complementsOptions[compIndex].price + ' &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>' + Math.round(newval * complementsOptions[compIndex].price * 100) / 100 + ' €</b></span><br>');
+				$('#precios div').prepend('<span id="' + elementId + '"><b>' + complementsOptions[compIndex].name + '</b>: ' + newval + ' x ' + complementsOptions[compIndex].price + ' &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>' + Math.round(newval * complementsOptions[compIndex].price * 100) / 100 + ' €</b><br></span>');
 			} else {
 				$('input#' + elementId).val(newval);
-				$('span#' + elementId).html('<b>' + complementsOptions[compIndex].name + '</b>: ' + newval + ' x ' + complementsOptions[compIndex].price + ' &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>' + Math.round(newval * complementsOptions[compIndex].price * 100) / 100 + ' €</b>');
+				$('span#' + elementId).html('<b>' + complementsOptions[compIndex].name + '</b>: ' + newval + ' x ' + complementsOptions[compIndex].price + ' &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>' + Math.round(newval * complementsOptions[compIndex].price * 100) / 100 + ' €</b><br>');
+			}
+
+			$('#total').html("Precio &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + getTotal() + " €");
+		});
+
+		$('.fa-minus#' + complementsOptions[complementIndex].slug).on( "click", function(e) {
+			var compIndex = $(e.target).data('index');
+			var elementId = $(e.target).attr('id');
+			var newval = parseInt($('input#' + elementId).val()) - 1;
+
+			if(newval == 0) {
+				$('input#' + elementId).val(newval);
+				$('span#' + elementId).remove();
+			} else if (newval > 0) {
+				$('input#' + elementId).val(newval);
+				$('span#' + elementId).html('<b>' + complementsOptions[compIndex].name + '</b>: ' + newval + ' x ' + complementsOptions[compIndex].price + ' &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>' + Math.round(newval * complementsOptions[compIndex].price * 100) / 100 + ' €</b><br>');
 			}
 
 			$('#total').html("Precio &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + getTotal() + " €");

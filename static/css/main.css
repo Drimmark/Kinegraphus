@@ -982,6 +982,7 @@ section#compra section#complements ul li div {
 
 section#compra section#complements ul li div p {
   margin: 0;
+  flex-basis: 100%;
 }
 
 section#compra section#complements ul li div i {
