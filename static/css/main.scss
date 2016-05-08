@@ -162,6 +162,7 @@ ul {
 header {
 	div{
 		display: flex;
+		flex-flow: row wrap;
 		justify-content: space-between;
 		align-items: center;
 		background-color: $azulOscuro;
@@ -293,15 +294,20 @@ section#search {
 	background-color: #eee;
 
 	#results {
-		#filters {
+		#filters > form {
 			background: $azulClarito;
-			padding: 15px 0;
+			padding: 2% 1%;
 			display: flex;
-			flex-flow: row;
-			justify-content: center;
+			flex-flow: row wrap;
+			justify-content: space-around;
+			align-items: center;
 
 			label {
 				color: #fff;
+			}
+			input, select {
+				margin: 0 1%;
+				max-width: 80%;
 			}
 		}
 
@@ -355,7 +361,8 @@ section#search {
 					}
 				}
 				h3 {
-					margin: 10px 1em;
+					margin: 3% 5%;
+					text-align: center;
 				}
 				ul.showtimes {
 					list-style: none;
@@ -948,5 +955,43 @@ footer {
 		justify-content: center;
 		margin: 30px 50px 0px;
 		padding: 0 0 15px;
+	}
+}
+
+@media (max-width: 900px) {
+	section#search {
+		.map {
+			display: none;
+		}
+		#results {
+			width: 100%;
+		}
+	}
+	section#destacados div#films a {
+		width: 30%;
+	}
+}
+
+@media (max-width: 700px) {
+	section#search {
+		#results #cinemas .cinema {
+			width: 45%;
+			flex-basis: 45%
+		}
+	}
+	section#destacados div#films a {
+		width: 45%;
+	}
+}
+
+@media (max-width: 400px) {
+	section#search {
+		#results #cinemas .cinema {
+			width: 95%;
+			flex-basis: 95%
+		}
+	}
+	section#destacados div#films a {
+		width: 100%;
 	}
 }

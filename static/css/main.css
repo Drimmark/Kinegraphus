@@ -551,6 +551,7 @@ ul {
 
 header div {
   display: flex;
+  flex-flow: row wrap;
   justify-content: space-between;
   align-items: center;
   background-color: #133C55;
@@ -677,16 +678,22 @@ section#search #results {
   width: 55%;
 }
 
-section#search #results #filters {
+section#search #results #filters > form {
   background: #1282A2;
-  padding: 15px 0;
+  padding: 2% 1%;
   display: flex;
-  flex-flow: row;
-  justify-content: center;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
 }
 
-section#search #results #filters label {
+section#search #results #filters > form label {
   color: #fff;
+}
+
+section#search #results #filters > form input, section#search #results #filters > form select {
+  margin: 0 1%;
+  max-width: 80%;
 }
 
 section#search #results div#movies, section#search #results div#cinemas {
@@ -737,7 +744,8 @@ section#search #results div#movies form > span a i.fa:before, section#search #re
 }
 
 section#search #results div#movies form h3, section#search #results div#cinemas form h3 {
-  margin: 10px 1em;
+  margin: 3% 5%;
+  text-align: center;
 }
 
 section#search #results div#movies form ul.showtimes, section#search #results div#cinemas form ul.showtimes {
@@ -1338,4 +1346,36 @@ footer p {
   justify-content: center;
   margin: 30px 50px 0px;
   padding: 0 0 15px;
+}
+
+@media (max-width: 900px) {
+  section#search .map {
+    display: none;
+  }
+  section#search #results {
+    width: 100%;
+  }
+  section#destacados div#films a {
+    width: 30%;
+  }
+}
+
+@media (max-width: 700px) {
+  section#search #results #cinemas .cinema {
+    width: 45%;
+    flex-basis: 45%;
+  }
+  section#destacados div#films a {
+    width: 45%;
+  }
+}
+
+@media (max-width: 400px) {
+  section#search #results #cinemas .cinema {
+    width: 95%;
+    flex-basis: 95%;
+  }
+  section#destacados div#films a {
+    width: 100%;
+  }
 }
