@@ -268,6 +268,12 @@ function getTotal() {
 
 	var elementPrice = parseInt($('#entradas input').val()) * 4.90;
 
+	if ($('#entradas input').val() == 0) {
+		$('#resumen form button').prop('disabled', 1);
+	} else {
+		$('#resumen form button').prop('disabled', 0);
+	}
+
 	price += elementPrice;
 
 
