@@ -39,5 +39,15 @@ $(function() {
 		else if ($(this).scrollTop() > h+x-a){
 			document.getElementById("map").style.top = "-" + String(-(x+h-a) + ($(this).scrollTop())) + "px";
 		}
+
+		//Para colocar la barra de filtros
+		if( $(this).scrollTop() < h){
+			document.getElementById("filters").style.top = "-" + String(h - $(this).scrollTop()) + "px";
+		}
+
+		else if( $(this).scrollTop() > h){
+			document.getElementById("filters").style.top = "-" + String(h) + "px";
+		}
+
 	});
 })

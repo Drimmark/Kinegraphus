@@ -150,8 +150,16 @@ def buyEnd():
     date = request.form.get('fecha',None)
     showtime = request.form.get('horario',None)
     butacas = request.form.getlist('butaca')
+    golosinas = int(request.form.get('golosinas',None))
+    nestea = int(request.form.get('nestea',None))
+    cola = int(request.form.get('cola',None))
+    colaZ = int(request.form.get('cola-zero',None))
+    nachos = int(request.form.get('nachos',None))
+    palomitas = int(request.form.get('palomitas',None))
+
+    precio += golosinas*1.0 + nestea*2.5 + cola*1.8 + colaZ*2.0 + nachos*4.0 + palomitas*2.5
     # print request.form
-    return render_template('buyEnd.html', cine=cine, location=location, pelicula=pelicula, cartel = cartel, showtime=showtime, precio=precio, date=date, butacas=butacas)
+    return render_template('buyEnd.html', cine=cine, location=location, pelicula=pelicula, cartel = cartel, showtime=showtime, precio=precio, date=date, butacas=butacas, nestea=nestea, golosinas=golosinas,colaZ=colaZ, cola=cola, nachos=nachos, palomitas=palomitas)
 
 @app.route('/contacto')
 def contacto():

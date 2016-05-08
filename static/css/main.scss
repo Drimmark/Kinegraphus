@@ -301,6 +301,8 @@ section#search {
 			flex-flow: row wrap;
 			justify-content: space-around;
 			align-items: center;
+			width: 55%;/*Estos 2 últimos son los necesarios*/
+			position: fixed !important;
 
 			label {
 				color: #fff;

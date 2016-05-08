@@ -685,6 +685,8 @@ section#search #results #filters > form {
   flex-flow: row wrap;
   justify-content: space-around;
   align-items: center;
+  width: 55%;/*Estos 2 últimos son los necesarios*/
+  position: fixed !important;
 }
 
 section#search #results #filters > form label {

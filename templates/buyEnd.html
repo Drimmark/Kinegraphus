@@ -29,6 +29,30 @@
                     {% for butaca in butacas %}
                         <li> {{butaca}} </li>
                     {% endfor %}
+
+                    {% if golosinas > 0 %}
+                        <li>Golosinas x {{golosinas}}</li>
+                    {% endif %}
+
+                    {% if nestea > 0 %}
+                        <li>Nestea x {{nestea}}</li>
+                    {% endif %}
+
+                    {% if cola > 0 %}
+                        <li>Coca-Cola x {{cola}}</li>
+                    {% endif %}
+
+                    {% if colaZ > 0 %}
+                        <li>Coca-Cola Zero x {{colaZ}}</li>
+                    {% endif %}
+
+                    {% if nachos > 0 %}
+                        <li>"Nachos x {{nachos}}</li>
+                    {% endif %}
+
+                    {% if palomitas > 0 %}
+                        <li>Palomitas x {{palomitas}}</li>
+                    {% endif %}
                  </ul>
              </article>
 
@@ -38,7 +62,7 @@
              </article>
 
     <article id="pdf">
-        <p>Descargue el siguiente documento y presentelo en taquilla para recoger sus entradas</p>
+        <p>Descargue el siguiente documento y preséntelo en taquilla para recoger sus entradas</p>
         <button type="button" class="action-button" onclick="generatePDF()">Descargar PDF</button>
     </article>
 
@@ -57,7 +81,11 @@
 
 function generatePDF() {
 
-
+    var i = 0; // La usaremos para controlar los saltos de linea
+    var desplazamiento = 0; // Servira para recolocar los elementos del pdf
+    var desplazamientoB = 0; // Servira para recolocar los elementos del pdf
+    var desplazamientoC = 0; // Servira para recolocar los elementos del pdf
+    var coma = 0; // necesaria para poner la coma correctamente en los complementos.
     var logo = new Image();
     logo.src = 'static/images/logo.png';
     var codebar = new Image();
@@ -70,11 +98,98 @@ function generatePDF() {
             {% else %}
                 butacasNum += "{{butaca}}, ";
             {% endif %}
+
+            i++;
+            if (i == 3){
+                i = 0;
+                butacasNum += "\n                               ";
+                desplazamientoB += 5;
+            }
+
         {% endfor %}
+
+    var complementos = "";
+    i = 0;
+    {% if golosinas > 0 %}
+        complementos += "Golosinas x {{golosinas}}";
+        coma++;
+        i++;
+
+    {% endif %}
+
+    {% if nestea > 0 %}
+        if(coma == 1){
+            complementos += ", ";
+            coma--;
+        }
+        coma++;
+        complementos += "Nestea x {{nestea}}";
+        i++;
+
+    {% endif %}
+
+    {% if cola > 0 %}
+        if(coma == 1){
+            complementos += ", ";
+            coma--;
+        }
+        coma++;
+        complementos += "Coca-Cola x {{cola}}";
+        i++;
+
+    {% endif %}
+
+    {% if colaZ > 0 %}
+        if(coma == 1){
+            complementos += ", ";
+            coma--;
+        }
+        if (i == 3){
+           complementos += "\n                               "; 
+           desplazamientoC += 4;
+        }
+        coma++;
+        complementos += "Coca-Cola Zero x {{colaZ}}";
+        i++;
+
+    {% endif %}
+
+    {% if nachos > 0 %}
+        if(coma == 1){
+            complementos += ", ";
+            coma--;
+        }
+        if (i == 3){
+           complementos += "\n                               "; 
+           desplazamientoC += 4;
+        }
+        coma++;
+        complementos += "Nachos x {{nachos}}";
+        i++;
+
+    {% endif %}
+
+    {% if palomitas > 0 %}
+        if(coma == 1){
+            complementos += ", ";
+            coma--;
+        }
+        if (i == 3){
+           complementos += "\n                               ";
+           desplazamientoC += 4;
+        }
+        coma++;
+        complementos += "Palomitas x {{palomitas}}";
+    {% endif %}
+
+    if(coma == 1){
+      complementos += ".";
+    }
+    desplazamiento = desplazamientoB+desplazamientoC;
 
 
     var doc = new jsPDF();
-    doc.setFontSize(20);
+    doc.setFontSize(16);
 
     doc.setFillColor(19,60,85);
     doc.rect(0, 0, 400, 70, 'F'); //Rectangulo logo
@@ -82,29 +197,30 @@ function generatePDF() {
     doc.addImage(logo, 'PNG', 20, 10, 60, 50);      //Imagen del logo
 
     doc.setFillColor(233,233,233);
-    doc.rect(0, 70, 400, 75, 'F'); //Rectangulo way
+    doc.rect(0, 70, 400, 75+desplazamiento, 'F'); //Rectangulo way
 
 
 
 
-    doc.text(22, 90, 'Cine:     {{cine}}');               //Cine
-    doc.text(22, 100, 'Película:    {{pelicula}}');               //Peli
-    doc.text(22, 110, 'Horario:     {{showtime}}');               //Horario
-    doc.text(22, 120, 'Butacas:      ' + String(butacasNum));    //butacas
-    doc.text(22, 130, 'Precio:      {{precio}} €');               //precio
-
-    doc.setFillColor(0,0,0);
-    doc.rect(0, 145, 400, 1, 'F'); //Linea divisora
-
-    doc.addImage(codebar, 'JPG', 26, 165, 155, 45);               //Ćódigo de barras
+    doc.text(20, 90,  'Cine:                      {{cine}}');               //Cine
+    doc.text(20, 100, 'Película:                 {{pelicula}}');               //Peli
+    doc.text(20, 110, 'Horario:                  {{showtime}}');               //Horario
+    doc.text(20, 120, 'Butacas:                 '+ String(butacasNum));    //butacas
+    doc.text(20, 130+desplazamientoB, 'Complementos:     '+ complementos);    //complementos
+    doc.text(20, 140+desplazamiento, 'Precio total:            {{precio}} €');               //precio
 
     doc.setFillColor(0,0,0);
-    doc.rect(0, 230, 400, 1, 'F'); //Linea divisora
+    doc.rect(0, 145+desplazamiento, 400, 1, 'F'); //Linea divisora
 
-    doc.setFontSize(15);
-    doc.text(22, 245, 'Cupón válido para la sesión del {{date}}.');
-    doc.text(22, 255, 'Precio por entrada 4,90€ (todas las entradas para la misma película y sesión).');
-    doc.text(22, 265, 'No se permitirán devoluciones de las entradas.');               //terminos de uso
+    doc.addImage(codebar, 'JPG', 26, 166+desplazamiento, 155, 45);               //Ćódigo de barras
+
+    doc.setFillColor(0,0,0);
+    doc.rect(0, 235+desplazamiento, 400, 1, 'F'); //Linea divisora
+
+    doc.setFontSize(12);
+    doc.text(20, 265, 'Cupón válido para la sesión del {{date}}.');
+    doc.text(20, 275, 'Precio por entrada 4,90€ (todas las entradas para la misma película y sesión).');
+    doc.text(20, 285, 'No se permitirán devoluciones de las entradas.');               //terminos de uso
 
 
     // Save the PDF
