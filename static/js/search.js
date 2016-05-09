@@ -40,13 +40,13 @@ $(function() {
 			document.getElementById("map").style.top = "-" + String(-(x+h-a) + ($(this).scrollTop())) + "px";
 		}
 
-		//Para colocar la barra de filtros
+		//Estamos arriba
 		if( $(this).scrollTop() < h){
-			document.getElementById("filters").style.top = "-" + String(h - $(this).scrollTop()) + "px";
+			document.getElementById("filters").style.top = String(h - $(this).scrollTop()) + "px";
 		}
-
-		else if( $(this).scrollTop() > h){
-			document.getElementById("filters").style.top = "-" + String(h) + "px";
+		//Estamos en medio
+		else if( $(this).scrollTop() > h && ($(this).scrollTop() < h+x-w)){
+			document.getElementById("filters").style.top = "0px";
 		}
 
 	});

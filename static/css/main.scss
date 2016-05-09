@@ -294,6 +294,13 @@ section#search {
 	background-color: #eee;
 
 	#results {
+		#filters {
+			//position: relative;
+			position: fixed !important;
+			width: 55%;
+			z-index: 100;
+		}
+		
 		#filters > form {
 			background: $azulClarito;
 			padding: 2% 1%;
@@ -301,8 +308,8 @@ section#search {
 			flex-flow: row wrap;
 			justify-content: space-around;
 			align-items: center;
-			width: 55%;/*Estos 2 últimos son los necesarios*/
-			position: fixed !important;
+			width: 100%;/*Estos 2 últimos son los necesarios*/
+			position: absolute;
 
 			label {
 				color: #fff;
@@ -321,6 +328,7 @@ section#search {
 			display: flex;
 			flex-flow: row wrap;
 			align-items: stretch;
+			margin-top: 11%;
 
 			form {
 				display: flex;
