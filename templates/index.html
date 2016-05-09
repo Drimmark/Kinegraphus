@@ -36,9 +36,28 @@
 						{% endfor %}
 					</select>
 				</li>
+
+				<li id='showFiltros'>
+					<span id='addFiltros' class="fa-stack fa-lg">
+						<i class='fa fa-square fa-stack-2x'></i>
+						<i class='fa fa-plus fa-stack-1x'></i>
+						<i class='fa fa-minus fa-stack-1x'></i>
+					</span>
+					<br>
+					Filtros
+				</li>
+
 				<li>
 					<input id="hidden" type="hidden" name="" value="">
 					<button id="busqueda" type="submit" disabled><i class='fa fa-search'></i>Buscar</button>
+				</li>
+			</ul>
+			<ul id='filtros'>
+				<li>
+					<label><input type="checkbox" id="2d" name="d2" {{ d2 if d2 != None }}/>2D</label>
+					<label><input type="checkbox" id="3d" name="d3" {{ d3 if d3 != None }}/> 3D</label>
+					<label><input type="checkbox" id="vose" name="vose" {{ vose if vose != None }}/> VOSE </label>
+					<label> <input type="date" name="date" value="{{ date }}"> Fecha</label>
 				</li>
 			</ul>
 		</form>

@@ -17,8 +17,8 @@ def index():
         .order_by(db.func.count(ShowTime.movie_id).desc())\
         .limit(10)
     premieres = [Movie.query.get(premiere_id.movie_id) for premiere_id in premieres_id]
-
-    return render_template('index.html', cities=cities, premieres=premieres)
+    date = datetime.now().strftime('%Y-%m-%d')
+    return render_template('index.html', cities=cities, premieres=premieres, date=date)
 
 
 @app.route('/searchsuggestions')
@@ -47,6 +47,7 @@ def searchcinemas():
     movie_id = request.args.get('movie_id', None)
     city = request.args.get('city', None)
     time = request.args.get('time', None)
+    print request.args.get('date')
     date = datetime.strptime(request.args.get('date'), "%Y-%m-%d") if request.args.get('date', None) is not None else datetime.today()
 
     if movie_id is not None:
@@ -68,6 +69,7 @@ def searchcinemas():
 def searchmovies():
     cinema_id = request.args.get('cinema_id', None)
     time = request.args.get('time', None)
+    print request.args.get('date') == None
     date = datetime.strptime(request.args.get('date'), "%Y-%m-%d") if request.args.get('date', None) is not None else datetime.today()
     d2 = request.args.get('d2', None)
     d3 = request.args.get('d3', None)

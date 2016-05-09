@@ -33,16 +33,16 @@ $(function () {
 		source: "/searchsuggestions"
 	});
 
-	//$('#addFiltros').click(function(){
-	//	if ($('#filtros').css('display') == 'flex') {
-	//		$('.fa-plus-square').css('display','flex');
-	//		$('.fa-minus-square').css('display','none');
-	//		$('#filtros').css('display','none');
-	//	}
-	//	else{
-	//		$('.fa-minus-square').css('display','flex');
-	//		$('.fa-plus-square').css('display','none');
-	//		$('#filtros').css('display','flex');
-	//	}
-	//});
+	$('#addFiltros').click(function(){
+		if ($('#filtros').css('height') != '0px') {
+			$('.fa-plus').css('opacity', 1);
+			$('.fa-minus').css('opacity', 0);
+			$('#filtros').css('height', '0px');
+		}
+		else{
+			$('.fa-minus').css('opacity', 1);
+			$('.fa-plus').css('opacity',0);
+			$('#filtros').css('height','100%');
+		}
+	});
 });

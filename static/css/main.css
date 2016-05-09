@@ -403,6 +403,38 @@ input[type="number"] {
   padding: 5px;
   border: solid 1px #133C55; }
 
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: #fafafa;
+  border: 1px solid #cacece;
+  padding: 9px;
+  border-radius: 4px;
+  display: inline-block;
+  position: relative;
+  margin: 0px 7px; }
+  input[type="checkbox"]:active, input[type="checkbox"]:checked:active {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px 1px 3px rgba(0, 0, 0, 0.1); }
+  input[type="checkbox"]:hover:before {
+    content: '\2714';
+    font-size: 14px;
+    position: absolute;
+    opacity: 0.5;
+    top: 0px;
+    left: 3px;
+    color: #133C55; }
+  input[type="checkbox"]:checked {
+    background-color: #e9ecee;
+    border: 1px solid #adb8c0;
+    color: #99a1a7; }
+  input[type="checkbox"]:checked:after {
+    content: '\2714';
+    font-size: 14px;
+    position: absolute;
+    top: 0px;
+    left: 3px;
+    color: #133C55; }
+
 select {
   background-color: #1282A2;
   color: white;
@@ -488,6 +520,8 @@ header #indexHeader {
   z-index: 1000;
   position: absolute;
   top: 0; }
+header section#barBusq {
+  width: 60%; }
 
 section#main {
   background-color: #e9e9e9; }
@@ -524,9 +558,40 @@ section#searchBar {
   position: absolute;
   bottom: 0;
   width: 100%;
-  padding: 20px 10%;
+  padding: 20px 10% 5px;
   background: rgba(233, 233, 233, 0.45);
   z-index: 100; }
+  section#searchBar #showFiltros {
+    text-align: center;
+    margin: 0 10px;
+    color: #e9e9e9; }
+    section#searchBar #showFiltros i {
+      cursor: pointer; }
+      section#searchBar #showFiltros i.fa-square {
+        color: #133C55;
+        transition: ease-in-out 0.5s; }
+      section#searchBar #showFiltros i.fa-plus {
+        color: #e9e9e9;
+        transition: ease-in-out 0.5s; }
+      section#searchBar #showFiltros i.fa-minus {
+        color: #e9e9e9;
+        transition: ease-in-out 0.5s; }
+  section#searchBar #filtros {
+    height: 0px;
+    display: flex;
+    justify-content: flex-end;
+    overflow: hidden;
+    margin-right: 15%;
+    transition: ease-in-out 1s; }
+    section#searchBar #filtros li {
+      display: flex;
+      align-items: center; }
+      section#searchBar #filtros li label {
+        display: flex;
+        flex-flow: row;
+        align-items: center; }
+        section#searchBar #filtros li label input {
+          margin: 0 7px; }
 
 section#destacados div#films {
   display: flex;
@@ -579,10 +644,16 @@ section#search {
       /*Estos 2 últimos son los necesarios*/
       position: absolute; }
       section#search #results #filters > form label {
-        color: #fff; }
+        color: #fff;
+        display: flex;
+        flex-flow: row;
+        align-items: center; }
       section#search #results #filters > form input, section#search #results #filters > form select {
         margin: 0 1%;
         max-width: 80%; }
+        section#search #results #filters > form input label, section#search #results #filters > form select label {
+          cursor: pointer;
+          position: absolute; }
     section#search #results div#movies, section#search #results div#cinemas {
       display: flex;
       flex-flow: row wrap;
