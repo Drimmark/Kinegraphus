@@ -1,0 +1,126 @@
+{% extends "layout.html" %}
+{% block title %}kinegraphus.com - Búsqueda de cines{% endblock %}
+
+{% block content %}
+
+
+<section id="search">
+    <div id="results">
+        <div id="filters">
+            <form action="?" method="get">
+                <input type="hidden" name="movie_id" value="{{ movie_id }}">
+
+                <input type="text" id="time" name="time" value="{{ time if time != None else '00:00' }}" />
+                <select name="city">
+                    <option value="">Todas</option>
+					{% for r in cities %}
+					<option value="{{ r.city }}" {% if r.city == city %}selected{% endif %}>{{ r.city }}</option>
+					{% endfor %}
+				</select>
+
+                <input type="date" name="date" value="{{ date.strftime("%Y-%m-%d") }}">
+            </form>
+        </div>
+
+        <div id="cinemas">
+            <div class="error404">La búsqueda realizada no ha encontrado ningún resultado.</div>
+        </div>
+    </div>
+
+    <div class="map" id="map">
+
+    </div>
+</section>
+
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+
+    <script>
+        var city = "";
+        var hay_city = 1;
+        var my_latitud;
+        var my_longitud;
+
+        $(document).ready(function() {
+            localizame(); /*Cuando cargue la página, cargamos nuestra posición*/
+        });
+
+        function localizame() {
+            if (navigator.geolocation) { /* Si el navegador tiene geolocalizacion */
+                navigator.geolocation.getCurrentPosition(coordenadas, errores);
+            }else{
+                alert('Oops! Tu navegador no soporta geolocalización. Bájate Chrome, que es gratis!');
+            }
+        }
+
+        function coordenadas(position) {
+            my_latitud = position.coords.latitude; /*Guardamos nuestra latitud*/
+            my_longitud = position.coords.longitude; /*Guardamos nuestra longitud*/
+        }
+
+        function errores(err) {
+            hay_city = 0;
+            /*Controlamos los posibles errores */
+            if (err.code == 0) {
+              alert("Oops! Algo ha salido mal");
+            }
+            if (err.code == 1) {
+              alert("Oops! No has aceptado compartir tu posición");
+            }
+            if (err.code == 2) {
+              alert("Oops! No se puede obtener la posición actual");
+            }
+            if (err.code == 3) {
+              alert("Oops! Hemos superado el tiempo de espera");
+            }
+        }
+
+    </script>
+
+    <script>
+        var positions = [
+                            {% for cinema in cinemas %}
+                                {% if cinema.latitude is not none and cinema.longitude is not none %}
+                                    {% if loop.last %}
+                                        {
+                                            latitude: {{ cinema.latitude }},
+                                            longitude: {{ cinema.longitude }},
+                                            name: "{{ cinema.name }}",
+                                            id: {{ cinema.id }}
+                                        }
+                                    {% else %}
+                                        {
+                                            latitude: {{ cinema.latitude }},
+                                            longitude: {{ cinema.longitude }},
+                                            name: "{{ cinema.name }}",
+                                            id: {{ cinema.id }}
+                                        },
+                                    {% endif %}
+                                {% endif %}
+                            {% endfor %}
+                        ];
+        {% if city is not none %} city = "{{ city }}" {% endif %};
+        if (city.localeCompare("")){//Si no podemos filtrar por ciudad, vemos si tenemos la geoposicion
+            if(hay_city == 1){//Si la tenemos cambiamos el valor, si no, se queda igual
+                city = "geo";
+            }
+
+        }
+
+        $(function() {
+            $('form.cinema input[name=time]').on('change', function() {
+                $(this).parent().parent().parent().find('button').attr('disabled', false);
+            })
+        })
+    </script>
+
+<script type="text/javascript" src="{{ url_for('static', filename='js/jquery-clockpicker.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/search.js') }}"></script>
+
+<script type="text/javascript" src="//maps.google.com/maps/api/js?sensor=true"></script>
+<script type="text/javascript" src="//hpneo.github.io/gmaps/gmaps.js"></script>
+<script type="text/javascript" src="//hpneo.github.io/gmaps/prettify/prettify.js"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/maps.js') }}"></script>
+{% endblock %}

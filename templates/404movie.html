@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+{% block title %}kinegraphus.com - Búsqueda de películas{% endblock %}
+
+{% block content %}
+
+<section id="search">
+    <div id="results">
+        <div id="filters">
+            <form action="?" method="get">
+                <input type="hidden" name="cinema_id" value="{{ cinema_id }}">
+
+                <input type="text" id="time" name="time" value="{{ time if time != None else '00:00' }}" />
+                <label><input type="checkbox" id="2d" name="d2" {{ d2 if d2 != None }}/>2D</label>
+                <label><input type="checkbox" id="3d" name="d3" {{ d3 if d3 != None }}/> 3D</label>
+                <label><input type="checkbox" id="vose" name="vose" {{ vose if vose != None }}/> VOSE </label>
+
+                <input type="date" name="date" value="{{ date.strftime("%Y-%m-%d") }}">
+            </form>
+        </div>
+
+        <div id="movies">
+            <div class="error404">La búsqueda realizada no ha encontrado ningún resultado.</div>
+        </div>
+    </div>
+
+    <div class="map" id="map">
+
+    </div>
+</section>
+
+{% endblock %}
+
+
+
+{% block scripts %}
+
+{{ super() }}
+    <script>
+        var positions = [
+                            {
+                                latitude: {{ cinema.latitude }},
+                                longitude: {{ cinema.longitude }},
+                                name: "{{ cinema.name }}",
+                                id: {{ cinema.id }}
+                            }
+                        ];
+        var city = "?";
+
+
+        $(function() {
+            $('form.movie input[name=time]').on('change', function() {
+                $(this).parent().parent().parent().find('button').attr('disabled', false);
+            })
+        })
+    </script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/jquery-clockpicker.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/search.js') }}"></script>
+
+<script type="text/javascript" src="//maps.google.com/maps/api/js?sensor=true"></script>
+<script type="text/javascript" src="//hpneo.github.io/gmaps/gmaps.js"></script>
+<script type="text/javascript" src="//hpneo.github.io/gmaps/prettify/prettify.js"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/maps.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/searchMovies.js') }}"></script>
+{% endblock %}

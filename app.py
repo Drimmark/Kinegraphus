@@ -47,7 +47,6 @@ def searchcinemas():
     movie_id = request.args.get('movie_id', None)
     city = request.args.get('city', None)
     time = request.args.get('time', None)
-    print request.args.get('date')
     date = datetime.strptime(request.args.get('date'), "%Y-%m-%d") if request.args.get('date', None) is not None else datetime.today()
 
     if movie_id is not None:
@@ -60,6 +59,9 @@ def searchcinemas():
         if time is not None:
             cinemas = cinemas.filter(ShowTime.time >= time)
 
+        if cinemas.count() == 0:
+            return render_template('404cine.html', cinemas=cinemas.all(), city=city, movie_id=movie_id, time=time, date=date, cities=cities)
+
         return render_template('searchcinemas.html', cinemas=cinemas.all(), city=city, movie_id=movie_id, time=time, date=date, cities=cities, randoms=[10,20,30,40,50,60,70,80,90])
     else:
         return redirect(url_for('index'))
@@ -69,7 +71,6 @@ def searchcinemas():
 def searchmovies():
     cinema_id = request.args.get('cinema_id', None)
     time = request.args.get('time', None)
-    print request.args.get('date') == None
     date = datetime.strptime(request.args.get('date'), "%Y-%m-%d") if request.args.get('date', None) is not None else datetime.today()
     d2 = request.args.get('d2', None)
     d3 = request.args.get('d3', None)
@@ -94,6 +95,10 @@ def searchmovies():
             movies = movies.filter(Movie.vose == '1')
 
         cinema = Cinema.query.filter(Cinema.id == cinema_id).first()
+        
+        if movies.count() == 0:
+            return render_template('404movie.html', movies=movies.all(), cinema=cinema, cinema_id=cinema_id, time=time, date=date, d2=d2, d3=d3, vose=vose)
+
         return render_template('searchmovies.html', movies=movies.all(), cinema=cinema, cinema_id=cinema_id, time=time, date=date, d2=d2, d3=d3, vose=vose, randoms=[10,20,30,40,50,60,70,80,90])
     else:
         return redirect(url_for('index'))

@@ -37,12 +37,12 @@ $(function () {
 		if ($('#filtros').css('height') != '0px') {
 			$('.fa-plus').css('opacity', 1);
 			$('.fa-minus').css('opacity', 0);
-			$('#filtros').css('height', '0px');
+			$('#filtros').css('height', '0vh');
 		}
 		else{
 			$('.fa-minus').css('opacity', 1);
 			$('.fa-plus').css('opacity',0);
-			$('#filtros').css('height','100%');
+			$('#filtros').css('height','7vh');
 		}
 	});
 });

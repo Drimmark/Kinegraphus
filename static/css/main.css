@@ -659,6 +659,13 @@ section#search {
       flex-flow: row wrap;
       align-items: stretch;
       margin-top: 11%; }
+      section#search #results div#movies .error404, section#search #results div#cinemas .error404 {
+        height: 80vh;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        font-size: 1.5em; }
       section#search #results div#movies form, section#search #results div#cinemas form {
         display: flex;
         flex-flow: column;
