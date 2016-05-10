@@ -11,7 +11,7 @@ db.init_app(app)
 
 @app.route('/')
 def index():
-    cities = db.session.query(Cinema.city).distinct()
+    cities = db.session.query(Cinema.city).distinct().order_by(Cinema.city)
     premieres_id = db.session.query(ShowTime.movie_id, db.func.count(ShowTime.movie_id))\
         .group_by(ShowTime.movie_id)\
         .order_by(db.func.count(ShowTime.movie_id).desc())\
@@ -43,7 +43,7 @@ def search_suggestions():
 
 @app.route('/searchcinemas', methods=['GET'])
 def searchcinemas():
-    cities = db.session.query(Cinema.city).distinct()
+    cities = db.session.query(Cinema.city).distinct().order_by(Cinema.city)
     movie_id = request.args.get('movie_id', None)
     city = request.args.get('city', None)
     time = request.args.get('time', None)
